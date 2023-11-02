@@ -3,9 +3,314 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>modulo 2 e 3</title>
 </head>
 <body>
+    <h1>Aula 1-Formatação de textos no CSS (1/2)</h1>
+    <h3>Texto de lorem:</h3>
+    <pre>
+        <code>
+            &lt;p&gt;lorem
+        </code>
+    </pre>
+    <h3>Text-Align</h3>
+    <pre>
+        <code>
+            p {
+                text-align: center;
+                color:blue;
+                font-size: 20px;
+                font-weight: bold;
+                font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+              }
+        </code>
+    </pre>
+    <h3>tirar underline dos link</h3>
+    <pre>
+        <code>
+            a{  <strong>para n aparecer nada:</strong>
+                text-decoration: none;
+                <strong>para riscar:</strong>
+                text-decoration: line-through;
+            }
+            </code>
+       </pre>  
+       <p>Um exemplo legal de interessao</p>
+       <pre>
+        <code>
+            a{
+                text-decoration: none;
+                        }
+            a:hover {
+                text-decoration: underline;
+            }
+        </code>
+    </pre>       
+    <h1>Aula 2- Formatação de textos no CSS (2/2)</h1>
+    <h3>Text-transform:uppercase</h3>
+    <pre>
+        <code>
+            #uppercase {
+                text-transform: uppercase;
+            }
     
+        </code>
+    </pre>
+    <h2>Text-transform:lowercase</h2>
+    <pre>
+        <code>
+            #lowercase {
+                text-transform: lowercase;
+            }
+        </code>
+    </pre>
+    <h3>letter-spacing</h3>
+    <pre>
+        <code>
+            #letter-spacing {
+                letter-spacing: 10px;
+            }
+        </code>
+    </pre>  
+    <h3>word-spacing</h3>
+    <pre>
+        <code>
+            #word-spacing {
+                word-spacing:20px;
+            }
+        </code>
+    </pre>
+    <h2>line-height</h2>
+    <p>Voce tambem pode definir a altura da linha, dentro do q tu quiser, so especificar</p>
+    <pre>
+        <code>
+            <strong>aqui usando uma id</strong>
+            #line-height {
+                line-height:50px;
+            }
+        </code>
+    </pre>   
+    <h3>Text-shadow</h3>
+    <pre>
+        <code>
+            <strong>aqui usando uma id</strong>
+            #text-shadow {
+                color:rgb(142, 73, 195);
+                text-shadow: 5px 5px 5px rgb(72, 58, 58);
+                font-size: 30px;
+            }
+        </code>
+    </pre>
+    <h1>Aula3- Adicionando Fontes Externas</h1>
+    <pre>
+        <code> 
+    <strong>(pronto essa e a parte um adicionamos esse link na area head do codigo.)</strong>
+            &lt;link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap" rel="stylesheet"&gt;"
+    <strong>(agora vamos ver a parte do CSS)</strong>
+                    p {
+                        font-family: 'Inconsolata', monospace;
+                    }
+          obs:Essa fonte e so um exmeplo, mas no site das fontes mostra o link e tmb o nome da fonte pra adicionar no CSS.
+        </code>
+    </pre>
+    <h1>Aula4-Listas no HTML</h1>
+    <h2>Lista desordenada:square/disc/circle/none</h2>
+    <ul style="list-style:square">
+        <li>exemplo1</li>
+        <li>exemplo2</li>
+    </ul>
+    <ul style="list-style:disc">
+            <li>exemplo1</li>
+            <li>exemplo2</li>
+    </ul>
+    <ul style="list-style:circle">
+            <li>exemplo1</li>
+            <li>exemplo2</li>
+    </ul>
+    <ul style="list-style:none">
+            <li>exemplo1</li>
+            <li>exemplo2</li>
+    </ul>
+    <pre>
+        <code>
+            <b>quadrado</b>
+            &lt;ul style="list-style:square"&gt;
+            <b>disco</b>
+            &lt;ul style="list-style:disc"&gt;
+            <b>circulo</b>
+            &lt;ul style="list-style:circle"&gt;
+            <b>nenhum</b>
+            &lt;ul style="list-style:none"&gt;
+        </code>
+    </pre>
+
+    <h2>Lista ordenada</h2>
+    <h3>type</h3>
+
+    <h4>type="1"</h4>
+    <p>Começa em ordem numerica</p>
+    <ol type="1">
+        <li>exemplo1</li>
+        <li>exemplo2</li>
+    </ol>
+    <pre>
+        <code>
+            &lt;ol type="1"&gt;
+        </code>
+    </pre>
+
+    <h4>type="A"</h4>
+    <p>Começa com Letra A maiscula</p>
+    <ol type="A">
+        <li>exemplo1</li>
+        <li>exemplo2</li>
+    </ol>
+
+    <h4>type="a"</h4>
+    <p>Começa com Letra a minuscula</p>
+    <ol type="a">
+        <li>exemplo1</li>
+        <li>exemplo2</li>
+    </ol>
+    <h4>type="I"</h4>
+    <p>Começa com numeros romanos maiusculo</p>
+    <ol type="I">
+        <li>exemplo1</li>
+        <li>exemplo2</li>
+    </ol>
+    <h4>type="i"</h4>
+    <p>Começa com numeros romanos minusculo</p>
+    <ol type="i">
+        <li>exemplo1</li>
+        <li>exemplo2</li>
+    </ol>
+    <h3>Start</h3>
+    <p>Nesse caso tu pode comecar com o valor que quiser a lista:</p>
+    <ol start="30">
+        <li>exemplo1</li>
+        <li>exemplo2</li>
+    </ol>
+    <pre>
+        <code>
+            &lt;ol start="30"&gt;
+        </code>
+    </pre>
+    
+    <h3>Lista dentro de lista</h3>
+    <p>So para constar, as combinacoes sao infinitas, basta tua criatividade.</p>
+    <ol>
+        <li>chas</li>
+            <ul>
+                <li>cha preto</li>
+                <li>cha verde</li>
+            </ul>
+        <li>cafe</li>
+            <ul>
+                <li>cafe bom</li>
+                    <ul style="list-style: disc;">
+                        <li>item 1</li>
+                        <li>item 2</li>
+                    </ul>
+                <li>cafe ruim</li>
+                    <ul style="list-style: disc;">
+                        <li>item 1</li>
+                        <li>item 2</li>
+                    </ul>
+            </ul>
+    </ol>
+    <h1>Aula 5- Tabelas no HTML</h1>  
+    <h2>Tag table</h2>
+    <p>o tr significa linha e as colunas e o td<br>vamos ja colocar um tam de 400px dentro do table.</p>
+<table width="400px" border="1">
+    <tr></tr>
+        <td>quadrado1</td>
+        <td>quadrado2</td>
+    <tr></tr>
+        <td>quadrado3</td>
+        <td>quadrado4</td>
+</table>
+    <h3>fazer um cabecalho</h3>
+<p>em vez de td vamos usar th (head),por uma questao estrutural podemos criar um thead e um tbody, n muda nada visualmente mas organiza o codigo</p>
+
+<table width="400px" border="1">
+<thead>
+    <tr>
+        <th>item 1</th>
+        <th>item 2</th>
+        <th>item 3</th>
+    </tr>
+</thead>
+<tbody>
+    <tr></tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+    <tr></tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+</tbody>
+</table>
+<pre>
+    <code>
+            <strong>EDITANDO TABLE:</strong>
+        Como pode ver, coloquei a tabela tam 600px e fiz uma borda solida de 1px preta.
+                   
+                    table {
+                        width:600px;
+                        border:1px solid black;
+                    }
+            <strong>EDITANDO COLUNAS TD TH:</strong>
+        Quando fizemos o codigo acima, fica apenas em volta da tabela e nao de todo o conteudo
+        entao, criamos uma folha de estilo para as colunas,so para lembrar td sao as linhas do
+        tbody e th sao as colunas do thead:
+        Nesse caso usei a mesma border, coloquei um padding para ter um espaçamento interno, mudei a cor para branco e coloquei o texto no centro.
+
+                    td, th {
+                        border:1px solid black;
+                        padding:10px;
+                        color: white;
+                        text-align:center;
+                    }
+            <strong>EDITANDO CABEÇALHO DA TABELA:</strong>
+        Bom esse codigo, usei para editar especificamente o cabeçalho da tabela, apenas mudando 
+        a cor de fundo.
+
+                    table thead {
+                        background-color:rgb(12, 10, 10);
+                    }
+
+            <strong>EDITANDO CORPO DA TABELA:</strong>
+        Aqui e p/ editar especificamente o corpo da tabela, apenas mudando a cor do fundo.
+
+                    table tbody{
+                        background-color:rgb(43, 12, 12);
+                    }
+
+            <strong>EDITANDO TBODY QUANDO PASSO O MOUSE EM CIMA:</strong>
+        Nao tem como ser mais especifico, esse codigo e quando passamos o mouse em cima do item, e cria seu efeito que determinei aqui
+        ou seja quando passar em cima do corpo da tabela, a cor mudara.
+                    
+                    tbody tr:hover { 
+                        background-color:rgb(6, 20, 81);
+                    }
+
+            <strong>EDITANDO COR APENAS EM NUMEROS PARES:</strong>
+        Isso nao foi explicado muito bem do porque esse motivo, mas o codigo é esse, mesmo e so vamos aceitar.
+        as cores onde estiver os itens pares ficaram nessa que escolhi.
+                    
+                    tbody tr:nth-child(even) {
+                        background-color: rgb(124, 95, 196);
+                    }
+
+            <strong>EDITANDO A FONTE DO TEXTO:</strong>
+        Aqui as tabelas ja vem de modo geral, em negrito, entao criei esse atributo apenas para deixar normal.
+                    
+                    th {
+                        font-weight:normal;
+                    }
+                    
+    </code>
+</pre>
 </body>
 </html>
