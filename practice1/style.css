@@ -1,0 +1,56 @@
+#inicio1 {
+    text-decoration: none;
+}
+#inicio2 {
+    text-decoration: line-through;
+}
+#inicio3 {
+    text-decoration: none;
+}
+#inicio3:hover {
+    text-decoration: underline;
+}
+h4 {
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 12px;
+    word-spacing: 10px;
+    letter-spacing: 5px;
+}
+h5 {
+    text-align: center;
+    text-transform: lowercase;
+    color: rgb(53, 53, 185);
+    text-shadow: 8px 8px 8px black;
+    font-size: 25px;
+}
+
+#newfont {
+    font-family:'Sometype Mono', monospace;
+}
+#normalfont {
+    font-size: 14px;
+}
+table {
+    width: 600px;
+    border: 1px solid rgb(53, 18, 225);
+}
+td, th {
+    border: 1px solid black;
+    padding: 10px;
+    color: white;
+    text-align: center;
+}
+table thead {
+    background-color: rgb(83, 83, 148);
+}
+table tbody {
+    background-color: rgb(70, 154, 223);
+}
+tbody, tr:hover {
+    background-color: rgb(144, 0, 255);
+}
+/*normally come with bold font, but here im just putting in normal font, bc in my oipinion is better*/
+th {
+    font-weight: normal;
+}
