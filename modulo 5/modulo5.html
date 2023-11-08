@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modulo 5 e 6</title>
+    <link rel="stylesheet" href="style5.css"/>
+</head>
+<body>
+    <h1>Aula1-</h1>
+    <h1>Aula2-</h1>
+    <h1>Aula 3-Viewport</h1>
+    <p>aqui aprenderemos sobre o viewport</p>
+    <pre>
+        <code>
+            com initial-scale1.0 conseguimos dar zoom em mobile.
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+            com user-scalable=no"nao conseguimos dar zoom em mobile.
+&lt;meta name="viewport" content="width=device-width, user-scalable=no">
+        </code>
+    </pre>
+    <h1>Aula 4-Imagens responsivas: picture e source </h1>
+<picture>
+    <source media="(min-width: 700px)" srcset="foto3.png"/>
+    <source media="(min-width: 350px)" srcset="foto2.png"/>
+    <source media="(min-width: 900px)" srcset="foto1.png"/>
+    <img src="foto1.png">    
+</picture>
+
+<pre>
+        <code>
+    &lt;picture>   
+    &lt;source media="(min-width: 650px)" srcset="foto3.png"/>
+    &lt;source media="(min-width: 450px)" srcset="foto2.png"/>
+    &lt;img src="foto1.png"/>
+    &lt;/picture>
+        </code>
+    </pre>
+
+
+    <h1>Aula 5-Imagens Responsivas: Propriedade Object-fit</h1>
+
+    <h2> object-fit: fill;</h2>
+    <p>Foto fica normal, cuidado com o tam q escolher dela pq pode ficar destorcida</p>
+    <h2> object-fit: contain;</h2>
+    <p>Nesse caso, conseguimos diminuir a imagem, de forma que ela nao fique destorcida, obviamente vai continuar naquele espaco ainda, so vai ficar em branco a parte que estiver disponivel.</p>
+    <h2> object-fit: cover;</h2>
+    <p>Aqui ele corta a imagem, mantendo a proporcao dentro do espcao disponivel que criamos, esse e o mais popular e comum o povo usar.</p>
+    <h2>scale-down</h2>
+    <p>E mt semelhante ao contain, a difrenca que diminui de modo que fique numa qualidade ok.</p>
+
+    <h1>Aula 6-Css @media: Como funciona 1</h1>
+    <p>Aqui conseguimos criar regras para nosso site, quando ele atingir determinados parametros que nos estabelecemos, e como se criassemos<br>outra folha de CSS, para determinado tamanho do site.</p>
+    <pre>
+        <code>
+            Aqui esta uma configurcao do nosso body normal:
+            <strong>body {
+                background-color:gray;
+            }
+            </strong>
+            aqui com esse comando, nosso body muda quando nossa tela atinge determinado tamanho.
+            <strong>@media (max-width: 600px) {
+            
+              body {
+                    background-color:red;
+                }
+            </strong> 
+            }
+        </code>
+    </pre>
+
+    <h1> Aula 7-Css @media: Como funciona 2</h1>
+<p>aqui vc entendera como imprimir, porem se vc colocar media all, ira funcionar em tds condicoes</p>
+<pre>
+    <code>
+        Aqui sao situacoes que aconteceram apenas quando, colocarmos para imprimir.
+
+        @media only print {
+            h1 {
+               display:none;
+            }
+            table, td {
+                border:3px solid black;
+            }
+        }
+    </code>
+</pre>
+<table width="100%">
+<tr>
+    <td>OLA</td>
+    <td>OLA</td>
+    <td>OLA</td>
+</tr>
+<tr>
+    <td>OLA</td>
+    <td>OLA</td>
+    <td>OLA</td>
+</tr>
+</table>
+<h1>Aula 8-Orientation no @media</h1>
+
+<div>1</div>
+<div>2</div>
+<div>3</div>
+<div>4</div>
+
+<PRE>
+    <code>
+        Esse landscape significa nossa tela na vertical
+        @media (orientation: landscape) {
+            body {
+                flex-direction: row;
+            }
+            }
+        Esse portrait e como se fosse na horizontal.
+        @media (orientation: portrait) {
+            body {
+                flex-direction:column;
+            }
+        }
+        E vamos colocar tambem nosso body com um display flex
+        body {
+            display: flex;
+        }
+    </code>
+</PRE>
+
+<h1>Aula 9-Aspect-ratio no @media</h1>
+<p>e uma tecnica pouco utilizada</p>
+<pre>
+    <code>
+        nesse caso quando a tela tiver 1 para 1 ou seja um quadrado, ela tera 
+        esses atributos:
+        @media (aspect-ratio: 1/1) {
+            body {
+                background-color: red;
+            }
+        }
+        ja aqui em 2 para 1, no caso quando ela tiver o dobro do tamanho da largura, ela tera esses atributos.
+        @media (aspect-ratio: 2/1) {
+            body {
+                background-color: rgb(0, 110, 255);
+            }
+        }
+        ja aqui e 1 para 2, no caso quando ela tiver o dobro do tamanho da altura, ela tera esses atributos.
+        @media (aspect-ratio: 1/2) {
+            body {
+                background-color: rgb(0, 255, 47);
+            }
+        }
+    </code>
+</pre>
+<h1>aula 10(Funcao var) e 11(Função var em media query)</h1>
+<pre>
+    <code>
+        entao pra criarmos variaveis, criamos um root: e definimos as variaveis.
+        :root {
+            --bg-color: rgb(74, 239, 9);
+            --bg-second: rgb(13, 38, 177);
+            --font-color: rgb(231, 21, 21);
+        }
+        
+        body {
+            background-color: var(--bg-color);
+        
+        }
+        digamos que tu exclua a variavel font-color , tu pode substituir caso tenha dado algum erro, colocando a segunda opcao, como fiz abaixo, colocando o blue, caso minha variavel tenha se perdido, ou tenha algum bug.
+        h1 {
+            color: var(--font-color, blue);
+        }
+        .container {
+            background-color: var(--bg-second);
+            color: var(--font-color);
+        }
+    </code>
+</pre>
+<pre>
+    <code>
+        no caso aqui criei um media query e ja defini a font quando a tela tiver 450px, sem precisar colar um por um.
+        
+        @media (max-width: 450px) {
+            :root {
+                --font-size: 15px;
+            }
+        }
+        
+    </code>
+</pre>
+
+<h1>Aula 12- Hack CSS: Altura relativa a largura</h1>
+<p>Aqui vamos aprender a deixar os videos responsivos.</p>
+<div class="video">
+    <div class="videoarea">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/uPNCKpOd0RQ">
+        </iframe>
+    </div>
+</div>
+<pre>
+    <code>
+        .video {
+            width: 100%;
+            margin: auto;
+        }
+        .vide-area {
+            position: relative;
+            height: 0px;
+            background-color: white;
+            padding: 0px 0px 56.25%;
+        }
+        .video-area iframe {
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            border: 0px;
+        }
+    </code>
+</pre>
+<h1>Aula 13-Funcao max e min</h1>
+<p>Entao em resumo aqui, conseguimos definir o tamanho da imagem de acordo como tamanho da tela que tivermos por exemplo</p>
+<img class="funmaxmin" src="https://www.google.com.br/google.jpg"/>
+<pre>
+    <code>
+        img {
+            width: max (50%, 400px);
+        
+        }
+    </code>
+</pre>
+
+<img class="funmin" src="https://www.google.com.br/google.jpg"/>
+<p>No min e o inverso, por exemplo os 50% sera quando estiver abaixo do valor min de pixel que voce definiu.</p>
+<pre>
+    <code>
+        img {
+            width: min (50%, 600px)
+        }
+    </code>
+</pre>
+</body>
+</html>
