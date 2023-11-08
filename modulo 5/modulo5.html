@@ -239,5 +239,19 @@
         }
     </code>
 </pre>
+<h1>Aula 14-Funcao calc</h1>
+<p>essa funcao calcula tamanhos, digamos que colocamos um width em porcentagem, mas queremos na verdade um espaco de 20px apenas, se deixar em porcentagem quando diminuir o tamanho da tela, consequentemente aquele tamanho tambem ira alterar, porque sera proporcional ao tam da tela aquela porcentagem que definimos </p>
+<div class="container"></div>
+<pre>
+    <code>
+        Entao esse valor de calc basicamente, define a responsividade daquele elemente, por exemplo quando eu for diminuindo a tela, sempre ficara aquele espaco de 40px definido.
+        
+        .container {
+            width: calc(100% - 40px);
+            background-color: grey;
+            height: 150px;
+        }
+    </code>
+</pre>
 </body>
 </html>

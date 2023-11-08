@@ -54,3 +54,8 @@ body {
 .funmin {
     width: min(50%, 600px);
 }
+.container {
+    width: calc(100% - 40px);
+    background-color: grey;
+    height: 150px;
+}
