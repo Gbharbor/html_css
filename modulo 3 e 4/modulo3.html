@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>modulo 2 e 3</title>
+</head>
+<body>
+    <h1>Aula 1-Formatação de textos no CSS (1/2)</h1>
+    <h3>Texto de lorem:</h3>
+    <pre>
+        <code>
+            &lt;p&gt;lorem
+        </code>
+    </pre>
+    <h3>Text-Align</h3>
+    <pre>
+        <code>
+            p {
+                text-align: center;
+                color:blue;
+                font-size: 20px;
+                font-weight: bold;
+                font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+              }
+        </code>
+    </pre>
+    <h3>tirar underline dos link</h3>
+    <pre>
+        <code>
+            a{  <strong>para n aparecer nada:</strong>
+                text-decoration: none;
+                <strong>para riscar:</strong>
+                text-decoration: line-through;
+            }
+            </code>
+       </pre>  
+       <p>Um exemplo legal de interessao</p>
+       <pre>
+        <code>
+            a{
+                text-decoration: none;
+                        }
+            a:hover {
+                text-decoration: underline;
+            }
+        </code>
+    </pre>       
+    <h1>Aula 2- Formatação de textos no CSS (2/2)</h1>
+    <h3>Text-transform:uppercase</h3>
+    <pre>
+        <code>
+            #uppercase {
+                text-transform: uppercase;
+            }
+    
+        </code>
+    </pre>
+    <h2>Text-transform:lowercase</h2>
+    <pre>
+        <code>
+            #lowercase {
+                text-transform: lowercase;
+            }
+        </code>
+    </pre>
+    <h3>letter-spacing</h3>
+    <pre>
+        <code>
+            #letter-spacing {
+                letter-spacing: 10px;
+            }
+        </code>
+    </pre>  
+    <h3>word-spacing</h3>
+    <pre>
+        <code>
+            #word-spacing {
+                word-spacing:20px;
+            }
+        </code>
+    </pre>
+    <h2>line-height</h2>
+    <p>Voce tambem pode definir a altura da linha, dentro do q tu quiser, so especificar</p>
+    <pre>
+        <code>
+            <strong>aqui usando uma id</strong>
+            #line-height {
+                line-height:50px;
+            }
+        </code>
+    </pre>   
+    <h3>Text-shadow</h3>
+    <pre>
+        <code>
+            <strong>aqui usando uma id</strong>
+            #text-shadow {
+                color:rgb(142, 73, 195);
+                text-shadow: 5px 5px 5px rgb(72, 58, 58);
+                font-size: 30px;
+            }
+        </code>
+    </pre>
+    <h1>Aula3- Adicionando Fontes Externas</h1>
+    <pre>
+        <code> 
+    <strong>(pronto essa e a parte um adicionamos esse link na area head do codigo.)</strong>
+            &lt;link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap" rel="stylesheet"&gt;"
+    <strong>(agora vamos ver a parte do CSS)</strong>
+                    p {
+                        font-family: 'Inconsolata', monospace;
+                    }
+          obs:Essa fonte e so um exmeplo, mas no site das fontes mostra o link e tmb o nome da fonte pra adicionar no CSS.
+        </code>
+    </pre>
+    <h1>Aula4-Listas no HTML</h1>
+    <h2>Lista desordenada:square/disc/circle/none</h2>
+    <ul style="list-style:square">
+        <li>exemplo1</li>
+        <li>exemplo2</li>
+    </ul>
+    <ul style="list-style:disc">
+            <li>exemplo1</li>
+            <li>exemplo2</li>
+    </ul>
+    <ul style="list-style:circle">
+            <li>exemplo1</li>
+            <li>exemplo2</li>
+    </ul>
+    <ul style="list-style:none">
+            <li>exemplo1</li>
+            <li>exemplo2</li>
+    </ul>
+    <pre>
+        <code>
+            <b>quadrado</b>
+            &lt;ul style="list-style:square"&gt;
+            <b>disco</b>
+            &lt;ul style="list-style:disc"&gt;
+            <b>circulo</b>
+            &lt;ul style="list-style:circle"&gt;
+            <b>nenhum</b>
+            &lt;ul style="list-style:none"&gt;
+        </code>
+    </pre>
+
+    <h2>Lista ordenada</h2>
+    <h3>type</h3>
+
+    <h4>type="1"</h4>
+    <p>Começa em ordem numerica</p>
+    <ol type="1">
+        <li>exemplo1</li>
+        <li>exemplo2</li>
+    </ol>
+    <pre>
+        <code>
+            &lt;ol type="1"&gt;
+        </code>
+    </pre>
+
+    <h4>type="A"</h4>
+    <p>Começa com Letra A maiscula</p>
+    <ol type="A">
+        <li>exemplo1</li>
+        <li>exemplo2</li>
+    </ol>
+
+    <h4>type="a"</h4>
+    <p>Começa com Letra a minuscula</p>
+    <ol type="a">
+        <li>exemplo1</li>
+        <li>exemplo2</li>
+    </ol>
+    <h4>type="I"</h4>
+    <p>Começa com numeros romanos maiusculo</p>
+    <ol type="I">
+        <li>exemplo1</li>
+        <li>exemplo2</li>
+    </ol>
+    <h4>type="i"</h4>
+    <p>Começa com numeros romanos minusculo</p>
+    <ol type="i">
+        <li>exemplo1</li>
+        <li>exemplo2</li>
+    </ol>
+    <h3>Start</h3>
+    <p>Nesse caso tu pode comecar com o valor que quiser a lista:</p>
+    <ol start="30">
+        <li>exemplo1</li>
+        <li>exemplo2</li>
+    </ol>
+    <pre>
+        <code>
+            &lt;ol start="30"&gt;
+        </code>
+    </pre>
+    
+    <h3>Lista dentro de lista</h3>
+    <p>So para constar, as combinacoes sao infinitas, basta tua criatividade.</p>
+    <ol>
+        <li>chas</li>
+            <ul>
+                <li>cha preto</li>
+                <li>cha verde</li>
+            </ul>
+        <li>cafe</li>
+            <ul>
+                <li>cafe bom</li>
+                    <ul style="list-style: disc;">
+                        <li>item 1</li>
+                        <li>item 2</li>
+                    </ul>
+                <li>cafe ruim</li>
+                    <ul style="list-style: disc;">
+                        <li>item 1</li>
+                        <li>item 2</li>
+                    </ul>
+            </ul>
+    </ol>
+    <h1>Aula 5- Tabelas no HTML</h1>  
+    <h2>Tag table</h2>
+    <p>o tr significa linha e as colunas e o td<br>vamos ja colocar um tam de 400px dentro do table.</p>
+<table width="400px" border="1">
+    <tr></tr>
+        <td>quadrado1</td>
+        <td>quadrado2</td>
+    <tr></tr>
+        <td>quadrado3</td>
+        <td>quadrado4</td>
+</table>
+    <h3>fazer um cabecalho</h3>
+<p>em vez de td vamos usar th (head),por uma questao estrutural podemos criar um thead e um tbody, n muda nada visualmente mas organiza o codigo</p>
+
+<table width="400px" border="1">
+<thead>
+    <tr>
+        <th>item 1</th>
+        <th>item 2</th>
+        <th>item 3</th>
+    </tr>
+</thead>
+<tbody>
+    <tr></tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+    <tr></tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+</tbody>
+</table>
+<pre>
+    <code>
+            <strong>EDITANDO TABLE:</strong>
+        Como pode ver, coloquei a tabela tam 600px e fiz uma borda solida de 1px preta.
+                   
+                    table {
+                        width:600px;
+                        border:1px solid black;
+                    }
+            <strong>EDITANDO COLUNAS TD TH:</strong>
+        Quando fizemos o codigo acima, fica apenas em volta da tabela e nao de todo o conteudo
+        entao, criamos uma folha de estilo para as colunas,so para lembrar td sao as linhas do
+        tbody e th sao as colunas do thead:
+        Nesse caso usei a mesma border, coloquei um padding para ter um espaçamento interno, mudei a cor para branco e coloquei o texto no centro.
+
+                    td, th {
+                        border:1px solid black;
+                        padding:10px;
+                        color: white;
+                        text-align:center;
+                    }
+            <strong>EDITANDO CABEÇALHO DA TABELA:</strong>
+        Bom esse codigo, usei para editar especificamente o cabeçalho da tabela, apenas mudando 
+        a cor de fundo.
+
+                    table thead {
+                        background-color:rgb(12, 10, 10);
+                    }
+
+            <strong>EDITANDO CORPO DA TABELA:</strong>
+        Aqui e p/ editar especificamente o corpo da tabela, apenas mudando a cor do fundo.
+
+                    table tbody{
+                        background-color:rgb(43, 12, 12);
+                    }
+
+            <strong>EDITANDO TBODY QUANDO PASSO O MOUSE EM CIMA:</strong>
+        Nao tem como ser mais especifico, esse codigo e quando passamos o mouse em cima do item, e cria seu efeito que determinei aqui
+        ou seja quando passar em cima do corpo da tabela, a cor mudara.
+                    
+                    tbody tr:hover { 
+                        background-color:rgb(6, 20, 81);
+                    }
+
+            <strong>EDITANDO COR APENAS EM NUMEROS PARES:</strong>
+        Isso nao foi explicado muito bem do porque esse motivo, mas o codigo é esse, mesmo e so vamos aceitar.
+        as cores onde estiver os itens pares ficaram nessa que escolhi.
+                    
+                    tbody tr:nth-child(even) {
+                        background-color: rgb(124, 95, 196);
+                    }
+
+            <strong>EDITANDO A FONTE DO TEXTO:</strong>
+        Aqui as tabelas ja vem de modo geral, em negrito, entao criei esse atributo apenas para deixar normal.
+                    
+                    th {
+                        font-weight:normal;
+                    }
+                    
+    </code>
+</pre>
+<h1>Aula 7- Formularios</h1>
+<p>GET and POST</p>
+<pre>
+    <code>
+        <strong>GET joga as info na URL</strong>
+        &lt;form action="paginalogin.html" method="GET"&gt;
+        <strong>POST fica interno</strong>
+        &lt;form action="paginalogin.html" method="POST"&gt;
+    </code>
+</pre>
+
+<h1>Aula 8- Input</h1>
+<h2>Input types</h2>
+<h3>type text</h3>
+<pre>
+    <code>
+        &lt;input type="text"/&gt;
+    </code>
+</pre>
+<form action="paginalogin.html" method="GET">
+    <input type="text"/>
+</form>
+
+<h3>type password</h3>
+<pre>
+    <code>
+        &lt;input type="password"/&gt;
+    </code>
+</pre>
+
+    <form action="paginalogin.html" method="GET">
+            <input type="password"/>
+    </form>
+    <h3>type checkbox</h3>
+    <pre>
+        <code>
+              &lt;input type="checkbox"/&gt;
+        </code>
+    </pre>
+            
+    <form action="paginalogin.html" method="GET">
+         <input type="checkbox"/>
+    </form>      
+    <h3>type radio</h3>
+    <p>a seguir um exemplo usando o msm name.</p>
+    <pre>
+        <code>
+              &lt;input type="radio" name="sexo"/&gt;
+              &lt;input type="radio" name="sexo"/&gt;
+        </code>
+    </pre>   
+    <form action="paginalogin.html" method="GET">
+        <input type="radio" name="sexo"/> 
+        <input type="radio" name="sexo"/>
+    </form>  
+    <p>Agora usando um name diferente, vera que conseguira marcar as duas bolinhas.</p>
+
+    <pre>
+        <code>
+              &lt;input type="radio" name="sexo"/&gt;
+              &lt;input type="radio" name="outro"/&gt;
+        </code>
+    </pre>
+            
+    <form action="paginalogin.html" method="GET">
+        <input type="radio" name="sexo"/> 
+        <input type="radio" name="outro"/>
+    </form>       
+    <h3>type submit</h3>
+    <pre>
+        <code>
+              &lt;input type="submit"/&gt;
+        </code>
+    </pre>
+            
+    <form action="paginalogin.html" method="GET">
+         <input type="submit"/>
+    </form>    
+    <h3>type email</h3>
+    <pre>
+        <code>
+              &lt;input type="email"/&gt;
+        </code>
+    </pre>
+            
+    <form action="paginalogin.html" method="GET">
+         <input type="email"/>
+    </form>      
+
+    <h2>"Names" e "value"</h2>
+<p>e aconselhavel usar o value em todos inputs, no caso do submit, o value so mudara o nome do botao</p>
+<form action="paginalogin.html" method="GET"> 
+
+    <input type="text" name="usuario" value="guiporto"/>
+    <input type="submit" value="fazer cadastrao"/>
+</form>
+<pre>
+<code>
+    &lt;input type="text" name=üsuario" value="guiporto"/&gt;
+    &lt;input type="submit" value="fazer cadastrao"/&gt;
+</code>
+</pre>
+<h1>Aula 9-Inputs no HTML5</h1>
+<h2>type color</h2>
+<pre>
+    <code>
+        &lt;form action="paginalogin.html" method="GET"&gt;
+        &lt;input type="color" name="usuario"/&gt;
+        &lt;input type="submit" value="ver cor"/&gt;
+        &lt;/form&gt;
+
+    </code>
+</pre>
+
+<form action="paginalogin.html" method="GET">
+    <input id="colorinput" type="color" name="usuario"/>
+    <input type="submit" value="ver cor"/>
+</form>
+<h2>type date</h2>
+<pre>
+    <code>
+        &lt;form action="paginalogin.html" method="GET"&gt;
+        &lt;input type="date" name="usuario"/&gt;
+        &lt;input type="submit" value="enviar"/&gt;
+        &lt;/form&gt;
+
+    </code>
+</pre>
+<form action="paginalogin.html" method="GET">
+<input type="date" name="usuario"/>
+<input type="submit" value="enviar"/>      
+</form>
+<h2>type datatime-local</h2>
+<pre>
+    <code>
+        &lt;form action="paginalogin.html" method="GET"&gt;
+        &lt;input type="datetime-local" name="usuario"/&gt;
+        &lt;input type="submit" value="enviar"/&gt;
+        &lt;/form&gt;
+
+    </code>
+</pre>
+<form action="paginalogin.html" method="GET">
+<input type="datetime-local" name="usuario"/>
+<input type="submit" value="enviar"/>      
+</form>
+
+<h2>type month</h2>
+<pre>
+    <code>
+        &lt;form action="paginalogin.html" method="GET"&gt;
+        &lt;input type="month" name="usuario"/&gt;
+        &lt;input type="submit" value="enviar"/&gt;
+        &lt;/form&gt;
+
+    </code>
+</pre>
+<form action="paginalogin.html" method="GET">
+<input type="month" name="usuario"/>
+<input type="submit" value="enviar"/>      
+</form>
+
+<h2>type number</h2>
+<pre>
+    <code>
+        &lt;form action="paginalogin.html" method="GET"&gt;
+        &lt;input type="number" name="usuario"/&gt;
+        &lt;input type="submit" value="enviar"/&gt;
+        &lt;/form&gt;
+
+    </code>
+</pre>
+<form action="paginalogin.html" method="GET">
+<input type="number" name="usuario"/>
+<input type="submit" value="enviar"/>      
+</form>
+
+<h2>type range</h2>
+<pre>
+    <code>
+        &lt;form action="paginalogin.html" method="GET"&gt;
+        &lt;input type="range" name="usuario"/&gt;
+        &lt;input type="submit" value="enviar"/&gt;
+        &lt;/form&gt;
+
+    </code>
+</pre>
+<form action="paginalogin.html" method="GET">
+<input type="range" name="usuario"/>
+<input type="submit" value="enviar"/>      
+</form>
+
+<h2>type search</h2>
+<pre>
+    <code>
+        &lt;form action="paginalogin.html" method="GET"&gt;
+        &lt;input type="search" name="usuario"/&gt;
+        &lt;input type="submit" value="enviar"/&gt;
+        &lt;/form&gt;
+
+    </code>
+</pre>
+<form action="paginalogin.html" method="GET">
+<input type="search" name="usuario"/>
+<input type="submit" value="enviar"/>      
+</form>
+
+<h2>type tell</h2>
+<pre>
+    <code>
+        &lt;form action="paginalogin.html" method="GET"&gt;
+        &lt;input type="tell" name="usuario"/&gt;
+        &lt;input type="submit" value="enviar"/&gt;
+        &lt;/form&gt;
+
+    </code>
+</pre>
+<form action="paginalogin.html" method="GET">
+<input type="tell" name="usuario"/>
+<input type="submit" value="enviar"/>      
+</form>
+
+<h2>type URL</h2>
+<pre>
+<code>
+    &lt;form action="paginalogin.html" method="GET"&gt;
+    &lt;input type="url" name="usuario"/&gt;
+    &lt;input type="submit" value="enviar"/&gt;
+    &lt;/form&gt;
+
+</code>
+</pre>
+<form action="paginalogin.html" method="GET">
+<input type="url" name="usuario"/>
+<input type="submit" value="enviar"/>      
+</form>
+
+<h2>type time</h2>
+<pre>
+<code>
+    &lt;form action="paginalogin.html" method="GET"&gt;
+    &lt;input type="time" name="usuario"/&gt;
+    &lt;input type="submit" value="enviar"/&gt;
+    &lt;/form&gt;
+
+</code>
+</pre>
+<form action="paginalogin.html" method="GET">
+<input type="time" name="usuario"/>
+<input type="submit" value="enviar"/>      
+</form>
+
+<h2>type week</h2>
+<pre>
+<code>
+    &lt;form action="paginalogin.html" method="GET"&gt;
+    &lt;input type="week" name="usuario"/&gt;
+    &lt;input type="submit" value="enviar"/&gt;
+    &lt;/form&gt;
+
+</code>
+</pre>
+<form action="paginalogin.html" method="GET">
+<input type="week" name="usuario"/>
+<input type="submit" value="enviar"/>      
+</form>
+<h1>Aula 10-Select</h1>
+<pre>
+    <code>
+     &lt;form action="paginalogin.html" method="GET"&gt;
+        <b>&lt;select name="ordenacao"&gt;</b>
+           <b>&lt;option value="bestseller">mais vendidos&lt;/option&gt;</b>
+           <b>&lt;option value="last" selected>recentes&lt;/option&gt;</b>
+        <b>&lt;/select&gt;</b>
+        &lt;input type="submit" value="fazer cadastro"/&gt;
+    &lt;/form&gt;
+
+(como pode ver coloquei um selected dentro da option que eu quiser, sendo assim se torna minha 
+primeira opcao, quando abrir o site mesmo nao sendo a primeira opcao que escrevi de fato.)
+    </code>
+</pre>
+<form action="paginalogin.html" method="GET">
+    <select name="ordenacao"> 
+        <option></option>
+        <option value="bestseller" selected>mais vendidos</option>
+        <option value="last">recentes</option>
+    </select>
+    <input type="submit" value="ver resultado"/>
+</form>
+<h2>Transformar o select em multipla escolha</h2>
+<pre>
+    <code>
+        <em>&lt;select name="order" size="2" multiple&gt;</em>
+    </code>
+</pre>
+<form action="paginalogin.html" method="GET">
+    <select name="order" size="2" multiple>
+        <option>mais caro</option>
+        <option value="bestseller">mais vendidos</option>
+        <option value="last">recentes</option>
+        <option>mais barato</option>
+    </select>
+    <input type="submit" value="ver resultado"/>
+</form>
+<h1>Aula 11-Textarea</h1>
+<h2>Caixinha para digitar</h2>
+<form action="paginalogin.html" method="get">
+    <textarea name="descricao"></textarea>
+    <input type="submit" value="enviar"/>
+</form>
+<pre>
+<code>
+ &lt;form action="paginalogin.html" method="GET">
+    &lt;textarea name="descricao">&lt;/textarea>
+    &LT;input type="submit" value="enviar"/>
+&lt;/form>
+</code>
+<h1>Aula 12-Button</h1>
+<p>Ambos tem a mesma funcao</p>
+<form action="paginalogin.html" method="GET">
+    <button>Texto do botao</button>
+    <input type="submit" value="texto do submit">
+</form>
+<pre>
+    <code>
+     &lt;form action="paginalogin.html" method="GET">
+        &lt;button>texto do botao&lt;/button>
+        &LT;input type="submit" value="texto do submit"/>
+    &lt;/form>
+    </code>
+</pre>
+<h1>Aula 13-Label</h1>
+<p>Temos formas de aprimorar, com o id="name"</p>
+<form action="paginalogin.html" method="GET">
+    <label for="nome">Nome Completo</label><br>
+    <input type="text" name="nome" id="nome"/><br>
+    <input type="submit" value="Enviar"/>
+</form>
+<pre>
+    <code>
+        &lt;form action="paginalogin.html" method="GET">
+            &lt;label for="nome">Nome Completo &lt;/label> &lt;br>
+            &lt;input type="text" name="nome" id="nome"/>
+            &lt;input type="submit" value="Enviar"/>
+        &lt;/form>
+    </code>
+</pre>
+<p>outro exemplo com for="name"</p>
+<form action="paginalogin.html" method="get">
+    <input type="checkbox" id="name"/>
+    <label for="name">Clique para aceitar os termos de privacidade.</label>
+</form>
+<pre>
+    <code>
+        &lt;input type="checkbox" id="name"/>
+        &lt;label for="name">Clique para aceitar os termos de privacidade.&lt;/label>
+    </code>
+</pre>
+<p>existe outra forma caso queira, colocandod entro do label o input </p>
+<form action="paginalogin.html" method="get">
+    <label>
+        Nome Completo: <br>
+        <input type="text" name="name"/>
+    </label>
+</form>
+<pre>
+    <code>
+        &lt;label>
+            Nome Completo:&ltbr>
+            &lt;input type="text" name="nome"/>
+        &lt;/label>
+    </code>
+</pre>
+<h1>Aula 14-Formatando formulários no CSS (1/2)</h1>
+<pre>
+    <code>
+        <b>CODIGO CSS</b>
+    Entao aqui no label, aprendemos o display, por padrao ja vem o inline.
+    porem vamos colocar o block, assim ficara um abaixo do outro como se fossem blocos;<br>
+    Ja o margim-bottom e a distancia interna da parte de baixo.
+
+        <em>label {
+            display:block;
+            margin-bottom:20px;
+        } </em>
+    
+    Aqui editamos o imput text, essa forma de adicionar o [type=text] nao funciona
+    para todos os inputs foi mencionado q funciona no password tmb;
+    Aqui basicamente usamos um espaçamento interno de 10px e uma largura de 500.
+
+       <em>input[type=text]{
+            padding:10px;
+            width:500px;</em> 
+        }
+    </code>
+</pre>
+<h3>Area de Cadastro:</h3>
+<form action="paginadelogin.html" method="get">
+    <label>Nome Completo<br>
+        <input type="text" name="nome"/>
+    </label>
+    <label>descricao<br>
+        <textarea name="descricao"></textarea>
+    </label>
+    <label>
+    Categoria:<br>
+    <select name="categoria">
+        <option value="1">Categoria 1</option>
+        <option value="2">Categoria 2</option>
+        <option value="3">Categoria 3</option>
+        <option value="4">Categoria 4</option>
+        <option value="5">Categoria 5</option>
+    </select>
+    </label>
+
+<label>
+    <input type="checkbox"/>Eu declaro que aceitos os 
+    termos
+    <a href="pagina/termos.html" target="_blank" class="termoslink">Termos de Servico</a>
+</label>
+<button>Fazer Cadastro</button>
+</form>
+<h1>Aula 15-Formatando formularios no CSS (2/2)</h1>
+<pre>
+    <code>
+        No label nao mexemos.
+
+        label {
+        display:block;
+        margin-bottom:20px;
+        }
+
+        Aqui adicionamos um font size de 15px pra aumentar o texto do input;criamos uma borda cinza solida, e esse outline e para tirar a cor automatica azul quando
+        clicamos na caixa pra digitar;o margim top e o afastamento externo do texto.Outro ponto importante que como queria essas informacoes para todo o cadastro,
+        adicionei o textarea, e o select.
+
+        input[type=text], textarea, select{
+        padding:10px;
+        width:500px;
+        <em>font-size:15px;
+        border:1px solid grey;
+        outline:0;
+        margin-top:5px;</em>
+        }
+
+        Msm ja adicionando o textarea em cima para obter algumas edicoes,criei uma nova folha so para ele, pois essa edicao e especifica para ele:
+        Coloquei uma altura de 200px e esse resize none e para o usuario nao ficar mexendo na area do texto.
+
+        textarea {
+        height: 200px;
+        resize:none;
+        }
+
+        Aqui criamos uma div dentro dos termos de serviço, como eu ja editei antes nas aulas anteriores  para todos as ancoras nao terem um text text-decoration,
+        ja iria funcionar de qualquer forma, mas igual adicionei aqui por didatica, lembrando que isso quer dizer que o link nao vai ter nenhuma decoracao.
+
+        .termoslink {
+        color:black;
+        text-decoration:none;
+        }
+
+        Outro ponto importante que foi dito e colocar um text-decoration:underline, assim quando passar o mouse em cma o link sera destacado,
+        tambem ja fiz essa edicao nas ancoras, entao so adicionei por didatica aqui, ela ja tava funcionando.
+
+        .termoslink:hover {
+        text-decoration: underline;
+        }
+
+        Aqui no botao fiz um espaçamento interno de 10px, aumentei o tam da letra, e fiz uma borda cinza e uma cor de fonto cinza clara.
+
+        button {
+        padding:10px;
+        font-size:15px;
+        border:1px solid grey;
+        background-color: #eee;
+        }
+
+        Aqui quando passar o mouse em cima, vai ficar um cinza mais escuro.
+
+        button:hover {
+        background-color: grey;
+        }
+    </code>
+</pre>
+<h1> Aula 16- tags fieldset e Legend</h1>
+<h2>O que é e para que serve?</h2>
+<p>basicamente aqui vamos aprender essas duas tag fieldset e legend<br>
+    para exemplificar , o fieldset monta um campo ao redos das label que eu selecionar dentro da tag.
+    e o legend colocamos dentro do fieldset tambem para determinar um nome e como se fosse um <br>
+    complemente do fieldset.</p>
+<form action="paginadelogin.html" method="post">
+    <fieldset>
+        <legend>Dados Pessoais</legend>
+        <label>primeiro nome:<br>
+            <input type="text" name="nome"/>
+        </label>
+        <label>sobrenome:<br>
+            <input type="text" name="lastname"/>
+        </label>
+    </fieldset>
+    <fieldset>
+        <legend>Dados Profissionais:</legend>
+        <label>
+            Nome da Empresa:<br>
+                <input type="text" name="companyname">
+        </label>
+        <label>
+            cargo:<br>
+                <input type="text" name="companyjobtittle">
+        </label>
+        <input type="submit" value="enviar cadastro">
+    </fieldset>
+</form>
+<p>exemplo so dos dados pessoais, pq e igual ao dados profissionais</p>
+<pre>
+    <code>
+        &lt;fieldset&gt;
+        &lt;legend>Dados Pessoais: &lt;/legend>
+        &lt;label>
+            Primeiro Nome: &lt;br>
+            &lt;input type="text" name="nome"/>
+            &lt;/label>
+            &lt;label>
+            Sobrenome: &lt;br>
+            &lt;input type="text" name="lastname"/>
+            &lt;/label>
+    </code>
+</pre>
+<h1>Aula 17- Validacoes nativas (1/2)</h1>
+<h2>Required</h2>
+<p>colocamos dentro do input</p>
+<pre>
+    <code>
+        &lt;input type="text" name="nome" <strong>Required</strong>/>
+    </code>
+</pre>
+<h2>minlength</h2>
+<p>colocamos dentro do input</p>
+<pre>
+    <code>
+        &lt;input type="text" name="nome" Required <strong>minlength="2"</strong>/>
+    </code>
+</pre>
+<h1>Aula 18-Validacao nativa parte 2</h1>
+<h2>Step</h2>
+<pre>
+    <code>
+        Idade
+            &lt;input type="number" name="age" step="2"/>    
+    </code>
+</pre>
+<h2>Min or Max</h2>
+<pre>
+    <code>
+        &lt;input type="number" name="age" min="18" max="120"/>
+    </code>
+</pre>
+<h1>Aula 19-Input type hidden</h1>
+<p>e mais utilizado quando estamos editando informacoes do usuario e nos organizar as informacoes do usuario.</p>
+<input type="hidden" name="country" value="PT"> <!--aqui e uma informacao especifica para o organizar o sistema, ficara escondido do usuario-->
+<pre>
+    <code>
+        &lt;input type="hidden" name="country" value="PT"> 
+    </code>
+</pre>
+<h1>Aula 20-Input type file</h1>
+<h2>Aceitando somente fotos.</h2>
+<form action="paginadelogin.html" method="get">
+    <fieldset>
+        <legend>Info do usuario</legend>
+        <label>
+            Nome Completo:
+            <input type="text" value="name" required>
+        </label>
+        <label>
+            Foto:<br>
+            <input id="foto" type="file" name="foto" accept="image/*">
+        </label>
+    </fieldset>
+</form>
+<h2>Aceitando so pdf e enctype</h2>
+<p>Ou caso queira alguma aplicacao especifica, digamos um pdf, usando um.<br>O enctype faz com que os arquivos se tornam em bytes para que o sistema consiga reproduzir o arquivo depois, caso nao faca isso pode ser que o sistema nao receba os arquivos.</p>
+<form action="paginalogin.html" method="get" enctype="multipart/form-data">
+    <fieldset><legend>informacao do usuario</legend>
+        <label>
+            Nome Completo:<br>
+            <input type="text" name="nome" required/>
+        </label>
+        <label>
+            PDF:<br>
+            <input  type="file" name="PDF" accept="application/PDF"/>
+        </label>
+    </fieldset>
+</form>
+<pre>
+    <code>
+        <strong>exemplo PDF:</strong>
+        &lt;form action="paginalogin.html" method="GET" enctype="multipart/form-data">
+        &LT;label>
+            PDF:&ltbr>
+            &LT;input  type="file" name="PDF" accept="application/PDF"/>
+        &LT;/label>
+
+        <strong>exemplo foto:</strong>
+        &lt;form action="paginalogin.html" method="GET" enctype="multipart/form-data">
+        &LT;label>
+            foto:&ltbr>
+            &LT;input  type="file" name="foto" accept="image/*"/>
+        &LT;/label>
+    </code>
+</pre>
+
+
+</body>
+</html>
