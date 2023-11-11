@@ -160,28 +160,23 @@ nav a:hover {
 
 
 /*Area departamentos*/
-.Departments {
+.Departments1, .Departments2, .Departments3 {
     display: flex;
     flex-wrap: wrap;
+    margin-top: 20px;
+    justify-content: space-between;
+
 }
- .div1,
- .div3,
- .div5 {
-    margin-left:0px;
-    margin-bottom: 25px;
-    background-color: #36a9e1;
-    height: 130px;
-    width: 130px;
- }
-.div2,
-.div4,
-.div6 {
-    margin-left: 25px;
-    margin-bottom: 25px;
-    background-color: #36a9e1;
-    height: 130px;
-    width: 130px;
+.dep_square1, .dep_square2, .dep_square3 {
+    width: 150px;
+    height: 150px;
+    background-color: #0079c7;
 }
+.Departments3 {
+    justify-content: space-between;
+
+}
+
 /*PARTE DAS NOTICIAS*/
 article {
     flex: 1;
@@ -429,4 +424,31 @@ font-size: 21px;
         justify-content: space-around;
     }  
 }
-    
+
+@media (max-width:926px) {
+    .Departments1, .Departments2, .Departments3 {
+        justify-content: space-around;
+        margin-top: 5px;
+
+    }
+    .dep_square1, .dep_square2, .dep_square3 {
+        width: 200px;
+        height: 200px;
+        margin-top: 25px;
+    }
+    #geral section,
+    #geral aside  {
+        padding: 5px;
+
+    }
+    .footer_area {
+        padding: 5px;
+    }
+    .logo {
+        padding: 5px;
+    }
+    .footer_copy {
+        padding: 5px;
+    }
+   
+}
