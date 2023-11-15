@@ -1,11 +1,138 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario Pesquisa</title>
+    <title>Formulario de Cadastro:</title>
+    <link rel="stylesheet" href="/Modulo 8/formulario/assets/css/style.css"/>
 </head>
 <body>
-    
+    <div class="container"> <!--TODO CONTEUDO ESTA AQUI DENTRO DO CONTAINER-->
+        <div class="form_image"> <!--ESSA IMAGEM OCUPARA 50% DA TELA-->
+            <img src="assets/img/undraw_shopping_re_hdd9.svg"/>
+        </div>
+
+        <div class="form"> <!--ESSA E A DIV DO FORMULARIO INTEIRO-->
+            <form action="#"> <!--ESSA  E A TAG FORM ONDE FICARA TDS LABEL E INPUTS-->
+                <!--AQUI FICA A MENSAGEM PRINCIPAL E O BOTAO ENTRAR-->
+                <div class="form_header">
+                    <div class="title">
+                        <h1>Cadastre-se</h1>
+                    </div>
+                    <div class="login_button">
+                        <button><a href="#">Entrar</a></button>
+                    </div>
+                </div>
+                                 <!--ESSA DIV ONDE FICARAM TODOS INPUTS DE CADASTRO-->
+            <div class="input_group"> 
+                <div 
+                    class="input_box">
+                <label 
+                    for="firstname">Primeiro Nome
+                </label>
+                <input
+                    id="firstname"
+                    type="text"
+                    name="firstname"
+                    placeholder="Seu primeiro nome"
+                    required/>
+                </div>
+                <div class="input_box">
+                    <label 
+                    for="lastname">Sobrenome
+                    </label>
+                    <input
+                    id="lastname"
+                    type="text"
+                    name="lastname"
+                    placeholder="Seu Sobrenome"
+                    required/>
+                </div>
+                <div class="input_box">
+                    <label 
+                    for="email">Email
+                    </label>
+                    <input
+                    id="email"
+                    type="email"
+                    name="email"
+                    placeholder="Seu Email"
+                    required/>
+                </div>
+                <div class="input_box">
+                    <label 
+                    for="number">Numero
+                    </label>
+                    <input
+                    id="number"
+                    type="tell"
+                    name="number"
+                    placeholder="Seu numero"
+                    required />
+                </div>
+                <div class="input_box">
+                    <label 
+                    for="password">Senha
+                    </label>
+                    <input
+                    id="password"
+                    type="password"
+                    name="password"
+                    placeholder="Sua Senha" 
+                    required/>
+                </div>
+                <div class="input_box">
+                    <label 
+                    for="confirmpassword">Confirme sua Senha
+                    </label>
+                    <input
+                    id="confirmpassword"
+                    type="password"
+                    name="confirmpassword"
+                    placeholder="Repita sua Senha"
+                    required/>
+                </div>
+            </div>
+                <!--DIV DOS GENEROS-->
+            <div class="gender_group">
+                <div class="gender_title">
+                    <h6>Gênero</h6>
+                </div>
+                <div class="gender_input">
+                    <input 
+                    type="radio" 
+                    id="female" 
+                    name="gender">
+                    <label for="female">Feminino</label>
+                </div>
+                <div class="gender_input">
+                    <input 
+                    type="radio" 
+                    id="male" 
+                    name="gender">
+                    <label for="male">Masculino</label>
+                </div>
+                <div class="gender_input">
+                    <input 
+                    type="radio" 
+                    id="others" 
+                    name="gender">
+                    <label for="others">Outros</label>
+                </div>
+                <div class="gender_input">
+                    <input 
+                    type="radio" 
+                    id="none" 
+                    name="gender">
+                    <label for="none">Prefiro nao dizer</label>
+                </div>          
+            </div>
+            <!--AQUI TEMOS UMA DIV SO PRO BOTAO P/CONTINUAR-->
+            <div class="continue_button"> 
+                    <button><a href="#">Continuar</a></button>
+            </div>
+        </form>
+        </div><!--DIV DO FORM-->
+    </div> <!--DIV CONTAINER-->
 </body>
 </html>
