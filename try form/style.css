@@ -1,38 +1,37 @@
 
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200&display=swap');
-
-  * {
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200&display=swap');
+*{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+    font-size: 'inter', sans-serif;
 }
-  body {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #0c0ce94d;
+body {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background:#0c0ce94d;
+  justify-content: center;
+  align-items: center;
 }
-  .container {
+.container {
     width: 80%;
     height: 80vh;
     display: flex;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, .212);
+    box-shadow: 5px 5px 10px  rgba(0, 0, 0, .212);
 }
-  .form_image {
+.form_image {
     width: 50%;
     display: flex;
-    justify-content: center;
+    justify-content:center;
     align-items: center;
     background-color: #fde3a7d7;
     padding: 1rem;
 }
-  .form_image img {
-    width:31rem;
+.form_image img {
+    width: 31rem;
 }
-  .form {
+.form {
     width: 50%;
     display: flex;
     justify-content: center;
@@ -41,19 +40,19 @@
     background-color: #fff;
     padding: 3rem;
 }
-  .form_header {
-    margin-bottom: 3rem;
+.form_header {
+    margin-bottom: 2rem;
     display: flex;
     justify-content: space-between;
 }
-  .login_button {
-     display: flex;
-     align-items: center;
+.login_button { 
+    display: flex;
+    align-items: center;
 }
 .login_button button {
     border: none;
-    background-color: #6c63ff ;
-    padding: 0.4rem 1rem;
+    background-color: #6c63ff;
+    padding: 0.7rem 1rem;
     border-radius: 5px;
     cursor: pointer;
 }
@@ -65,7 +64,9 @@
     font-weight: 500;
     color: #fff;
 }
-.form_header h1::after {
+
+ /*Isso e aquele risco em baixo do Cadastre-se*/
+.form_header h1::after { 
     content: '';
     display: block;
     width: 5rem;
@@ -86,6 +87,7 @@
     flex-direction: column;
     margin-bottom: 1.1rem;
 }
+/*Ja aqui eu simplesmente tirei a borda tradicional adicinei a minha borda redonda e coloquei uma combrinha atras dela, para poder mostra-la, caso contrario n apareceria nada*/
 .input_box input {
     margin: 0.6rem 0;
     padding: 0.8rem 1.2rem;
@@ -93,29 +95,28 @@
     border-radius: 10px;
     box-shadow: 1px 1px 6px #0000001c;
 }
+/*ja aqui quando so ao passar o mouse por cima da caixinhae ele vai ficar um cinzinha bem clarinho*/
 .input_box input:hover {
     background-color: #eeeeee75;
 }
+/*Aqui resumidamente, quando clciar na caixinha vai ficar uma linha roxinha fininha dentro da caixinha para responder*/
 .input_box input:focus-visible {
-    outline: 1px solid #6c63ff;
+    outline:1px solid #6c63ff;
 }
-.input_box label,
-.gender_title h6 {
-    font-size: 0.75rem;
+.input_box label, .title h5 {
+    font-size: 0.80rem;
     font-weight: 600;
     color: #000000c0;
 }
 .input_box input::placeholder {
-    color: #000000be;
+    color: #6f6d6dbe;
 }
-/*AQUI EDITAMOS O GRUPO DOS GENEROS*/
-.gender_group{
+.gender_group {
     display: flex;
     justify-content: space-between;
     margin-top: 0.62rem;
     padding: 0 0.5rem;
 }
-/*AQUI OS TIPOS DE GENEROS*/
 .gender_input {
     display: flex;
     align-items: center;
@@ -128,9 +129,7 @@
     font-weight: 600;
     color: #000000c0;
 }
-
-/*EDICAO DO BOTAO CONTINUAR*/
-.continue_button button {
+.button_continue button {
     width: 100%;
     margin-top: 2.5rem;
     border: none;
@@ -139,21 +138,18 @@
     border-radius: 5px;
     cursor: pointer;
 }
-.continue_button button:hover {
+.button_continue button:hover {
     background-color: #6b63fff1;
 }
-.continue_button button a {
+.button_continue button a {
     text-decoration: none;
     font-size: 0.93rem;
-    font-weight:500;
+    font-weight: 500;
     color: #fff;
 }
 
+@media screen and (max-width:1169px) {
 
-
-/*AQUI DEIXAMOS RESPONSIVO PARA 1330px*/
-
-@media screen and (max-width:1330px){
     .form_image {
         display: none;
     }
@@ -164,10 +160,8 @@
         width: 100%;
     }
 }
-
-/*AQUI DEIXAMOS RESPONSIVO PARA 1000px*/
-
-@media screen and (max-width:1000px) {
+/*Esse overflow y scroll faz com que crie uma barra de scrool dentro do grou*/
+@media screen and (max-width:918px) {
     .container {
         width: 90%;
         height: auto;
@@ -179,13 +173,10 @@
         max-height: 10rem;
         padding-right: 5rem;
     }
-    .gender_input{
-        margin-top: 2rem;
+    .gender_input {
+        margin-top: 0.5rem;
     }
     .gender_group {
         flex-direction: column;
-    }
-    .gender_input {
-        margin-top: 0.5rem;
     }
 }
