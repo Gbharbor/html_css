@@ -1,0 +1,41 @@
+header div {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+}
+header div:first-child {
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+header div:last-child {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.balao {
+    background-color: blue;
+    display: inline-block;
+    color: white;
+    padding: 20px;
+    border-radius: 20px;
+}
+.balao::after {
+    content:"";
+    display: block;
+    position: absolute;
+    margin-top: 20px;
+    border:20px solid;
+    border-color: blue transparent transparent transparent;
+}
+body {
+    background-image:url('bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.div {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}

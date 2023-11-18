@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MODULO 8 aulas</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <h1>Seletor pelo atributo pt 1 e 2</h1>
+    <input type="text" name="usuario" required/>
+    <input type="password" name="password" />
+    <h1>Resumo</h1>
+    <p>Conseguir editar algum atributo especifico, por exemplo um required e so colocar entre colchetes
+    <br>ou caso queira um tipo de atributo por exemplo o type text, so colocar [type=text] normalmente,<br>
+    porem se vc usar uma tag que vc msm criou por exemplo um name="usuario", ai tem q por entre aspas<br>e tmb colocar aspas, assim por exemplo name="usuario" 
+    </p>
+    <p>no modo do required por exemplo, tu pode especificar mais ainda, por exemplo tds required de uma div ou um id ou de um input por exemplo .divqualquer ou #idqualquer [required]</p>
+    <p>no caso do type e a mesma coisa, mas se quiser especificar input[type] mas como ja vimos isso e mt geral<br>entao podemos colocar assim se quiser especificar mais ainda input[type=text] ou input[type=password] </p>
+    <p>no caso do name input[name="usuario"]</p>
+    <p>agr digamos que vc queira alterar algo que esta dentro de um link, fazer uma edicao daquilo,supostamente temos 4 noticias e 2 delas no link tem a palavra economia, podemos editar apenas ela, de forma super simples, poderia ser outra palavra como futebol por exemplo</p>
+    <p>a [href*="economia"]</p>
+    <p>agora digamos q queira q td q comece com https seja editado, obviamente mudara tds link, menos algum q tenha http por exemplo, esse chapeu serve pra dizer q e no comeco.</p>
+    <p>a [href^="https"</p>
+    <p>digamos q tu faca isso com o http tmb</p>
+    <p>a [href^="https"</p>
+    <p>vc vera q o http ficara com a msm cor do https, obviamente por http tem em https tmb,vc tem 2 opcoes, ou tu muda a posicao deles no css, colocando o http acima do https ou<br>
+    tu pode simplesmente colocar um : (dois pontos) </p>
+    <p>a [href^="https:"]</p>
+    <p>a [href^="http:"]</p>
+    <p>pronto isso e mais uma dica mesmo.</p>
+    <p>agora usando html que e no final , ai adicionamos o cifrao $</p>
+    <p>a[href$="html"]</p>
+    <h1>Aula 8- Seletor de elemento vazio</h1>
+    <div>texto1</div>
+    <div>texto2</div>
+    <div></div>
+    <div>texto4</div>
+    <p>Entao desse modo. vc vera q a div q n tem nd escrito vai aparecer o espaco q coloquei igual, porem digamos q quero editar essa div q n tem conteudo.</p>
+    <p>div:empty</p>
+    <p>pronto apenas isso, ai digamos q essa div vc queira q n apareca, e so dar um display:none </p>
+
+    <h1>Aula 9- Seletor de primeira letra e primeira linha</h1>
+<p>No caso da primeira letra no exemplo de um paragrafo por exemplo<Br> apeans colocamos p::first-letter </p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse, saepe asperiores, eius alias est doloribus corporis libero a quis minima iure excepturi sint deleniti, aperiam ea illo soluta hic at.</p>
+<h2>Agora so na primeira linha</h2>
+<p>agr em vez de first letter vms usar <b>p::first-line</b></p>
+<h1>Aula 10-Seletor de Primeiro e Último Elemento </h1>
+<p>agr digamos q queira colocar bordas arredondadas de forma que fosse um elemento unico juntando as 4 divs</p>
+<p>entao nesse caso, vc tera que fazer div:first-child, no caso do nosso exemplo tera que ser div:first-child, e no caso de editar a ultima div, no nosso caso de colocar arredondado como se fosse um menu, aidionamos o div:last-child</p>
+
+<header>
+    <div>.</div>
+    <div>.</div>
+    <div>.</div>
+    <div>.</div>
+</header>
+<h1>Aula 11- Seletor Negativo  </h1>
+<p>Aqui eu seleciono tudo menos isso q vou especificar, vms aprender isso</p>
+<p>Por exemplo, digamos quero colocar td vermelho, menos o p, porem se vc fizer isso, o body ficara vermelho tmb, entao a diga e usar body :not(p) {}, mas poderia ser tmb uma div ou uma class, oq tu quiser</p>
+<p>:not(p) {edicao}
+</p>
+<h1>Aula 12- Seletor NTH  </h1>
+<p>Agr vms aprender a selecionar 1 item especifico, independente de onde ele estiver</p>
+<p>entao digamos q temos 4 div , pra editar a primeira e ultima nos ja sabemos, usariamos o first e last child, como ja vimos</p>
+<p>porem quero editar o item 2, nesse caso usamos</p>
+<p>div:nth-child(2) {}</p>
+<p>mas agr digamos q quero de baixo para cima, ou seja o segundo de baixo para cima</p>
+<p>div:nth-last-child(2)</p>
+<h1>Aula 13- Seletor Before/After </h1>
+<p>Aqui resumidamente a gente consegue criar um elemento, antes de depois de algum elemento criado dentro do html<br>
+por exemplo crio uma div e quero que tenha um quadrado antes dela.</p>
+<p>entao abrimos nosso css e colocamos <strong>div::before ou div::after</strong><br>e sempre tem que acompanhar o content</p>
+<p>Se reparar criamos uma setinha com a cor azul de fundo</p>
+<pre>
+    <code>
+        div::after ou before {
+            content:"->";
+            background-color: blue;
+        }
+    </code>
+</pre>
+<p>mas digamos que agora vc queira criar um quadrado de fato, quando vc tentar fazer n vai aparecer<br>
+porque o after e before e em linha, ou seja para isso vc precisara colocar um display:inline-block;</p>
+<pre>
+    <code>
+        div::after ou before {
+            content:"";
+            display:inline-block;
+            width:100px;
+            height:100px;
+            background-color: blue;
+        }
+    </code>
+</pre>
+
+<h1>Aula 14- Seletor Before/After exemplo de balaozinho</h1>
+
+<div class="balao">Ola tudo bem ?</div>
+
+<br>
+<br>
+<br>
+<p>entao usando esses codigos, conseguimos criar o quadrado e jogamos para fora da div, para a seguir fazer o nosso triangulo.</p>
+<pre>
+    <code>
+        .balao {
+            background-color: blue;
+            display: inline-block;
+            color: white;
+            padding: 20px;
+            border-radius: 20px;
+        }
+        .balao::after {
+            content:"";
+            width:20px;
+            height:20px;
+            background-color: blue;
+            display: block;
+            position: absolute;
+            margin-top: 20px;
+        }
+    </code>
+</pre>
+<p>aqui e como vamos manipular a borda para ela se tornar um triangulo, mas antes devemos apagar o background-color e suas medidas altura e largura<br>
+so para lembrar q o position absolute e para poder manipular esse objeto,e esse margin top 20px <br>e a altura exata do objeto q criamos para poder ficar fora da div balao, e assim criarmos o triangulo</p>
+<pre>
+    <code>
+        .balao {
+            background-color: blue;
+            display: inline-block;
+            color: white;
+            padding: 20px;
+            border-radius: 20px;
+        }
+        .balao::after {
+            content:"";
+            <del>width:20px;</del>
+            <del>height:20px;</del>
+            <del>background-color: blue;</del>
+            display: block;
+            position: absolute;
+            margin-top: 20px;
+            border:20px solid;
+            border-color: blue transparent transparent transparent;
+        }
+    </code>
+</pre>
+<p>Entao a dica aqui tu pode escolher a posicao do triangulo deixando as outras posicoes transparent, se vc colocar cor nas 4, vc vera suas posicoes.</p>
+<p>para fazer outro exemplo digamos q queremos colocar nossa seta bem na direita do balao, nos obviamente mudamos a posicao da cor,<br> em seguida colocamos um display inline block, para ficar ao lado do outro, e entao definimos  a posicao exata que queremos usando o margin-left nesse caso, e n esquecermos de colocar um top:20px, para ele n ficar na parte de baixo.</p>
+<pre>
+    <code>
+        .balao::after {
+            content:"";
+            <del>width:20px;</del>
+            <del>height:20px;</del>
+            <del>background-color: blue;</del>
+            display: <b>inline-block;</b>
+            position: absolute;
+            <b>margin-left: 20px;</b>
+            <b>top:25px;</b>
+            border:20px solid;
+            border-color: transparent transparent transparent <b>blue;</b>
+        }
+    </code>
+</pre>
+<h1>Aula 15- RGBA</h1>
+<P>antes de mais nd para essa aula, vms adicionar uma imagem de fundo de toda nessa tela, para isso dentro do body, vamos adicionar a imagem, cover cobrindo td a tela, e center obviamente para centralizar a imagem</P>
+<pre>
+    <code>
+        body {
+            background-image:url('bg.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+    </code>
+</pre>
+<p>agr vms criar uma div de quadrado vemelho, como de costume e vms adicionar o RGBA , esse A e a taxa de <b>transparent</b> apenas isso basicamente</p>
+<p>Agr um exemplo legal de design com essa tecnica e colocar de preto nosso rgb e colocar uma tranparencia<br>que seja visivel a imagem de fundo, de forma q de um design legal.</p>
+<p>para isso vc tera q deixar essa div com position:fixed; e tds posicoes em zero, em resumo to colando a minhas bordas da div em td tela.</p>
+<pre>
+    <code>
+        .div {
+            background-color: rgba(0, 0, 0, 0.5);
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    </code>
+</pre>
+
+<h1>Aula 16- Transform(1/2)</h1>
+
+
+
+
+</body>
+</html>
