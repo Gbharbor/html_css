@@ -192,9 +192,61 @@ so para lembrar q o position absolute e para poder manipular esse objeto,e esse 
 </pre>
 
 <h1>Aula 16- Transform(1/2)</h1>
+<h2>SCALE</h2>
+<p>Entao basicamente o modo scale vc muda a escala do elemento, por exemplo<br>
+digamos q vc tenha uma div quadrado, e queira q ela mude de escala, dependendo <br>
+de quanto vc por, podera ficar bem destorcida, isso e mt comum para galerias de foto</p>
+<p><strong>trasnform:scale(1);</strong></p>
+<p>o scale(1) n mudara em nd e como se fosse o padrao, mas se vc ir alterando, 0.5 por exemplo<br>
+ja ficara menor assim como 2 ficara maior.</p>
+<p>vc pode definir tmb tanto horizontal e vertical, respecetvimente apenas espacando eles:</p>
+<p><strong>transform:scale(1, 0.5);</strong></p>
+<p>vc tmb pode definir isso usando scaleX ou scaleY X para horizontal e Y para vertical.</p>
+
+<h1>Aula 17- Transform(2/2)</h1>
+<h2>rotate</h2>
+<p>Aqui como o proprio nome ja diz vamos rotacionar o elemento, no caso vms usar graus aqui , "deg"<br>
+obviamente podendo ser negativo tmb para o lado oposto.</p>
+<p><strong>transform:rotate(30deg);</strong></p>
+<p>Agora vamos fazer um exemplo de colocar essa div bem no canto de nossa tela, so para praticar.</p>
+<p>se v adicionar X ou Y ele vai rotacionar em torno desse eixo que vc especificar <br>
+se deixar o rotateZ e como se fosse o padrao, entao e bom so para saber mesmo.</p>
+<pre>
+    <code>
+        Entao esse position fixed e para poder definir um local a seguir usamos o right zero e para colar 
+        na direita e o bottom zero e colar em baixo,
+
+        <b>div</b> {
+            background-color:red;
+            width:100px;
+            height:100px;
+            <b>position:fixed;</b>
+            <b>right:0;</b>
+            <b>bottom:0;</b>
+            <b>transform:rotate(90deg);</b>
+        }
+    </code>
+</pre>
 
 
+<h2>Skew</h2>
+<p>ja aqui vamos distorcer o elemento, tmb usamos o deg </p>
+<p><strong>transform:skew(20deg)</strong></p>
+<p>tmb pode ser usado na vertical e horizontal usando skewX e skewY, assim como pode usar ambos <br>
+dentro do parenteses transform:skew(20deg, 25deg)</p>
 
+<h1>Aula 18- Aula de box-sizing  </h1>
+<p>Ja foi ensinado isso</p>
+<h1>Aula 19- Estilizando o Placeholder</h1>
+<p>mt simples</p>
+<pre>
+    <code>
+        .input::placeholder{
+            color:;
+            font-size:; 
+            }
+    </code>
+</pre>
 
 </body>
 </html>
