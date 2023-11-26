@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <div class="container">
+        <div class="item item1">1</div>
+        <div class="item item2">2</div>
+        <div class="item item3">3</div>
+        <div class="item item4">4</div>
+        <div class="item item5">5</div>
+        <div class="item item6">6</div>
+        <div class="item item7">7</div>
+    </div>
+    <p>Algumas coisas definimos no container assim como outras devemos definir no item</p>
+    <p>digamos q quero que os 3 primeiros itens fiquem dividio na primeira linha<br>
+    e o item 4 ocupe toda a linha pegando os o espacao do 3 itens de cima.</p>
+  
+    <h2>Trabalhando com GAP</h2>
+    <p>Separacao entre um item e outro</p>
+    <pre>
+        <code>
+            .container {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr); /*isso faz criar colunas de grid,eu n defini quantas linahas entao se for um numero impar vai sempre pular para proxima ja q defini 3 colunas.*/
+                grid-column-gap:10px; /*isso dara um espaco de 10px de uma coluna com a outra*/
+                grid-gap: 10px 10px; /*aqui tu consegue adicionar os  dois juntos 10 para linha e 10para coluna*/
+                grid-row-gap:20px; 
+            
+            }
+        </code>
+    </pre>
+    <p>agr digamos q vc queira 3 colunas de 100px, ele vai criar essas 3 colunas de 100px e pular para proxima linha, independente do espaco q vc tiver</p>
+    <pre>
+        <code>
+            grid-template-columns: 100px 100px 100px;
+        </code>
+    </pre>
+    <p>quero q so a 2 coluna tenha 200px, vc pode fazer isso tmb</p>
+    <pre>
+        <code>
+            grid-template-columns: 100px 200px 100px;
+        </code>
+    </pre>
+    <p>deixar tam automatico, ou seja 50/50 da tela, vai de sua criatividade</p>
+    <pre>
+        <code>
+            grid-template-columns: auto auto;
+            ou se quiser deixar so auto e feinidir valor para os outros.
+            grid-template-columns: auto 200px 100px; 
+        </code>
+    </pre>
+    <h2>gri tamplate rows</h2>
+    <p>e basicamente a mesma coisa das colunas, porem menos flexivel pq e dificil adaptar td pois linhas tmb depende das colunas</p>
+    <pre>
+        <code>
+            basicamente tu precisa definir o valor de cada linha caso contraria ficara 
+            o tamanho normal dela.
+            grid-template-rows: 100px 200px 50px 300px;
+        </code>
+    </pre>
+    <h2>unidade FR</h2>
+    <p>digamos q tu coloque 3 colunas com 1 FR cada, isso vai dividr a tela em 3 olunas,<br>
+    mas isso quer dizer que 1 Fr tem aquele tam real ? NAO ! isso vai sempre depender do tamanho do grid.<Br>por exemplo se tu colocar um tam fixo pro grid de 400px, essas 3 colunas de 1FR vai se dividir dentro desse espaco</p>
+        <p>ele se divide proporcionalmente dentro do espaco</p>
+    <PRE>
+        <code>
+            width:500px;
+            grid-template-columns: 1fr 1fr 1fr;
+        </code>
+    </PRE>
+    <p>agr digamos que colocamos 2fr, esse valor de 2fr sera o dobor do valor do 1fr q tiver com ele, independente da posicao, eles vao ser recalculados para se ajustarem </p>
+    <p>assim se vc por 3fr sera a mesma logica.</p>
+    <pre>
+        <code>
+            width:500px;
+            grid-template-columns: 1fr 2fr 1fr;
+        </code>
+    </pre>
+    <p>lembrando q coloquei um valor fixo, mas que n use um valor fixo os fr vap se adaptar no tam de tela q vc tiver.</p>
+
+    <h2>Usando o Repeat </h2>
+    <p>Entao basicamente e uma forma de deixar o codigo mais pratico e rapido, por exemplo </p>
+    <pre>
+        <code>
+            .container { 
+                display:grid
+                Nesse caso to dizendo pra ele repetir 3x o valor de 100px
+                grid-template-columns: repeat(3, 100px);
+                Assim como, se eu fizer isso: sera a mesma coisa, porem com mais codigos.
+                grid-template-columns: 100px 100px 100px;
+                poderia ser 1fr tmb.
+                grid-template-columns: 
+                grid-template-columns: repeat(3, 1fr);
+
+            }
+        </code>
+    </pre>
+<p>Agora digamos que eu queira fazer 3 colunas com o repeat e uma por minha conta, tal desse modo :</p>
+
+    <pre>
+        <code>
+            Ou seja funcionara na mesma, 3 com 1fr e uma com 200px, lembrando q o FR e o valor que se divide no espaco que determinamos para ele de forma automatica.
+            grid-template-columns: repeat(3, 1fr), 200px; 
+            E se eu quiser criar 5 colunas, da mesma forma sempre a mesma logica.
+            grid-template-columns: 100px repeat(3,fr) 200px;
+        </code>
+    </pre>
+    <p>Outro modo, digamos que tu queira fazer dessa tal maneira:</p>
+    <pre>
+        <code>
+            Dessa mandeira ele vai repetir esse valor 2x , por exemplo uma de 100 outra de 200 dps 100 e dps 200 de novo.
+            grid-template-columns: repeat(2, 100px 200px);
+            Pode fazer isso tmb: as possibilidades sao bemg grandes
+            grid-template-columns: repeat(3, 100px), repeat (2, 20px);
+
+        </code>
+    </pre>
+    <h2>auto-fill</h2>
+<p>Entao digamos que temos uma tela, e queremos que as colunas se criem de maneira que eu for aumentando minha tela </p>
+<pre>
+    <code>
+        grid-template-columns: repeat(auto-fill, 200px);
+
+    </code>
+</pre>
+<h2>grid-auto-rows</h2>
+<p>pode ser usado de muitas formas, mas vms usar de uma forma basica para comecar, digamos que quero q todas tenham 200px</p>
+<pre>
+    <code>
+        grid-auto-rows:200px; 
+    </code>
+</pre>
+<p>porem nos colocamos um texto mt grande, e ele vai acabar saindo dessa linha auto que criamos</p>
+<p>para solocionar isso, usamos o nosso minmax</p>
+<h3>minmax</h3>
+<pre>
+    <code>
+        Entao dessa forma, eu limito o tam das linhas de acordo com o conteudo delas.
+        entao se o nosso elemento 5, tiver um texto q cubra 200px da row,ele automaticamente, vai modificar todas as outras desse modo na mesma.
+        grid-auto-rows: minmax(50px, 200px)
+
+        Porem, eu nao quero que todas fiquem alteradas.Entao dessa forma eu limito o tam min de 500px
+        porem, o tam max ficara automatico, ou seja sera de acordo com o tam que eu tiver ocupado dentro do elemento, e obviamente toda linha acompanhara.
+        grid-auto-rows: minmax(50px, auto);
+ 
+    </code>
+</pre>
+<p>Mas caso prefira pode usar o minmax dentro do proprio grid-template-columns </p>
+<pre>
+    <code>
+        grid-template-columns: repeat (3, minmax(100px, 300px));
+    </code>
+</pre>
+<p>Um ponto importante e, se eu defini aqueles valores e, coicide de eu ter muitos elementos, ele seguira<Br> a regra na mesma, mesmo que tenha que criar uma barra de rolagem.</p>
+
+<h2>Posicionamento no GRID</h2>
+<p>Entao, vms colocar um background color no nosso container para visualizar a area que esta os elementos grid.</p>
+<p>Entao agr vms posicionar ele, igual faziamos com o flexbox, usando o justify-content, e obviamente <br> isso e sempre em relacao ao espaco que eu definir do meu container, obviamente se tu usar o space between e around, vai quebrar a funcao do grid-gap </p>
+<pre>
+    <code>
+        .container {
+            display:grid;
+            grid-gap:10px;
+            grid-template-columns: repeat (3, 200px);
+            background-color: #ccc;
+            justify-content:end;
+
+        }
+    </code>
+</pre>
+<p>pode usar o align-itens tmb, porem e um pouco complexo pq muda bastante, sem contar q tem q definir uma altura grande para ter espaco dos espacos dos elementos</p>
+<p>supondo que tu coloque um align-itens:center;, para facilitar o align itens e como se eles se alinhassem na vertical </p>
+<p>temos tmb o o align-content, ele juntaria todo o grupo em si e nos definimos onde jogamos ele.</p>
+<p>essa parte e melhor exemplificada.</p>
+
+<h2>Mesclando itens em linhas (1/3)</h2>
+<p>Entao aqui vamos aprender a alterar algum item especifica sem necessariamente seguir uma regra.</p>
+<p>entao supondo que vamos fazer essas alteracoes nao precisamos mais do grid-auto ate pq queremos alterar e n deixar automatizado.</p>
+<p>entao vamos definir classes para os icones, para poder alteralos como quisermos.</p>
+<h3>em colunas</h3>
+<pre>
+    <code>
+        nesse caso vai continuar igual
+        .item1 {
+            grid-column-start:1;
+            grid-column-end:2;
+        }
+        entao seguindo essa logica parece realmente que vai fazer uma conexao da coluna 1 com a 2 
+        ERRADO! nesse caso temos q imaginar uma linha imaginaria, e contar uma antes, ou seja para 
+        fazer com que junte os 2 elementos , teriamos que colocar o end:3;
+
+        agora sim ! 
+        desse modo consigo juntar os 2 primeiros elementos das colunas como realmente queria.
+        .item1 {
+            grid-column-start:1;
+            grid-column-end:3;
+        }
+    </code>
+</pre>
+<h3>agr com linhas (rows)</h3>
+<p></p>
+
+</body>
+</html>
