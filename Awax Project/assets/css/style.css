@@ -145,6 +145,9 @@ header {
 .banner .pointer.active {
     background-color: #b28756;
 }
+input[type=submit] {
+    cursor: pointer;
+}
 
 /*onde ficara os conteudos*/
 .default {
@@ -616,3 +619,116 @@ padding:0;
 }
 
 /*Fatos sobre a empresa*/
+.section_facts {
+    display: flex;
+}
+.section_fact {
+    flex: 1;
+    text-align: center;
+    padding: 15px;
+}
+.section_fact h3 {
+    color: #b28756;
+    font-size: 45px;
+}
+.section_fact_line {
+    width: 20px;
+    border-bottom: 2px solid #b28756;
+    margin: auto;
+}
+.section_fact h4 {
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+.section_fact p {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #999;
+}
+/*Parte do share*/
+.section_share {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    padding: 20px;
+    background-color: #fff;
+    color: #999;
+}
+.section_share_legend {
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+}
+.section_share_legend img {
+    margin-right: 10px;
+}
+.section_share_item {
+    font-size: 12px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.section_share_icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: white;
+    margin-right: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.section_share_icon img {
+    height: 12px;
+}
+.section_share_icon.twitter {
+    background-color:#34c5f0;
+}
+.section_share_icon.linkedin {
+    background-color:#127cb4;
+}
+.section_share_icon.facebook {
+    background-color:#336297;
+}
+.section_share_icon.googleplus {
+    background-color:#e74237;
+}
+.section_share_icon.pinterest {
+    background-color:#b71c29;
+}
+
+/*Area para nos contactar*/
+
+
+.section_contact {
+    max-width: 450px;
+    margin: auto;
+    text-align: center;
+}
+.section_contact textarea:focus,
+.section_contact input[type=text]:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+.section_contact input[type=text],
+.section_contact textarea { 
+    display: block;
+    width: 100%;
+    height: 40px;
+    border: 0;
+    background: transparent;
+    border-bottom: 1px solid #ccc;
+}
+.section_contact textarea {
+    height: 100px;
+    resize: none;
+}
+.section_contact_split {
+    display: flex;
+}
+.section_contact_split input:first-child {
+    margin-right: 20px;
+}
+/*Area do mapa*/
