@@ -203,7 +203,161 @@
     </code>
 </pre>
 <h3>agr com linhas (rows)</h3>
-<p></p>
+<p>Entao com linhas e mt semelhante </p>
+<pre>
+    <code>
+        Sempre q definir o row, tem q definir o collumn tmb
+        Se fizermos apenas isso, que seria a msm logica das collum, o item 2 mudara de lugar com o 3
+        entao precisamos defifinir as collumn tmb, para dar certo.
+        .item3 {
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+        entao faremos assim : assim esta td normal, nd mudou
+        .item3 {
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+        agr eu quero q a row termine no 4.
+        .item3 {
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 2;
+            grid-row-end: 4;
+        }
+        e logicamente pode editar tmb as rows.
+        e sempre vai empurrando os outros, eles nunca se somem, e so uma questao de espaco.
+
+        Agr nesse item, msm q um elemento ocupe o espaco de uma linha, aquela linha coberta tem q ser contada tmb.
+        .item8 {
+            grid-column-start:3;
+            grid-column-end:4;
+            grid-row-start:5;
+            grid-row-end:7;
+        }
+    </code>
+</pre>
+<h1>mesclando itens em linhas (2/3)</h1>
+<p>Entao digamos q eu queira posiconar um item , em um lugar bem distinto.</p>
+<pre>
+    <code>
+        .item7 {
+            grid-column-start:3;
+            grid-column-end:4;
+            grid-row-start:1;
+            grid-row-end:5;
+        }
+        entao desa forma ele pode quebrar as linhas, e dessa forma tu pode aumentar o end para 6.
+
+        agr outro exemplo:
+        .item5 {
+            grid-column-start:1;
+            grid-column-end:3;
+            grid-row-start:4;
+            grid-row-end:5;
+        }
+    </code>
+</pre>
+<h1>mesclando itens em linhas (2/3)</h1>
+<p>agr vms aprender de uma forma mais simples, a parte mais dificil ja foi</p>
+
+<pre>
+    <code>
+        .item1 {
+            grid-column-start:1;
+            grid-column-end:4;
+        }
+        porem podemos fazer assim q e mais rapido:
+        .item1 {
+            grid-column:1/3;
+            gird-row: 1/3;
+        }
+        caso prefira pode usar o span para isso:
+        o span diz que em vez de ir ate tal linha iamginaria, ele simplesmente vai ate o final.
+        .item1 {
+            grid-column:1/ span 2;
+            grid-row:1/ span 3;
+        }
+    </code>
+</pre>
+<h1>Grid Area</h1>
+<p>aqui vms resumir os 2 q aprendemos antes row e column:</p>
+<pre>
+    <code>
+        Seguindo essa ordem !
+            1- grid-row-start
+            2-grid-column-start
+            3-grid-row-end
+            4-grid-column-end
+        .item1 {
+            grid-area: 1 / 1 / span 2 / span 2
+        }
+        ou se n quiser o span 
+        .item1 {
+            grid-area: 1 / 1 / 3 / 3
+        }
+        outro exemplo:
+        .item 6 {
+            grid-area: 4 / 2 / 6 / 4;
+        }
+    </code>
+</pre>
+<h1>template area</h1>
+<p>Agr vms juntar td q aprendemos, porem antes devemos remover um comando do container.</p>
+<pre>
+    <code>
+        .container {
+            background-color:white;
+            display:grid;
+            grid-gap:10px;
+           <del>grid-tamplate-columns:repeat(3, 1fr)</del> 
+            substituir para, e vms usar nesse exemplo so 4 item.
+            grid-template-areas:
+                <em>"item1 item2"</em>
+                <em>"item3 item4"</em>
+            ;
+
+            agr digamos q v quer q tenha uma linha junta logo no inicio. como se fosse a 1 ocupando o espaco da 2
+            vc pode fazer assim, mas tem q definir o 2!
+            grid-template-areas:
+            <em>"item1 item1"</em>
+            <emn>item2 item3</emn>
+            <em>item4 .</em>
+            esse ponto, serve para avisar que tera um item vazio.
+
+            tmb pode fazer assim, outro exemplo:
+            <em>"item1 item1"</em>
+            <emn>item2 item3</emn>
+            <em>item4 item3</em>
+        }
+        .item 1 {
+            grid-area: item1;
+        }
+        .item 2 {
+            grid-area: item2;
+        }   
+        .item 3 {
+            grid-area: item4;
+        }
+        .item 4 {
+            grid-area: item4;
+        }
+
+
+
+    </code>
+</pre>
+
+
+
+
+
+
+
+
+
 
 </body>
 </html>
