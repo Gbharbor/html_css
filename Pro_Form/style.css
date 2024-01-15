@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200&display=swap');
 *{
     padding: 0;
@@ -10,7 +9,7 @@ body {
   display: flex;
   width: 100%;
   height: 100vh;
-  background:#0c0ce94d;
+  background: radial-gradient(white,#6d208c);
   justify-content: center;
   align-items: center;
 }
@@ -18,18 +17,24 @@ body {
     width: 80%;
     height: 80vh;
     display: flex;
-    box-shadow: 5px 5px 10px  rgba(0, 0, 0, .212);
+    background-color: transparent;
+    box-shadow: 0px 0px 30px  rgba(0, 0, 0, 0.9 );
 }
 .form_image {
     width: 50%;
     display: flex;
     justify-content:center;
     align-items: center;
-    background-color: #fde3a7d7;
+    background-color: transparent;
     padding: 1rem;
 }
 .form_image img {
-    width: 31rem;
+    width: 25rem;
+    animation-iteration-count: 1;
+    transition: all 2s linear;
+}
+.form_image img:hover {
+    width: 30rem;
 }
 .form {
     width: 50%;
@@ -51,30 +56,20 @@ body {
 }
 .login_button button {
     border: none;
-    background-color: #6c63ff;
+    background-color: #6d208c;
     padding: 0.7rem 1rem;
     border-radius: 5px;
     cursor: pointer;
+    animation-iteration-count: 1;
+    transition: all 0.5s linear;
 }
 .login_button button:hover {
-    background-color: #6b63fff1;
+    box-shadow: 0px 0px 10px  rgba(0, 0, 0, 0.6);   
 }
 .login_button button a {
     text-decoration: none;
     font-weight: 500;
     color: #fff;
-}
-
- /*Isso e aquele risco em baixo do Cadastre-se*/
-.form_header h1::after { 
-    content: '';
-    display: block;
-    width: 5rem;
-    height: 0.3rem;
-    background-color: #6c63ff;
-    margin: 0 auto;
-    position: absolute;
-    border-radius: 10px;
 }
 .input_group {
     display: flex;
@@ -101,7 +96,7 @@ body {
 }
 /*Aqui resumidamente, quando clciar na caixinha vai ficar uma linha roxinha fininha dentro da caixinha para responder*/
 .input_box input:focus-visible {
-    outline:1px solid #6c63ff;
+    outline:1px solid #6d208c;
 }
 .input_box label, .title h5 {
     font-size: 0.80rem;
@@ -133,13 +128,15 @@ body {
     width: 100%;
     margin-top: 2.5rem;
     border: none;
-    background-color: #6c63ff;
+    background-color: #6d208c;
     padding: 0.62rem;
     border-radius: 5px;
     cursor: pointer;
+    animation-iteration-count: 1;
+    transition: all 0.5s linear;
 }
 .button_continue button:hover {
-    background-color: #6b63fff1;
+    box-shadow: 0px 0px 10px  rgba(0, 0, 0, 0.6);
 }
 .button_continue button a {
     text-decoration: none;
