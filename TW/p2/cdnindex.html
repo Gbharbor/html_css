@@ -1,0 +1,37 @@
+<!--
+Modo 1: Usando o CDN do Tailwind.
+Essa abordagem não é recomendada para projetos grandes, pois pode tornar o site mais lento. 
+É útil apenas para testes rápidos.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Configurações básicas do documento -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo com Tailwind</title>
+
+    <!-- Importando o Tailwind via CDN -->
+    <!--<script src="https://cdn.tailwindcss.com"></script>-->
+
+    <!-- Configurações personalizadas do Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        vermelho: '#ff0000', // Adicionando uma cor personalizada chamada 'vermelho'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-blue-600">
+    <!-- Conteúdo principal -->
+    <h1 class="text-3xl font-bold underline">Hello Tailwind</h1>
+    <h2 class="bg-vermelho text-white p-2 mt-4">
+        Exemplo usando cor 'vermelho' configurada no Tailwind
+    </h2>
+</body>
+</html>
