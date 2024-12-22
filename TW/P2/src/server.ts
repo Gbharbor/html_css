@@ -50,8 +50,3 @@
 
 // Passo 8: Parar o monitoramento do Tailwind
 // No terminal, pressione "Ctrl + C" para interromper o processo de monitoramento.
-
-// Estrutura final do projeto esperada:
-/*
-
-*/
