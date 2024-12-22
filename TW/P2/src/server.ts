@@ -53,15 +53,5 @@
 
 // Estrutura final do projeto esperada:
 /*
-my-project/
-│
-├── node_modules/         // Dependências instaladas
-├── dist/                 // Arquivos finais de distribuição
-│   └── output.css        // CSS final gerado pelo Tailwind
-├── src/                  // Arquivos de desenvolvimento
-│   ├── input.css         // Arquivo de entrada do Tailwind
-│   └── index.html        // Seu arquivo HTML principal
-├── tailwind.config.js    // Configuração personalizada do Tailwind
-├── package.json          // Configuração do projeto
-└── package-lock.json     // Controle das dependências instaladas
+
 */
