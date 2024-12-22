@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo Tailwind - Aula 2</title>
+    <link rel="stylesheet" href="../dist/output.css">
+</head>
+<body class="bg-green-950 text-white">
+
+    <!-- Título Principal -->
+    <h1 class="text-3xl font-bold underline mb-4">
+        <!-- 
+        text-3xl: Define o tamanho da fonte como 3xl.
+        font-bold: Torna o texto em negrito.
+        underline: Adiciona sublinhado ao texto.
+        mb-4: Adiciona uma margem inferior de 1rem (16px).
+        -->
+        Olá, Tailwind!
+    </h1>
+
+    <!-- Trabalhando com Cores e Transparências -->
+    <section class="mb-6">
+        <!-- mb-6: Adiciona uma margem inferior de 1.5rem (24px). -->
+        <h2 class="text-2xl font-semibold mb-2">
+            <!-- 
+            text-2xl: Define o tamanho da fonte como 2xl.
+            font-semibold: Torna o texto semi-negrito.
+            mb-2: Adiciona uma margem inferior de 0.5rem (8px).
+            -->
+            Exemplo de Cores
+        </h2>
+        <p class="text-blue-500">
+            <!-- text-blue-500: Define a cor do texto como azul no nível 500. -->
+            Texto com cor azul nível 500
+        </p>
+        <p class="text-red-400/50">
+            <!-- text-red-400/50: Define o texto como vermelho nível 400 com 50% de transparência. -->
+            Texto vermelho nível 400 com 50% de transparência
+        </p>
+    </section>
+
+    <!-- Trabalhando com Backgrounds e Bordas -->
+    <section class="mb-6">
+        <h2 class="text-2xl font-semibold mb-2">Exemplo de Backgrounds e Bordas</h2>
+        <div class="bg-red-200 text-red-900 p-4 mb-4">
+            <!-- 
+            bg-red-200: Fundo vermelho claro.
+            text-red-900: Texto vermelho escuro.
+            p-4: Adiciona preenchimento interno de 1rem (16px).
+            mb-4: Adiciona margem inferior de 1rem (16px).
+            -->
+            <p>Texto com fundo vermelho nível 200 e texto vermelho nível 900</p>
+        </div>
+        <div class="bg-green-300/80 p-4 border-2 border-green-500">
+            <!-- 
+            bg-green-300/80: Fundo verde nível 300 com 80% de transparência.
+            border-2: Define borda de 2px de largura.
+            border-green-500: Define a cor da borda como verde nível 500.
+            -->
+            <p>Div com fundo verde nível 300 e borda verde nível 500</p>
+        </div>
+    </section>
+
+    <!-- Trabalhando com Tamanhos -->
+    <section>
+        <h2 class="text-2xl font-semibold mb-2">Exemplo de Tamanhos</h2>
+        <div>
+            <div class="bg-blue-600 w-20 h-20">
+                <!-- 
+                bg-blue-600: Fundo azul nível 600.
+                w-20: Define largura de 5rem (80px).
+                h-20: Define altura de 5rem (80px).
+                -->
+                <p>Quadrado 1</p>
+            </div>
+            <div class="bg-blue-600 w-1/2">
+                <!-- 
+                w-1/2: Define a largura como 50% do tamanho do elemento pai.
+                -->
+                <p>Quadrado 2</p>
+            </div>
+            <!-- Exemplo não praticado ainda, mas adicionado para referência futura -->
+            <!--
+            <div class="w-screen h-screen bg-red-500">
+                w-screen: Define largura como 100% da tela.
+                h-screen: Define altura como 100% da tela.
+            </div>
+            -->
+        </div>
+        <div>
+            <!--
+            Margin e Padding:
+            - Margin (m-): Espaçamento externo ao redor do elemento.
+            - Padding (p-): Espaçamento interno dentro do elemento.
+        
+            Exemplos:
+            - `p-2`: Adiciona 8px de preenchimento interno em todos os lados.
+            - `m-2`: Adiciona 8px de margem externa em todos os lados.
+        
+            Direcionais:
+            - `mt-4`: Adiciona margem apenas no topo (margin-top: 16px).
+            - `ml-4`: Adiciona margem apenas à esquerda (margin-left: 16px).
+            
+            Eixos:
+            - `my-8`: Adiciona margem no eixo vertical (topo e base).
+            - `mx-8`: Adiciona margem no eixo horizontal (esquerda e direita).
+            
+            Valores personalizados:
+            - Você pode usar valores personalizados como `ml-[100px]` para 100px de margem à esquerda.
+            -->
+            <div class="bg-blue-600 w-30 h-30 p-2">
+                <!-- 
+                bg-blue-600: Fundo azul nível 600.
+                w-30 e h-30: Largura e altura de 7.5rem (120px).
+                p-2: Padding interno de 0.5rem (8px) em todos os lados.
+                -->
+                1
+            </div>
+        
+            <div class="bg-blue-600 w-30 h-30 m-2">
+                <!-- 
+                bg-blue-600: Fundo azul nível 600.
+                w-30 e h-30: Largura e altura de 7.5rem (120px).
+                m-2: Margem externa de 0.5rem (8px) em todos os lados.
+                -->
+                2
+            </div>
+        </div>        
+        <div>
+            <!--
+            Trabalhando com texto no Tailwind CSS:
+        
+            1. Tamanhos de texto:
+                - `text-sm`: Define um texto pequeno.
+                - `text-base`: Define um tamanho padrão de texto (base).
+            
+            2. Alinhamento:
+                - `text-center`: Centraliza o texto.
+                - `text-left`: Alinha o texto à esquerda.
+                - `text-right`: Alinha o texto à direita.
+        
+            3. Decorações:
+                - `underline`: Sublinha o texto.
+                - `line-through`: Risca o texto.
+                - `italic`: Deixa o texto em itálico.
+                - `not-italic`: Remove o estilo itálico.
+        
+            4. Negrito e Intensidade:
+                - `font-bold`: Torna o texto em negrito.
+                - `font-semibold`: Torna o texto semi-negrito.
+                - `font-black`: Aplica uma intensidade máxima (nível 900).
+        
+            5. Transformações:
+                - `uppercase`: Deixa o texto em letras maiúsculas.
+                - `lowercase`: Deixa o texto em letras minúsculas.
+        
+            6. Controle de Quebras:
+                - `truncate`: Faz com que o texto muito longo seja cortado e exibe "..." no final.
+                - `line-clamp-3`: Limita o texto a no máximo 3 linhas. Ao exceder, adiciona "..." (requer o plugin de `line-clamp` no Tailwind).
+            -->
+            <div class="bg-red-200 text-blue-100 text-sm text-center underline truncate">
+                <!-- 
+                bg-red-200: Fundo vermelho claro.
+                text-blue-100: Texto azul claro.
+                text-sm: Texto pequeno.
+                text-center: Texto alinhado ao centro.
+                underline: Sublinha o texto.
+                truncate: Corta o texto longo e adiciona "..." no final.
+                -->
+                algum texto qualquer
+            </div>
+        </div>
+        <div>
+            <!--
+            Trabalhando com Bordas no Tailwind CSS:
+        
+            1. **Bordas Arredondadas (`rounded`):**
+               - `rounded`: Adiciona cantos arredondados com 4px (padrão).
+               - Tamanhos adicionais:
+                 - `rounded-sm`: Cantos arredondados menores.
+                 - `rounded-md`, `rounded-lg`, `rounded-xl`: Cantos progressivamente maiores.
+                 - `rounded-full`: Faz o elemento ficar totalmente arredondado (exemplo: círculo).
+            
+            2. **Espessura da Borda (`border-`):**
+               - `border-2`: Define uma borda de 2px de largura.
+               - `border-4`: Define uma borda de 4px de largura.
+               - `border-none`: Remove a borda.
+        
+            3. **Cor da Borda (`border-color`):**
+               - `border-red-500`: Define a borda na cor vermelha nível 500.
+               - `border-blue-500`: Define a borda na cor azul nível 500.
+        
+            4. **Posições Específicas de Bordas:**
+               - `border-l-4`: Aplica uma borda de 4px apenas no lado esquerdo.
+               - `border-r-2`: Aplica uma borda de 2px apenas no lado direito.
+               - Funciona com todas as direções:
+                 - `border-t-`: Superior.
+                 - `border-b-`: Inferior.
+        
+            5. **Estilos de Borda:**
+               - `border-dashed`: Borda tracejada.
+               - `border-dotted`: Borda pontilhada.
+               - `border-solid`: Borda sólida (padrão).
+        
+            6. **Outline (bordas externas):**
+               - `outline-none`: Remove o contorno padrão ao clicar no elemento.
+               - `outline-red-500`: Define a cor do contorno como vermelho.
+               - `outline-4`: Define a espessura do contorno como 4px.
+               - Semelhante à borda, você pode combinar espessura, cor e remover o contorno.
+            -->
+        
+            <!-- Exemplo prático de bordas -->
+            <div class="w-80 h-80 bg-gray-800 border-r-2 border-red-500 border-dashed rounded">
+                <!--
+                w-80: Largura de 20rem (320px).
+                h-80: Altura de 20rem (320px).
+                bg-gray-800: Fundo cinza escuro.
+                border-r-2: Borda de 2px no lado direito.
+                border-red-500: Cor da borda vermelha.
+                border-dashed: Borda com estilo tracejado.
+                rounded: Cantos arredondados (4px por padrão).
+                -->
+            </div>
+        
+            <!-- Exemplo prático de Input com Outline -->
+            <input class="w-80 outline-none mt-4" placeholder="Digite algo aqui" />
+            <!--
+            w-80: Largura de 20rem (320px).
+            outline-none: Remove o contorno padrão ao clicar no input.
+            mt-4: Adiciona margem superior de 1rem (16px).
+            -->
+        </div>        
+    </section>
+</body>
+</html>
