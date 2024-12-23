@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layouts e Responsividade</title>
+    <link rel="stylesheet" href="../dist/output.css">
+</head>
+<body>
+    <!-- 
+        Explicação sobre o uso do container e responsividade com TailwindCSS:
+
+        1. O `container` cria um tamanho padrão responsivo:
+           - Conforme a largura da tela aumenta, o container ajusta sua largura de forma automática, respeitando os pontos de interrupção (breakpoints) do TailwindCSS.
+
+        2. Centralização com `mx-auto`:
+           - A classe `mx-auto` centraliza o container horizontalmente de forma prática.
+
+        3. Configuração de centralização no TailwindCSS:
+           - No arquivo de configuração do Tailwind (`tailwind.config.js`), você pode definir o container para ficar sempre centralizado (usando a propriedade `center: true`).
+           - No entanto, isso não é recomendado se você precisar fazer alterações específicas no posicionamento do container, já que ele estará centralizado por padrão.
+
+        4. Valores padrão de largura para o container nos breakpoints:
+           - none: width: 100%;
+           - sm: max-width: 640px;
+           - md: max-width: 768px;
+           - lg: max-width: 1024px;
+           - xl: max-width: 1280px;
+           - 2xl: max-width: 1536px.
+    -->
+    <div class="container mx-auto bg-red-200">
+        <!-- Conteúdo do container -->
+    </div>
+<!-- 
+    Tipos de Display no CSS (exemplo com TailwindCSS):
+
+    1. **Span como elemento inline**:
+       - Por padrão, o `<span>` é um elemento inline, ou seja, ele não quebra a linha.
+       - Se adicionarmos a classe `block` no `<span>`, ele passa a se comportar como um bloco (similar a uma `<div>`), quebrando a linha.
+
+    2. **Uso de padding com inline-block**:
+       - Para adicionar padding a um texto sem que ele quebre a linha, usamos a classe `inline-block`.
+       - Dessa forma, o elemento mantém propriedades de bloco (como padding e margin), mas ainda permanece em linha.
+
+    3. **Flex e Grid**:
+       - Também é possível usar layouts avançados aplicando as classes `flex` ou `grid` no TailwindCSS.
+       - Essas classes transformam o elemento em um contêiner flexível ou em um grid layout.
+
+    4. **Hidden**:
+       - A classe `hidden` remove completamente o elemento da página, funcionando como `display: none`.
+
+    Exemplo:
+    - Abaixo, o texto entre `<span>` está com a classe `inline-block`, que permite adicionar padding sem quebrar a linha.
+-->
+<div class="container mx-auto">
+    <div>
+        Texto qualquer para pular linha e testar display.
+        <span class="inline-block p-2 bg-gray-200">Sendo digitado</span>.
+        E não sei o que fazer.
+    </div>
+</div>
+  <!-- 
+    Responsividade no TailwindCSS:
+
+    1. **Vantagem da responsividade**:
+       - Uma das principais vantagens do TailwindCSS é sua facilidade para criar layouts responsivos.
+
+    2. **Propriedades predominantes**:
+       - Quando duas propriedades iguais são definidas, a última declarada é a que prevalece. Exemplo:
+         - `bg-blue-300 bg-blue-500` → A cor azul mais escura (`bg-blue-500`) será aplicada porque foi definida por último.
+
+    3. **Responsividade com breakpoints**:
+       - Podemos definir propriedades específicas para diferentes tamanhos de tela usando breakpoints. Exemplo:
+         - `sm:bg-blue-500`: Aplica a cor `bg-blue-500` apenas em telas pequenas.
+         - `md:bg-green-400`: Aplica a cor `bg-green-400` apenas em telas médias.
+
+    4. **Funcionamento dos breakpoints**:
+       - Se você usar apenas um breakpoint (por exemplo, `sm`), as telas maiores continuarão aplicando as propriedades definidas por último, caso novos breakpoints não sejam especificados.
+       - Essa lógica funciona para qualquer propriedade, como cores, padding, margens, etc.
+
+    5. **Dica para organização**:
+       - Sempre defina as propriedades responsivas por último no código para garantir uma melhor organização e previsibilidade.
+
+    Exemplo:
+    - No código abaixo:
+      - A cor de fundo será `bg-blue-300` por padrão.
+      - Em telas pequenas (`sm`), a cor muda para `bg-blue-500`.
+      - Em telas médias (`md`), a cor muda para `bg-green-400` e é adicionado padding `md:p-10`.
+-->
+    <div class="container mx-auto">
+        <div class="bg-blue-300 sm:bg-blue-500 md:bg-green-400 md:p-10">
+            Estou digitando um texto qualquer e quero que você olhe para a tela.
+        </div>
+    </div>
+<!-- 
+    Flexbox no TailwindCSS:
+
+    1. **Direção dos itens (flex-row e flex-col)**:
+       - Por padrão, ao usar `flex`, os itens são dispostos em linha horizontal (`flex-row`).
+       - Para dispor os itens em uma coluna vertical, use `flex-col`.
+
+    2. **Espaçamento entre itens (gap)**:
+       - Use a classe `gap` para adicionar espaçamento uniforme entre os itens, como `gap-2`.
+       - Funciona de forma semelhante ao grid, mas é aplicado no contexto do Flexbox.
+
+    3. **Alinhamento com justify e items**:
+       - `justify-*`: Controla o alinhamento horizontal (ou vertical, dependendo da direção do flex):
+         - `justify-center`: Centraliza os itens.
+         - `justify-between`: Espaça os itens com margem entre eles.
+         - `justify-around`: Espaça os itens com margem ao redor.
+       - `items-*`: Controla o alinhamento vertical (ou horizontal, dependendo da direção do flex):
+         - `items-center`: Centraliza os itens no eixo transversal.
+         - `items-end`: Alinha os itens no final.
+         - `items-stretch`: Estica os itens para ocupar o tamanho total do maior item.
+
+    4. **Distribuição de espaço com grow e flex-1**:
+       - Use `grow` ou `flex-1` para fazer com que os itens ocupem todo o espaço disponível de forma proporcional.
+       - Exemplo:
+         - Se todos os itens têm `grow`, eles dividirão o espaço igualmente.
+         - Se apenas um item tem `grow`, ele ocupará o espaço restante enquanto os outros mantêm seu tamanho inicial.
+
+    5. **Reordenamento de itens (order)**:
+       - Mude a ordem dos itens usando `order-*`:
+         - `order-first`: Move o item para a primeira posição.
+         - `order-last`: Move o item para a última posição.
+
+    6. **Responsividade com Flexbox**:
+       - Aplique classes responsivas para ajustar a direção ou outras propriedades:
+         - Exemplo: `sm:flex-row` faz os itens ficarem em linha quando a tela for maior.
+
+    Exemplo:
+    - No código abaixo:
+      - Os itens são dispostos em coluna (`flex-col`) por padrão.
+      - Espaçamento entre os itens é adicionado com `gap-2`.
+      - Em telas pequenas (`sm`), a direção muda para linha (`flex-row`).
+      - Os itens têm espaço igual devido a `grow`, e a ordem de alguns itens é ajustada com `order-first` e `order-last`.
+-->
+    <div class="flex flex-col gap-2 justify-center items-stretch sm:flex-row">
+        <div class="grow rounded-md bg-blue-500 text-white p-4">1</div>
+        <div class="order-first grow rounded-md bg-blue-500 text-white p-4">2</div>
+        <div class="grow rounded-md bg-blue-500 text-white p-4">3</div>
+        <div class="order-last grow rounded-md bg-blue-500 text-white p-4">4</div>
+    </div>
+<!-- 
+    GRID no TailwindCSS:
+
+    1. **Definindo colunas com `grid-cols-*`**:
+       - Use `grid-cols-*` para definir o número de colunas no grid. 
+       - Exemplo: `grid-cols-3` cria três colunas.
+
+    2. **Manipulando a ocupação de colunas com `col-span-*`**:
+       - Use `col-span-full` para fazer um item ocupar toda a largura do grid. 
+         - Exemplo: O item 1 ocupará toda a linha.
+       - Especifique o número de colunas que um item deve ocupar com `col-span-*`. 
+         - Exemplo: O item 2 ocupa duas colunas.
+
+    3. **Alinhamento e reposicionamento com `col-start-*` e `col-end-*`**:
+       - `col-start-*` define onde o item começa.
+       - `col-end-*` define onde o item termina.
+       - Exemplo: No item 5, `col-start-2 col-end-4` faz com que ele comece na segunda coluna e termine na última disponível.
+
+    4. **Reposicionamento de linhas com `row-start-*` e `row-end-*`**:
+       - Substitua `col` por `row` para manipular a posição vertical (linhas).
+       - Exemplo: O item 2 é colocado na primeira linha com `row-start-1`.
+
+    5. **Espaçamento entre itens com `gap-*`**:
+       - Adicione espaçamento uniforme entre os itens usando a classe `gap`.
+       - Exemplo: `gap-3` cria um espaçamento de 0.75rem entre os itens.
+
+    Exemplo:
+    - No código abaixo:
+      - O item 1 ocupa toda a largura do grid.
+      - O item 2 ocupa duas colunas e está na primeira linha.
+      - O item 5 ocupa colunas específicas, empurrando o item 6 para a próxima linha.
+      - O item 9 também ocupa toda a largura do grid.
+-->
+    <div class="grid grid-cols-3 gap-3">
+        <div class="col-span-full rounded-md bg-blue-500 text-white p-4">1</div>
+        <div class="row-start-1 col-span-2 rounded-md bg-blue-500 text-white p-4">2</div>
+        <div class="rounded-md bg-blue-500 text-white p-4">3</div>
+        <div class="rounded-md bg-blue-500 text-white p-4">4</div>
+        <div class="col-start-2 col-end-4 rounded-md bg-blue-500 text-white p-4">5</div>
+        <div class="rounded-md bg-blue-500 text-white p-4">6</div>
+        <div class="rounded-md bg-blue-500 text-white p-4">7</div>
+        <div class="rounded-md bg-blue-500 text-white p-4">8</div>
+        <div class="col-span-full rounded-md bg-blue-500 text-white p-4">9</div>
+    </div>
+<!-- Aula sobre Propriedades de Background -->
+
+<!--
+1. Adicionando Backgrounds:
+   - Você pode definir um background usando o CSS inline:
+     style="background-image: url('link_da_imagem');"
+   - Outra abordagem é usar classes utilitárias do Tailwind CSS (TW).
+
+2. Controle de Rolagem do Background:
+   - `bg-local`: Faz com que o texto e o background rolem juntos.
+   - `bg-scroll`: Faz com que apenas o texto role, mantendo o background fixo.
+
+3. Posicionamento de Background:
+   - Exiba uma parte específica da imagem:
+     - `bg-right`: Mostra o lado direito.
+     - `bg-right-bottom`: Mostra o canto inferior direito.
+     - `bg-center`: Centraliza a imagem.
+
+4. Repetição de Background:
+   - `bg-repeat`: Faz com que a imagem se repita no espaço disponível.
+
+5. Ajuste de Tamanho do Background:
+   - `bg-cover`: Ajusta a imagem para preencher toda a área disponível da forma mais proporcional possível.
+   - `bg-contain`: Ajusta a imagem para ser totalmente visível, mas pode distorcer dependendo do container. Não é muito recomendado.
+-->
+    <div class="container mx-auto">
+        <!-- Exemplo Prático -->
+        <div class="overflow-y-scroll text-white w-60 h-60 bg-local bg-[url('link_da_imagem')]">
+            Conteúdo qualquer dentro do container com overflow.
+        </div>
+    </div>
+<!-- Aula sobre Gradientes -->
+
+<!--
+1. O que são Gradientes?
+   - Gradientes são transições suaves entre duas ou mais cores.
+   - No Tailwind CSS, você pode criar gradientes lineares e radiais com classes utilitárias.
+
+2. Criando Gradientes Lineares:
+   - `bg-gradient-to-{direção}`: Define a direção do gradiente.
+     Exemplos:
+     - `bg-gradient-to-r`: Gradiente da esquerda para a direita.
+     - `bg-gradient-to-l`: Gradiente da direita para a esquerda.
+     - `bg-gradient-to-t`: Gradiente de baixo para cima.
+     - `bg-gradient-to-b`: Gradiente de cima para baixo.
+     - `bg-gradient-to-tr`: Gradiente do canto inferior esquerdo para o superior direito.
+
+3. Definindo Cores no Gradiente:
+   - Use as classes `from-{cor}`, `via-{cor}` e `to-{cor}` para configurar as cores.
+     Exemplos:
+     - `from-blue-500 to-green-500`: Gradiente do azul para o verde.
+     - `from-red-500 via-yellow-500 to-pink-500`: Gradiente com três cores (vermelho, amarelo e rosa).
+
+4. Gradientes Radiais:
+   - `bg-radial`: Cria um gradiente circular partindo do centro.
+     Exemplo:
+     - `bg-radial from-blue-500 to-green-500`: Gradiente circular do azul ao verde.
+
+5. Aplicando Gradientes com Opacidade:
+   - Combine gradientes com opacidade usando as classes `opacity-{valor}`.
+     Exemplo:
+     - `bg-gradient-to-r from-red-500 to-blue-500 opacity-75`.
+
+-->
+
+<div class="container mx-auto">
+    <!-- Exemplo Prático 1: Gradiente Linear -->
+    <div class="w-60 h-60 bg-gradient-to-r from-blue-500 to-green-500 text-white flex items-center justify-center">
+        Gradiente Linear
+    </div>
+
+    <!-- Exemplo Prático 2: Gradiente com Cores Intermediárias -->
+    <div class="w-60 h-60 bg-gradient-to-tr from-red-500 via-yellow-500 to-pink-500 text-white flex items-center justify-center mt-4">
+        Gradiente com Via
+    </div>
+
+    <!-- Exemplo Prático 3: Gradiente Radial -->
+    <div class="w-60 h-60 bg-radial from-blue-500 to-green-500 text-white flex items-center justify-center mt-4">
+        Gradiente Radial
+    </div>
+
+    <!-- Exemplo Prático 4: Gradiente com Opacidade -->
+    <div class="w-60 h-60 bg-gradient-to-b from-purple-500 to-blue-500 opacity-75 text-white flex items-center justify-center mt-4">
+        Gradiente com Opacidade
+    </div>
+</div>
+<!-- Aula sobre Animações no Tailwind CSS -->
+
+<!--
+1. Introdução às Animações no Tailwind:
+   - Tailwind CSS oferece classes utilitárias para criar transições e animações de forma simples.
+   - Você pode usar animações predefinidas ou criar suas próprias com o Tailwind.
+
+2. Animações Predefinidas:
+   - `animate-bounce`: Faz o elemento "pular".
+   - `animate-spin`: Faz o elemento girar continuamente.
+   - `animate-ping`: Cria um efeito de pulsação.
+   - `animate-pulse`: Aplica um efeito de pulsação (mudança de opacidade).
+   - `animate-none`: Desativa a animação.
+
+3. Configurando Duração e Delay:
+   - `duration-{tempo}`: Define a duração da animação.
+     Exemplos:
+     - `duration-500`: 500ms (meio segundo).
+     - `duration-1000`: 1000ms (um segundo).
+   - `delay-{tempo}`: Adiciona um atraso antes de iniciar a animação.
+     Exemplo:
+     - `delay-300`: Atraso de 300ms.
+
+4. Loops e Repetições:
+   - Por padrão, as animações predefinidas são contínuas.
+   - Para animações personalizadas, você pode controlar o loop no arquivo de configuração do Tailwind.
+
+5. Personalizando Animações:
+   - No arquivo `tailwind.config.js`, você pode definir animações personalizadas.
+     module.exports = {
+       theme: {
+         extend: {
+           animation: {
+             wiggle: 'wiggle 1s ease-in-out infinite',
+           },
+           keyframes: {
+             wiggle: {
+               '0%, 100%': { transform: 'rotate(-3deg)' },
+               '50%': { transform: 'rotate(3deg)' },
+             },
+           },
+         },
+       },
+     };
+     
+-->
+
+<div class="container mx-auto">
+    <!-- Exemplo Prático 1: Animação Bounce -->
+    <div class="w-20 h-20 bg-blue-500 text-white flex items-center justify-center animate-bounce">
+        Bounce
+    </div>
+
+    <!-- Exemplo Prático 2: Animação Spin -->
+    <div class="w-20 h-20 bg-green-500 text-white flex items-center justify-center animate-spin mt-4">
+        Spin
+    </div>
+
+    <!-- Exemplo Prático 3: Animação Ping -->
+    <div class="w-20 h-20 bg-red-500 text-white flex items-center justify-center animate-ping mt-4">
+        Ping
+    </div>
+
+    <!-- Exemplo Prático 4: Animação Pulse -->
+    <div class="w-20 h-20 bg-purple-500 text-white flex items-center justify-center animate-pulse mt-4">
+        Pulse
+    </div>
+
+    <!-- Exemplo Prático 5: Animação Customizada -->
+    <div class="w-20 h-20 bg-yellow-500 text-white flex items-center justify-center animate-wiggle mt-4">
+        Wiggle costumizei no tailwind.config.js
+    </div>
+
+    <div class="container mx-auto flex justify-center items-center h-screen">
+        <!-- Div com efeito de aumento no hover -->
+        <div class="w-40 h-40 bg-blue-500 text-white flex items-center justify-center text-xl font-bold transition-transform duration-300 hover:scale-125">
+            Passe o mouse
+        </div>
+    </div>
+    <!-- Exemplo de Efeito Hover com Delay no Tailwind CSS -->
+    <div class="container mx-auto flex justify-center items-center h-screen">
+        <!-- Div com efeito hover e atraso na transformação -->
+        <div class="w-40 h-40 bg-green-500 text-white flex items-center justify-center text-xl font-bold transition-transform duration-500 delay-300 hover:scale-125 hover:animate-spin">
+            Passe o mouse
+    </div>
+</div>
+<!-- Aula sobre Trabalhar com SVG no Tailwind CSS -->
+
+<!--
+1. Introdução:
+   - SVGs são gráficos vetoriais escaláveis amplamente usados na web por sua flexibilidade e qualidade em qualquer resolução.
+   - O Tailwind CSS oferece classes utilitárias para personalizar SVGs diretamente.
+
+2. Preenchendo SVGs:
+   - `fill-{cor}`: Preenche a área interna do SVG.
+     Exemplo:
+     - `fill-blue-500`: Preenche o SVG com a cor azul (tom 500).
+
+3. Personalizando Linhas de Contorno:
+   - `stroke-{cor}`: Define a cor da linha de contorno do SVG.
+     Exemplo:
+     - `stroke-red-900`: Contorno na cor vermelha (tom 900).
+
+   - `stroke-{valor}`: Controla a largura da linha de contorno.
+     Exemplo:
+     - `stroke-2`: Define a espessura da linha como 2 unidades.
+
+4. Trabalhando com SVGs de Estilo Outline:
+   - SVGs de estilo outline usam `fill="none"` por padrão.
+   - Use `stroke-{cor}` e `stroke-{valor}` para personalizar o contorno.
+
+5. Trabalhando com SVGs de Estilo Solid:
+   - SVGs de estilo solid podem ser personalizados com `fill-{cor}`.
+   - Você também pode adicionar linhas de contorno (stroke), mesmo que o SVG original não tenha contornos.
+
+6. Aplicando Classes Utilitárias:
+   - Use classes como `w-{valor}` e `h-{valor}` para ajustar largura e altura.
+   - Combine com outras classes para responsividade e estilo adicional.
+
+-->
+
+    <div class="container mx-auto flex gap-8 justify-center items-center h-screen">
+        <!-- Exemplo 1: SVG Outline com Fill e Stroke -->
+        <svg class="w-24 h-24 fill-blue-500 stroke-red-900 stroke-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
+        </svg>
+
+        <!-- Exemplo 2: SVG Solid com Fill e Stroke -->
+        <svg class="w-24 h-24 fill-green-700 stroke-black stroke-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-4.28 9.22a.75.75 0 0 0 0 1.06l3 3a.75.75 0 1 0 1.06-1.06l-1.72-1.72h5.69a.75.75 0 0 0 0-1.5h-5.69l1.72-1.72a.75.75 0 0 0-1.06-1.06l-3 3Z" clip-rule="evenodd" />
+        </svg>
+    </div>
+    <!--Exercicio: Loading...-->
+    <div class="w-12 h-12 border-8 border-blue-200 border-r-blue-600 border-t-blue-600 rounded-full animate-spin">
+    </div>
+
+    <!--Exercicio: Hero Card-->
+    <div class="container mx-auto">
+        <div class="rounded-xl overflow-hidden p-6 bg-slate-800 md:flex md:p-0">
+            <div class="w-24 h-24 rounded-full mx-auto bg-cover bg-center md:w-48 md:h-auto md:rounded-none bg-[url(https://www.google.com/imgres?q=mark%20zuckerberg&imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F1%2F18%2FMark_Zuckerberg_F8_2019_Keynote_%252832830578717%2529_%2528cropped%2529.jpg%2F800px-Mark_Zuckerberg_F8_2019_Keynote_%252832830578717%2529_%2528cropped%2529.jpg&imgrefurl=https%3A%2F%2Fpt.wikipedia.org%2Fwiki%2FMark_Zuckerberg&docid=gZpB0qHdoKDANM&tbnid=XOdZP7JFVtPgTM&vet=12ahUKEwjWy8vAwL6KAxXYR_EDHSBcBfcQM3oECBYQAA..i&w=800&h=994&hcb=2&ved=2ahUKEwjWy8vAwL6KAxXYR_EDHSBcBfcQM3oECBYQAA)]"></div>
+            <div class="grow pt-6 text-center md:p-8 md:text-left">
+                <p class="text-lg text-white">Me fale e eu esquecoMe fale e eu esquecoMe fale e eu esquecoMe fale</p>
+                <p class="mt-3 font-bold text-sky-400">Beijamin Butao</p>
+                <p class="text-slate-500">Politico USA</p>
+            </div>
+        </div>
+    </div>
+    <div class="p-3 rounded-md bg-gray-400">
+        <div class="grid grid-cols-2 gap-2 md:grid-cols-3">
+            <div class="w-full h-60 bg-cover bg-center col-span-2 md:col-span-2 md:row-span-2 md:h-full bg-[url()]"></div>
+            <div class="w-full h-32 bg-cover bg-center md:h-60 bg-[url()]"></div>
+            <div class="w-full h-32 bg-cover bg-center md:h-60 bg-[url()]"></div>
+        </div>
+        <div class="text-2xl font-bold mt-3">Titulo da casa</div>
+        <div class="flex gap-2 mt-3">
+            <div class="rounded-full px-3 py-1 text-sm bg-green-700 text-white">campo</div>
+            <div class="rounded-full px-3 py-1 text-sm bg-green-700 text-white">Moderno</div>
+            <div class="rounded-full px-3 py-1 text-sm bg-green-700 text-white">Piscina</div>
+        </div>
+    </div>
+    <div>
+        <table class="w-full mx-2">
+            <thead>
+                <tr class="border-b text-left text-sm border-gray-200">
+                    <th class="py-2">Nome</th>
+                    <th class="hidden md:table-cell">Titulo</th>
+                    <th class="hidden md:table-cell">email</th>
+                    <th>Funcao</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="border-b text-left text-sm text-gray-400 border-gray-200">
+                    <td class="py-2">
+                        <p class="font-bold text-black">Maria Silva</p>
+                        <p class="block md:hidden">Cafezeira</p>
+                        <p class="block md:hidden">Mariacafe@gmail.com</p>
+                    </td>
+                    <td class="hidden md:table-cell">Cafezeira</td>
+                    <td class="hidden md:table-cell">Mariacafe@gmail.com</td>
+                    <td>membro</td>
+                    <td>
+                        <a href="#">Editar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+</body>
+</html>
