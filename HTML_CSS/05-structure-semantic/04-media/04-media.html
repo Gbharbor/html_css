@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>HTML - Media</title>
+   <link rel="stylesheet" href="04-media.css"/>
+</head>
+<body>
+
+<main>
+   <h1>HTML - Media (Áudio e Vídeo)</h1>
+
+   <!-- =========================
+        TAG VIDEO
+   ========================== -->
+   <h2>Tag video</h2>
+
+   <p>Usa um player de vídeo nativo do navegador.</p>
+   <p>Normalmente definimos largura (<code>width</code>) e altura (<code>height</code>).</p>
+   <p>O atributo <code>controls</code> mostra os controlos (play, volume, barra de progresso).</p>
+   <p>O atributo <code>autoplay</code> inicia o vídeo automaticamente.</p>
+   <p>Podemos combinar vários atributos conforme a necessidade.</p>
+
+   <video width="320" height="240" controls>
+       <source src="video.mp4" type="video/mp4">
+       Seu navegador não suporta vídeo.
+   </video>
+
+   <!-- =========================
+        TAG AUDIO
+   ========================== -->
+   <h2>Tag audio</h2>
+
+   <p>Permite reproduzir áudio diretamente no navegador.</p>
+   <p>O atributo <code>controls</code> mostra os controlos do player.</p>
+   <p><code>autoplay</code> inicia automaticamente (nem sempre funciona sem interação do utilizador).</p>
+   <p><code>loop</code> faz o áudio repetir quando termina.</p>
+   <p><code>muted</code> inicia o áudio sem som.</p>
+
+   <audio controls loop>
+       <source src="som.mp3" type="audio/mpeg">
+       Seu navegador não suporta áudio.
+   </audio>
+
+   <p>
+       O atributo <code>preload</code> pode carregar parte do áudio antes da reprodução,
+       ajudando em conexões mais lentas.
+   </p>
+
+</main>
+
+</body>
+</html>

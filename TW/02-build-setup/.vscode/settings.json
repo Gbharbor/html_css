@@ -1,0 +1,52 @@
+{
+  // =========================
+  // CSS / Tailwind fixes
+  // =========================
+
+  "css.lint.unknownAtRules": "ignore",
+  "scss.lint.unknownAtRules": "ignore",
+  "less.lint.unknownAtRules": "ignore",
+
+  // =========================
+  // Tailwind IntelliSense
+  // =========================
+
+  "tailwindCSS.validate": true,
+  "tailwindCSS.emmetCompletions": true,
+  "tailwindCSS.classAttributes": [
+    "class",
+    "className"
+  ],
+
+  // Detecta Tailwind dentro de CSS (importante para @apply)
+  "tailwindCSS.includeLanguages": {
+    "plaintext": "html",
+    "javascript": "javascript",
+    "typescript": "typescript"
+  },
+
+  // =========================
+  // Melhor UX com classes
+  // =========================
+
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+
+  "editor.inlineSuggest.enabled": true,
+
+  // =========================
+  // Organização automática
+  // =========================
+
+  "editor.formatOnSave": true,
+
+  // =========================
+  // Evita sugestões antigas/confusas
+  // =========================
+
+  "tailwindCSS.experimental.classRegex": [
+    ["class=\"([^\"]*)\"", 1],
+    ["className=\"([^\"]*)\"", 1]
+  ]
+}

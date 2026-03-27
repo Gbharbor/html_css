@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Aula 5</title>
+   <link rel="stylesheet" href="05-form-structure.css" />
+
+</head>
+<body>
+   <h1>Formatando formulários no CSS (1/2)</h1>
+
+   <h2>Área de Cadastro</h2>
+   
+   <form action="paginadelogin.html" method="get">
+       <label for="nome">Nome Completo</label>
+       <input type="text" name="nome" id="nome">
+   
+       <label for="descricao">Descrição</label>
+       <textarea name="descricao" id="descricao"></textarea>
+   
+       <label for="categoria">Categoria</label>
+       <select name="categoria" id="categoria">
+           <option value="1">Categoria 1</option>
+           <option value="2">Categoria 2</option>
+           <option value="3">Categoria 3</option>
+           <option value="4">Categoria 4</option>
+           <option value="5">Categoria 5</option>
+       </select>
+   
+       <label for="aceite">
+           <input type="checkbox" name="aceite" id="aceite">
+           Eu declaro que aceito os
+           <a href="pagina/termos.html" target="_blank" class="termoslink">Termos de Serviço</a>
+       </label>
+   
+       <button type="submit">Fazer Cadastro</button>
+   </form>
+   
+   <h1>Aula 10 - Formatando formulários no CSS (2/2)</h1>
+   
+   <form action="paginadelogin.html" method="get">
+       <label for="nome2">Nome Completo</label>
+       <input type="text" name="nome" id="nome2">
+   
+       <label for="descricao2">Descrição</label>
+       <textarea name="descricao" id="descricao2"></textarea>
+   
+       <label for="categoria2">Categoria</label>
+       <select name="categoria" id="categoria2">
+           <option value="1">Categoria 1</option>
+           <option value="2">Categoria 2</option>
+           <option value="3">Categoria 3</option>
+           <option value="4">Categoria 4</option>
+           <option value="5">Categoria 5</option>
+       </select>
+   
+       <label for="aceite2">
+           <input type="checkbox" name="aceite" id="aceite2">
+           Eu declaro que aceito os
+           <a href="pagina/termos.html" target="_blank" class="termoslink">Termos de Serviço</a>
+       </label>
+   
+       <button type="submit">Fazer Cadastro</button>
+   </form>
+   
+   <h1>Aula 11 - Tags fieldset e legend</h1>
+   
+   <h2>O que são e para que servem?</h2>
+   <p>
+       As tags <strong>fieldset</strong> e <strong>legend</strong> ajudam a organizar melhor um formulário.
+       O <strong>fieldset</strong> agrupa campos relacionados dentro de uma mesma área.
+       Já a tag <strong>legend</strong> funciona como o título desse grupo de campos.
+   </p>
+   
+   <form action="paginadelogin.html" method="post">
+       <fieldset>
+           <legend>Dados Pessoais</legend>
+   
+           <label for="primeiro-nome">Primeiro nome</label>
+           <input type="text" name="nome" id="primeiro-nome">
+   
+           <label for="sobrenome">Sobrenome</label>
+           <input type="text" name="lastname" id="sobrenome">
+       </fieldset>
+   
+       <fieldset>
+           <legend>Dados Profissionais</legend>
+   
+           <label for="empresa">Nome da Empresa</label>
+           <input type="text" name="companyname" id="empresa">
+   
+           <label for="cargo">Cargo</label>
+           <input type="text" name="companyjobtitle" id="cargo">
+       </fieldset>
+   
+       <button type="submit">Enviar cadastro</button>
+   </form>
+</body>
+</html>

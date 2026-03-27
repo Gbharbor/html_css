@@ -1,0 +1,70 @@
+/* =========================
+   Reset básico
+========================= */
+* {
+   box-sizing: border-box;
+}
+
+body {
+   margin: 0;
+   font-family: Arial, Helvetica, sans-serif;
+   line-height: 1.6;
+   background-color: #f5f5f5;
+   color: #222;
+}
+
+/* =========================
+  Estrutura
+========================= */
+main {
+   max-width: 800px;
+   margin: 0 auto;
+   padding: 30px 20px 60px;
+}
+
+/* =========================
+  Tipografia
+========================= */
+h1 {
+   margin-bottom: 30px;
+}
+
+h2 {
+   margin-top: 40px;
+   margin-bottom: 10px;
+}
+
+p {
+   margin-bottom: 16px;
+}
+
+/* =========================
+  Código inline
+========================= */
+code {
+   background-color: #eee;
+   padding: 2px 6px;
+   border-radius: 4px;
+   font-family: Consolas, Monaco, monospace;
+}
+
+/* =========================
+  Media (video / audio)
+========================= */
+video,
+audio {
+   display: block;
+   margin: 20px auto;
+}
+
+/* Vídeo responsivo */
+video {
+   max-width: 100%;
+   border-radius: 8px;
+   background-color: black;
+}
+
+/* Audio ocupa largura disponível */
+audio {
+   width: 100%;
+}

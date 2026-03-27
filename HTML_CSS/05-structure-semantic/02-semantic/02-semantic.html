@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semântica HTML</title>
+    <link rel="stylesheet" href="02-semantic.css">
+</head>
+<body>
+    <main>
+        <h1>Semântica HTML</h1>
+
+        <h2>Header, Nav e Footer</h2>
+
+        <h3>Tag header</h3>
+        <p>
+            A tag <code>header</code> representa o cabeçalho da página ou de uma seção.
+            Normalmente colocamos nela o título principal e um subtítulo.
+        </p>
+
+        <header>
+            <h4>Título da página</h4>
+            <p>
+                Todo o conteúdo que está aqui se refere ao cabeçalho da página.
+                Normalmente colocamos o título principal e um subtítulo.
+            </p>
+        </header>
+
+        <pre><code>&lt;header&gt;
+    &lt;h1&gt;Título&lt;/h1&gt;
+    &lt;p&gt;Subtítulo&lt;/p&gt;
+&lt;/header&gt;
+</code></pre>
+
+        <h3>Tag nav</h3>
+        <p>
+            A tag <code>nav</code> é importante para acessibilidade, ajudando leitores de tela
+            e a organização da navegação.
+        </p>
+        <p>
+            Ela é usada para indicar onde ficará o menu principal do site.
+        </p>
+
+        <nav>
+            <a href="">Link 1</a>
+            <a href="">Link 2</a>
+            <a href="">Link 3</a>
+            <a href="">Link 4</a>
+        </nav>
+
+        <pre><code>&lt;nav&gt;
+    &lt;a href=""&gt;Link 1&lt;/a&gt;
+    &lt;a href=""&gt;Link 2&lt;/a&gt;
+    &lt;a href=""&gt;Link 3&lt;/a&gt;
+    &lt;a href=""&gt;Link 4&lt;/a&gt;
+&lt;/nav&gt;
+</code></pre>
+
+        <h3>Tag footer</h3>
+        <p>Aqui colocaremos o rodapé do site.</p>
+        <p>
+            Assim como <code>header</code> e <code>nav</code>, a tag <code>footer</code>
+            ajuda a dar significado semântico ao conteúdo.
+        </p>
+
+        <pre><code>&lt;footer&gt;Rodapé&lt;/footer&gt;
+</code></pre>
+
+        <footer>
+            Rodapé da página
+        </footer>
+
+        <h2>Section, Article, Aside e Time</h2>
+
+        <h3>Tag section</h3>
+        <p>
+            Usamos <code>section</code> para determinar uma seção ou assunto da página.
+        </p>
+        <p>
+            Ela ajuda a organizar conteúdos relacionados dentro do mesmo tema.
+        </p>
+
+        <section>
+        </section>
+
+        <h3>Tag article</h3>
+        <p>
+            Normalmente usamos <code>article</code> para indicar um conteúdo principal
+            e independente dentro da página.
+        </p>
+        <p>
+            Também ajuda buscadores a entenderem melhor a estrutura do conteúdo.
+        </p>
+
+        <article>
+        </article>
+
+        <h3>Tag aside</h3>
+        <p>
+            O que estiver dentro de <code>aside</code> é considerado conteúdo secundário
+            ou complementar.
+        </p>
+
+        <aside>
+        </aside>
+
+        <h3>Tag time</h3>
+        <p>
+            É uma tag especial. Visualmente pode não alterar nada, mas ajuda o navegador
+            e buscadores a entender datas e horários.
+        </p>
+        <p>Ela serve para representar uma data ou um tempo.</p>
+        <p>
+            O meu dia preferido é o
+            <time datetime="1600-01-01">dia do meu aniversário</time>.
+        </p>
+    </main>
+</body>
+</html>

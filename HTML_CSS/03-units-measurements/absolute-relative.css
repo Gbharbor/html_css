@@ -1,0 +1,72 @@
+/* =========================
+   Reset básico
+========================= */
+* {
+   box-sizing: border-box;
+ }
+ 
+ body {
+   margin: 0;
+   padding: 30px 20px 60px;
+   font-family: Arial, Helvetica, sans-serif;
+   line-height: 1.6;
+   background-color: #f5f5f5;
+   color: #222;
+   max-width: 900px;
+   margin-inline: auto;
+ }
+ 
+ /* =========================
+    Títulos
+ ========================= */
+ h1 {
+   margin-bottom: 20px;
+   font-size: 32px;
+ }
+ 
+ h2 {
+   margin-top: 35px;
+   margin-bottom: 12px;
+   font-size: 24px;
+ }
+ 
+ h3 {
+   margin-top: 25px;
+   margin-bottom: 10px;
+   font-size: 20px;
+ }
+ 
+ /* =========================
+    Parágrafos e listas
+ ========================= */
+ p {
+   margin-bottom: 16px;
+ }
+ 
+ ul {
+   margin-bottom: 20px;
+   padding-left: 22px;
+ }
+ 
+ li {
+   margin-bottom: 8px;
+ }
+ 
+ /* =========================
+    Código inline
+ ========================= */
+ code {
+   background-color: #eaeaea;
+   padding: 2px 6px;
+   border-radius: 4px;
+   font-family: Consolas, Monaco, monospace;
+ }
+ 
+ /* =========================
+    Separador
+ ========================= */
+ hr {
+   border: none;
+   border-top: 1px solid #ccc;
+   margin: 30px 0;
+ }

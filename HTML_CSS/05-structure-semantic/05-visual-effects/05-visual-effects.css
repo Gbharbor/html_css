@@ -1,0 +1,164 @@
+/* =========================
+   Reset básico
+========================= */
+* {
+   box-sizing: border-box;
+}
+
+body {
+   margin: 0;
+   font-family: Arial, Helvetica, sans-serif;
+   line-height: 1.6;
+   background-color: #f5f5f5;
+   color: #222;
+}
+
+/* =========================
+   Estrutura geral da página
+========================= */
+main {
+   max-width: 900px;
+   margin: 0 auto;
+   padding: 30px 20px 60px;
+}
+
+h1 {
+   margin-bottom: 30px;
+}
+
+h2 {
+   margin-top: 40px;
+   margin-bottom: 10px;
+}
+
+p {
+   margin-bottom: 16px;
+}
+
+pre {
+   background-color: #111;
+   color: #f4f4f4;
+   padding: 16px;
+   border-radius: 8px;
+   overflow-x: auto;
+}
+
+code {
+   font-family: Consolas, Monaco, monospace;
+}
+
+/* =========================
+   Gradiente
+========================= */
+.gradiente,
+.gradiente2 {
+   width: 300px;
+   height: 300px;
+   max-width: 100%;
+   margin-bottom: 20px;
+   border-radius: 20px;
+}
+
+.gradiente {
+   background-color: rgb(41, 20, 203);
+
+   /* Comando padrão */
+   background: linear-gradient(white, blue);
+
+   /* Prefixos antigos para compatibilidade */
+   background: -moz-linear-gradient(white, blue);
+   background: -o-linear-gradient(white, blue);
+   background: -webkit-linear-gradient(white, blue);
+}
+
+.gradiente2 {
+   background-color: blue;
+   background: linear-gradient(90deg, white, blue);
+}
+
+/* =========================
+   Animações, sombras e transições
+========================= */
+@keyframes exemplo {
+   0% {
+      background-color: red;
+      margin-top: 0;
+      margin-left: 0;
+      box-shadow: -15px 0 5px black;
+   }
+
+   25% {
+      background-color: yellow;
+      margin-top: 0;
+      margin-left: 200px;
+      box-shadow: 0 -15px 5px black;
+   }
+
+   50% {
+      background-color: blue;
+      margin-top: 200px;
+      margin-left: 200px;
+      box-shadow: 15px 0 5px black;
+   }
+
+   75% {
+      background-color: green;
+      margin-top: 200px;
+      margin-left: 0;
+      box-shadow: 0 15px 5px black;
+   }
+
+   100% {
+      background-color: red;
+      margin-top: 0;
+      margin-left: 0;
+      box-shadow: 0 0 0 rgb(81, 79, 79);
+   }
+}
+
+.exemplo {
+   width: 150px;
+   height: 150px;
+   background-color: red;
+   animation-name: exemplo;
+   animation-duration: 10s;
+   animation-delay: 1s;
+   animation-iteration-count: 1;
+   margin: 100px auto 40px;
+   box-shadow: 10px 10px 5px black;
+   border-radius: 75px;
+   transition: all 1s linear;
+}
+
+.exemplo:hover {
+   width: 200px;
+   height: 200px;
+   border-radius: 100px;
+   background-color: grey;
+}
+
+.exemplo2 {
+   width: 100px;
+   height: 100px;
+   background-color: red;
+   transition: all 0.5s linear;
+   margin: 0 auto 30px;
+}
+
+.exemplo2:hover {
+   width: 200px;
+   background-color: blue;
+}
+
+/* =========================
+   Word-wrap
+========================= */
+.aula21 {
+   width: 150px;
+   min-height: 200px;
+   border: 1px solid black;
+   padding: 10px;
+   background-color: white;
+   word-wrap: break-word;
+   overflow-wrap: break-word;
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula 6</title>
+  <link rel="stylesheet" href="06-validation.css" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 5px;
+    }
+
+    input {
+      padding: 8px;
+      width: 300px;
+      border: 1px solid #ccc;
+      outline: 0;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px;
+    }
+
+    /* Campo inválido */
+    input:focus:invalid {
+      border: 2px solid red;
+    }
+
+    /* Campo válido */
+    input:focus:valid {
+      border: 2px solid green;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Aula 1 - Validações nativas (1/2)</h1>
+
+  <h2>required</h2>
+  <p>Campo obrigatório. Não permite enviar o formulário vazio.</p>
+
+  <pre>
+<code>&lt;input type="text" name="nome" required&gt;</code>
+  </pre>
+
+  <h2>minlength</h2>
+  <p>Define a quantidade mínima de caracteres.</p>
+
+  <pre>
+<code>&lt;input type="text" name="nome" required minlength="2"&gt;</code>
+  </pre>
+
+  <hr>
+
+  <h1>Aula 2 - Validações nativas (2/2)</h1>
+
+  <h2>step</h2>
+  <p>Define o intervalo permitido entre os valores.</p>
+
+  <pre>
+<code>Idade
+&lt;input type="number" name="idade" step="2"&gt;</code>
+  </pre>
+
+  <h2>min e max</h2>
+  <p>Definem o valor mínimo e máximo permitido.</p>
+
+  <pre>
+<code>&lt;input type="number" name="idade" min="18" max="120"&gt;</code>
+  </pre>
+
+  <hr>
+
+  <h1>Aula 3 - Estados de validação com CSS</h1>
+
+  <h2>:invalid</h2>
+  <p>
+    O seletor <strong>:invalid</strong> aplica estilo quando o campo estiver inválido,
+    ou seja, quando não atender às regras definidas no HTML.
+  </p>
+
+  <pre>
+<code>input:focus:invalid {
+  border: 2px solid red;
+}</code>
+  </pre>
+
+  <h2>:valid</h2>
+  <p>
+    O seletor <strong>:valid</strong> aplica estilo quando o campo estiver válido,
+    ou seja, quando estiver preenchido corretamente.
+  </p>
+
+  <pre>
+<code>input:focus:valid {
+  border: 2px solid green;
+}</code>
+  </pre>
+
+  <p>
+    Usamos junto com <strong>:focus</strong> para o estilo aparecer apenas quando o
+    utilizador estiver interagindo com o campo, evitando que ele já carregue vermelho
+    logo ao abrir a página.
+  </p>
+
+  <hr>
+
+  <h2>Exemplo prático completo</h2>
+
+  <form action="#" method="get">
+    <label for="nome">Nome</label>
+    <input
+      type="text"
+      name="nome"
+      id="nome"
+      required
+      minlength="2"
+    >
+
+    <label for="email">Email</label>
+    <input
+      type="email"
+      name="email"
+      id="email"
+      required
+    >
+
+    <label for="idade">Idade</label>
+    <input
+      type="number"
+      name="idade"
+      id="idade"
+      min="18"
+      max="120"
+      step="1"
+      required
+    >
+
+    <button type="submit">Enviar</button>
+  </form>
+
+</body>
+</html>

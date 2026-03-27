@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selectors</title>
+  <link rel="stylesheet" href="selectors.css">
+</head>
+<body>
+
+  <main>
+    <h1>Seletores CSS avançados</h1>
+
+    <section>
+      <h2>Seletor por atributo - parte 1 e 2</h2>
+
+      <input type="text" name="usuario" required>
+      <input type="password" name="password">
+
+      <h3>Resumo</h3>
+
+      <p>
+        O seletor por atributo permite estilizar elementos com base em atributos específicos.
+        Por exemplo, se quisermos editar um campo com <code>required</code>, basta usar colchetes:
+      </p>
+
+      <pre><code>[required] {
+  /* estilos */
+}</code></pre>
+
+      <p>
+        Também podemos selecionar por tipo de input:
+      </p>
+
+      <pre><code>input[type=text] {
+  /* estilos */
+}
+
+input[type=password] {
+  /* estilos */
+}</code></pre>
+
+      <p>
+        Quando o valor do atributo é texto personalizado, como <code>name="usuario"</code>,
+        o ideal é usar aspas:
+      </p>
+
+      <pre><code>input[name="usuario"] {
+  /* estilos */
+}</code></pre>
+
+      <p>
+        Também podemos combinar seletores para deixar a regra mais específica:
+      </p>
+
+      <pre><code>.minha-div [required] {
+  /* estilos */
+}
+
+#meu-id input[type="text"] {
+  /* estilos */
+}</code></pre>
+
+      <h3>Selecionando links por partes do atributo href</h3>
+
+      <p>
+        Podemos selecionar links que contenham determinada palavra no <code>href</code>.
+        Exemplo:
+      </p>
+
+      <pre><code>a[href*="economia"] {
+  /* estilos */
+}</code></pre>
+
+      <p>
+        O operador <code>*=</code> significa “contém”.
+      </p>
+
+      <p>
+        Se quisermos selecionar tudo que começa com <code>https</code>, usamos:
+      </p>
+
+      <pre><code>a[href^="https:"] {
+  /* estilos */
+}</code></pre>
+
+      <p>
+        O operador <code>^=</code> significa “começa com”.
+      </p>
+
+      <p>
+        Se também quisermos diferenciar links que começam com <code>http:</code>, podemos fazer:
+      </p>
+
+      <pre><code>a[href^="http:"] {
+  /* estilos */
+}
+
+a[href^="https:"] {
+  /* estilos */
+}</code></pre>
+
+      <p>
+        Já para selecionar links que terminam com determinado valor, usamos <code>$=</code>.
+      </p>
+
+      <pre><code>a[href$="html"] {
+  /* estilos */
+}</code></pre>
+
+      <p>
+        O operador <code>$=</code> significa “termina com”.
+      </p>
+    </section>
+
+    <section>
+      <h2>Seletor de elemento vazio</h2>
+
+      <div>texto 1</div>
+      <div>texto 2</div>
+      <div></div>
+      <div>texto 4</div>
+
+      <p>
+        O seletor <code>:empty</code> serve para selecionar elementos que não possuem conteúdo.
+      </p>
+
+      <pre><code>div:empty {
+  /* estilos */
+}</code></pre>
+
+      <p>
+        Se quiser esconder esse elemento vazio, por exemplo:
+      </p>
+
+      <pre><code>div:empty {
+  display: none;
+}</code></pre>
+    </section>
+
+    <section>
+      <h2>Seletor de primeira letra e primeira linha</h2>
+
+      <h3><code>::first-letter</code></h3>
+      <p>
+        Permite estilizar apenas a primeira letra de um elemento de texto, como um parágrafo.
+      </p>
+
+      <pre><code>p::first-letter {
+  /* estilos */
+}</code></pre>
+
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse, saepe asperiores,
+        eius alias est doloribus corporis libero a quis minima iure excepturi sint deleniti,
+        aperiam ea illo soluta hic at.
+      </p>
+
+      <h3><code>::first-line</code></h3>
+      <p>
+        Permite estilizar apenas a primeira linha de um texto.
+      </p>
+
+      <pre><code>p::first-line {
+  /* estilos */
+}</code></pre>
+    </section>
+
+    <section>
+      <h2>Seletor de primeiro e último elemento</h2>
+
+      <p>
+        Podemos usar <code>:first-child</code> e <code>:last-child</code> para estilizar
+        o primeiro e o último elemento dentro de um grupo.
+      </p>
+
+      <p>
+        Isso é muito útil, por exemplo, para criar bordas arredondadas em um menu
+        formado por vários blocos.
+      </p>
+
+      <header>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+        <div>.</div>
+      </header>
+
+      <pre><code>div:first-child {
+  /* estilos */
+}
+
+div:last-child {
+  /* estilos */
+}</code></pre>
+    </section>
+
+    <section>
+      <h2>Seletor negativo</h2>
+
+      <p>
+        O seletor <code>:not()</code> serve para selecionar tudo, menos o que for especificado.
+      </p>
+
+      <p>
+        Exemplo: aplicar estilos em todos os elementos, exceto os parágrafos.
+      </p>
+
+      <pre><code>body :not(p) {
+  /* estilos */
+}</code></pre>
+
+      <p>
+        Também pode ser usado com classes, ids ou outros seletores.
+      </p>
+    </section>
+
+    <section>
+      <h2>Seletor NTH</h2>
+
+      <p>
+        O seletor <code>:nth-child()</code> permite selecionar um elemento específico
+        de acordo com sua posição.
+      </p>
+
+      <pre><code>div:nth-child(2) {
+  /* estilos */
+}</code></pre>
+
+      <p>
+        Se quisermos contar de baixo para cima, usamos <code>:nth-last-child()</code>.
+      </p>
+
+      <pre><code>div:nth-last-child(2) {
+  /* estilos */
+}</code></pre>
+    </section>
+
+    <section>
+      <h2>Seletores <code>::before</code> e <code>::after</code></h2>
+
+      <p>
+        Com <code>::before</code> e <code>::after</code>, conseguimos criar conteúdo visual
+        antes ou depois de um elemento.
+      </p>
+
+      <p>
+        Exemplo simples com texto:
+      </p>
+
+      <pre><code>div::before {
+  content: "->";
+  background-color: blue;
+}</code></pre>
+
+      <p>
+        Se quisermos criar uma forma, como um quadrado, precisamos lembrar que
+        esses pseudo-elementos são inline por padrão. Por isso, usamos
+        <code>display: inline-block</code>.
+      </p>
+
+      <pre><code>div::after {
+  content: "";
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+}</code></pre>
+    </section>
+
+    <section>
+      <h2>Exemplo de balão com <code>::after</code></h2>
+
+      <div class="balao">Olá, tudo bem?</div>
+
+      <p>
+        Podemos usar <code>::after</code> para criar a “seta” do balão.
+      </p>
+
+      <pre><code>.balao {
+  background-color: blue;
+  display: inline-block;
+  color: white;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.balao::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: blue;
+  display: block;
+  position: absolute;
+  margin-top: 20px;
+}</code></pre>
+
+      <p>
+        Para transformar esse elemento em triângulo, removemos largura, altura e background
+        e passamos a usar bordas:
+      </p>
+
+      <pre><code>.balao::after {
+  content: "";
+  display: block;
+  position: absolute;
+  margin-top: 20px;
+  border: 20px solid;
+  border-color: blue transparent transparent transparent;
+}</code></pre>
+
+      <p>
+        Alterando a posição da cor na propriedade <code>border-color</code>,
+        conseguimos mudar a direção da seta.
+      </p>
+
+      <p>
+        Exemplo com a seta na lateral direita:
+      </p>
+
+      <pre><code>.balao::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  margin-left: 20px;
+  top: 25px;
+  border: 20px solid;
+  border-color: transparent transparent transparent blue;
+}</code></pre>
+    </section>
+
+    <section>
+      <h2>RGBA</h2>
+
+      <p>
+        O formato <code>rgba()</code> permite definir uma cor com transparência.
+        O último valor representa a opacidade.
+      </p>
+
+      <h3>Imagem de fundo</h3>
+
+      <pre><code>body {
+  background-image: url("bg.jpg");
+  background-size: cover;
+  background-position: center;
+}</code></pre>
+
+      <p>
+        Um uso muito comum de RGBA é criar uma camada escura sobre a imagem de fundo.
+      </p>
+
+      <pre><code>.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}</code></pre>
+    </section>
+
+    <section>
+      <h2>Transform - parte 1</h2>
+
+      <h3><code>scale()</code></h3>
+
+      <p>
+        A função <code>scale()</code> altera a escala do elemento.
+      </p>
+
+      <pre><code>transform: scale(1);</code></pre>
+
+      <p>
+        O valor <code>1</code> representa o tamanho normal.
+        Valores menores diminuem, e valores maiores aumentam.
+      </p>
+
+      <pre><code>transform: scale(0.5);
+transform: scale(2);</code></pre>
+
+      <p>
+        Também podemos definir escala horizontal e vertical separadamente:
+      </p>
+
+      <pre><code>transform: scale(1, 0.5);</code></pre>
+
+      <p>
+        Ou usar:
+      </p>
+
+      <pre><code>transform: scaleX(1.2);
+transform: scaleY(0.8);</code></pre>
+    </section>
+
+    <section>
+      <h2>Transform - parte 2</h2>
+
+      <h3><code>rotate()</code></h3>
+
+      <p>
+        A função <code>rotate()</code> rotaciona o elemento em graus.
+      </p>
+
+      <pre><code>transform: rotate(30deg);</code></pre>
+
+      <p>
+        Também é possível usar valores negativos.
+      </p>
+
+      <pre><code>div {
+  background-color: red;
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  transform: rotate(90deg);
+}</code></pre>
+
+      <h3><code>skew()</code></h3>
+
+      <p>
+        A função <code>skew()</code> distorce o elemento.
+      </p>
+
+      <pre><code>transform: skew(20deg);</code></pre>
+
+      <p>
+        Também podemos usar:
+      </p>
+
+      <pre><code>transform: skewX(20deg);
+transform: skewY(25deg);
+transform: skew(20deg, 25deg);</code></pre>
+    </section>
+
+    <section>
+      <h2>Box-sizing</h2>
+      <p>Esse conteúdo já foi ensinado anteriormente.</p>
+    </section>
+
+    <section>
+      <h2>Estilizando o placeholder</h2>
+
+      <p>
+        Podemos estilizar o texto do placeholder com o pseudo-elemento
+        <code>::placeholder</code>.
+      </p>
+
+      <pre><code>.input::placeholder {
+  color: #999;
+  font-size: 14px;
+}</code></pre>
+    </section>
+
+    <section>
+      <h2>Exemplo final com lista</h2>
+
+      <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+      </ul>
+    </section>
+  </main>
+
+</body>
+</html>

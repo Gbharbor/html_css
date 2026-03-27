@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Grid</title>
+  <link rel="stylesheet" href="02-complete.css">
+</head>
+<body>
+
+  <main>
+    <h1>CSS Grid</h1>
+
+    <section>
+      <div class="container">
+        <div class="item item1">1</div>
+        <div class="item item2">2</div>
+        <div class="item item3">3</div>
+        <div class="item item4">4</div>
+        <div class="item item5">5</div>
+        <div class="item item6">6</div>
+        <div class="item item7">7</div>
+      </div>
+
+      <p>
+        No Grid, algumas propriedades são definidas no <strong>container</strong>,
+        enquanto outras devem ser definidas nos <strong>itens</strong>.
+      </p>
+
+      <p>
+        Por exemplo: podemos querer que os 3 primeiros itens fiquem na primeira linha
+        e que o item 4 ocupe toda a linha abaixo deles.
+      </p>
+    </section>
+
+    <section>
+      <h2>Trabalhando com GAP</h2>
+
+      <p>
+        O <code>gap</code> define o espaçamento entre os itens do Grid.
+      </p>
+
+      <pre><code>.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 10px;
+  row-gap: 20px;
+  gap: 10px 10px;
+}</code></pre>
+
+      <p>
+        Nesse exemplo, criamos 3 colunas. Como não definimos manualmente as linhas,
+        o Grid cria novas linhas automaticamente conforme os itens forem sendo adicionados.
+      </p>
+
+      <p>
+        Também podemos definir colunas fixas:
+      </p>
+
+      <pre><code>grid-template-columns: 100px 100px 100px;</code></pre>
+
+      <p>
+        Ou deixar uma coluna diferente das outras:
+      </p>
+
+      <pre><code>grid-template-columns: 100px 200px 100px;</code></pre>
+
+      <p>
+        Também é possível misturar tamanhos automáticos com fixos:
+      </p>
+
+      <pre><code>grid-template-columns: auto auto;
+grid-template-columns: auto 200px 100px;</code></pre>
+    </section>
+
+    <section>
+      <h2>Grid Template Rows</h2>
+
+      <p>
+        A propriedade <code>grid-template-rows</code> funciona de forma parecida com
+        <code>grid-template-columns</code>, mas controla a altura das linhas.
+      </p>
+
+      <pre><code>grid-template-rows: 100px 200px 50px 300px;</code></pre>
+
+      <p>
+        Se não definirmos as linhas manualmente, o Grid calcula a altura automaticamente
+        com base no conteúdo.
+      </p>
+    </section>
+
+    <section>
+      <h2>Unidade FR</h2>
+
+      <p>
+        A unidade <code>fr</code> divide o espaço disponível de forma proporcional.
+      </p>
+
+      <pre><code>width: 500px;
+grid-template-columns: 1fr 1fr 1fr;</code></pre>
+
+      <p>
+        Nesse caso, o espaço disponível será dividido em 3 partes iguais.
+      </p>
+
+      <p>
+        Se uma coluna tiver <code>2fr</code>, ela ocupará o dobro do espaço de uma coluna com <code>1fr</code>.
+      </p>
+
+      <pre><code>width: 500px;
+grid-template-columns: 1fr 2fr 1fr;</code></pre>
+
+      <p>
+        Mesmo sem largura fixa no container, o <code>fr</code> continua se adaptando
+        ao espaço disponível.
+      </p>
+    </section>
+
+    <section>
+      <h2>Usando Repeat</h2>
+
+      <p>
+        A função <code>repeat()</code> serve para deixar o código mais curto e organizado.
+      </p>
+
+      <pre><code>.container {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+}</code></pre>
+
+      <p>
+        Isso é equivalente a:
+      </p>
+
+      <pre><code>grid-template-columns: 100px 100px 100px;</code></pre>
+
+      <p>
+        Outro exemplo:
+      </p>
+
+      <pre><code>grid-template-columns: repeat(3, 1fr);</code></pre>
+
+      <p>
+        Também podemos misturar <code>repeat()</code> com outros valores:
+      </p>
+
+      <pre><code>grid-template-columns: repeat(3, 1fr) 200px;
+grid-template-columns: 100px repeat(3, 1fr) 200px;</code></pre>
+
+      <p>
+        E ainda repetir grupos de valores:
+      </p>
+
+      <pre><code>grid-template-columns: repeat(2, 100px 200px);
+grid-template-columns: repeat(3, 100px) repeat(2, 20px);</code></pre>
+    </section>
+
+    <section>
+      <h2>Auto-fill</h2>
+
+      <p>
+        O <code>auto-fill</code> permite criar colunas automaticamente conforme houver espaço disponível.
+      </p>
+
+      <pre><code>grid-template-columns: repeat(auto-fill, 200px);</code></pre>
+    </section>
+
+    <section>
+      <h2>Grid Auto Rows</h2>
+
+      <p>
+        A propriedade <code>grid-auto-rows</code> define a altura padrão das linhas criadas automaticamente.
+      </p>
+
+      <pre><code>grid-auto-rows: 200px;</code></pre>
+
+      <p>
+        Porém, se algum item tiver muito conteúdo, ele pode ultrapassar essa altura.
+        Para resolver isso, usamos <code>minmax()</code>.
+      </p>
+
+      <h3>Minmax</h3>
+
+      <pre><code>grid-auto-rows: minmax(50px, 200px);</code></pre>
+
+      <p>
+        Nesse caso, a linha terá no mínimo 50px e no máximo 200px.
+      </p>
+
+      <p>
+        Se quisermos deixar a altura máxima automática:
+      </p>
+
+      <pre><code>grid-auto-rows: minmax(50px, auto);</code></pre>
+
+      <p>
+        Também podemos usar <code>minmax()</code> nas colunas:
+      </p>
+
+      <pre><code>grid-template-columns: repeat(3, minmax(100px, 300px));</code></pre>
+    </section>
+
+    <section>
+      <h2>Posicionamento no Grid</h2>
+
+      <p>
+        Assim como no Flexbox, podemos alinhar o Grid dentro do container.
+      </p>
+
+      <pre><code>.container {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, 200px);
+  background-color: #ccc;
+  justify-content: end;
+}</code></pre>
+
+      <p>
+        Também existem propriedades como:
+      </p>
+
+      <ul>
+        <li><code>justify-content</code></li>
+        <li><code>align-items</code></li>
+        <li><code>align-content</code></li>
+      </ul>
+
+      <p>
+        Essas propriedades controlam como o grid e seus itens se posicionam dentro do espaço disponível.
+      </p>
+    </section>
+
+    <section>
+      <h2>Mesclando itens em colunas</h2>
+
+      <p>
+        Podemos fazer um item ocupar mais de uma coluna usando:
+        <code>grid-column-start</code> e <code>grid-column-end</code>.
+      </p>
+
+      <pre><code>.item1 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}</code></pre>
+
+      <p>
+        Aqui, o item começa na linha 1 e termina na linha 3, ocupando 2 colunas.
+      </p>
+    </section>
+
+    <section>
+      <h2>Mesclando itens em linhas</h2>
+
+      <p>
+        A lógica para linhas é parecida:
+      </p>
+
+      <pre><code>.item3 {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 4;
+}</code></pre>
+
+      <p>
+        Assim, o item ocupa uma coluna e se estende por mais de uma linha.
+      </p>
+
+      <p>
+        Os outros itens não desaparecem: eles apenas são reposicionados no espaço restante.
+      </p>
+    </section>
+
+    <section>
+      <h2>Outros exemplos de posicionamento</h2>
+
+      <pre><code>.item7 {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 5;
+}
+
+.item5 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 4;
+  grid-row-end: 5;
+}</code></pre>
+    </section>
+
+    <section>
+      <h2>Forma resumida: Grid Column e Grid Row</h2>
+
+      <p>
+        Podemos resumir as propriedades anteriores desta forma:
+      </p>
+
+      <pre><code>.item1 {
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+}</code></pre>
+
+      <p>
+        Também podemos usar <code>span</code>:
+      </p>
+
+      <pre><code>.item1 {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 3;
+}</code></pre>
+    </section>
+
+    <section>
+      <h2>Grid Area</h2>
+
+      <p>
+        A propriedade <code>grid-area</code> resume:
+      </p>
+
+      <ol>
+        <li>grid-row-start</li>
+        <li>grid-column-start</li>
+        <li>grid-row-end</li>
+        <li>grid-column-end</li>
+      </ol>
+
+      <pre><code>.item1 {
+  grid-area: 1 / 1 / span 2 / span 2;
+}
+
+.item1 {
+  grid-area: 1 / 1 / 3 / 3;
+}
+
+.item6 {
+  grid-area: 4 / 2 / 6 / 4;
+}</code></pre>
+    </section>
+
+    <section>
+      <h2>Grid Template Areas</h2>
+
+      <p>
+        Aqui usamos nomes para organizar visualmente o layout.
+      </p>
+
+      <pre><code>.container {
+  display: grid;
+  gap: 10px;
+  grid-template-areas:
+    "item1 item2"
+    "item3 item4";
+}</code></pre>
+
+      <p>
+        Se quisermos que o item 1 ocupe duas colunas:
+      </p>
+
+      <pre><code>.container {
+  display: grid;
+  gap: 10px;
+  grid-template-areas:
+    "item1 item1"
+    "item2 item3"
+    "item4 .";
+}</code></pre>
+
+      <p>
+        O ponto <code>.</code> representa uma célula vazia.
+      </p>
+
+      <p>
+        Outro exemplo:
+      </p>
+
+      <pre><code>.container {
+  display: grid;
+  gap: 10px;
+  grid-template-areas:
+    "item1 item1"
+    "item2 item3"
+    "item4 item3";
+}</code></pre>
+
+      <pre><code>.item1 { grid-area: item1; }
+.item2 { grid-area: item2; }
+.item3 { grid-area: item3; }
+.item4 { grid-area: item4; }</code></pre>
+    </section>
+  </main>
+
+</body>
+</html>

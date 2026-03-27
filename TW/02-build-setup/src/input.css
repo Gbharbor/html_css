@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@layer base {
+  h1 {
+    @apply text-2xl bg-yellow-600;
+  }
+}
+
+@layer components {
+  .card {
+    @apply m-2 p-3 border-2 border-gray-700 rounded-md bg-white shadow;
+  }
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Aula 2</title>
+   <link rel="stylesheet" href="02-form.css" />
+
+</head>
+<body>
+   <h1>Formulários</h1>
+
+<p>
+   O formulário é usado para enviar dados.
+   Ele pode utilizar dois métodos principais: GET e POST.
+</p>
+
+<pre>
+<code><strong>GET envia dados pela URL</strong>
+&lt;form method="get"&gt;
+
+<strong>POST envia dados de forma interna</strong>
+&lt;form method="post"&gt;</code>
+</pre>
+
+<h2>Exemplo prático</h2>
+
+<form action="paginalogin.html" method="get">
+   <input type="text" name="usuario" placeholder="Digite seu nome">
+   <input type="submit" value="Enviar (GET)">
+</form>
+
+<br>
+
+<form action="paginalogin.html" method="post">
+   <input type="text" name="usuario" placeholder="Digite seu nome">
+   <input type="submit" value="Enviar (POST)">
+</form>
+</body>
+</html>

@@ -1,0 +1,129 @@
+/* =========================
+   RESET
+   ========================= */
+   * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    /* =========================
+       BASE
+       ========================= */
+    body {
+      font-family: "Noto Sans", Arial, sans-serif;
+      background: #f5f7fb;
+      color: #1f2937;
+      line-height: 1.6;
+      padding: 24px;
+    }
+    
+    /* =========================
+       LAYOUT GRID
+       ========================= */
+    .layout {
+      max-width: 1000px;
+      margin: 0 auto;
+      min-height: 100vh;
+    
+      display: grid;
+      gap: 20px;
+    
+      grid-template-columns: 220px 1fr 220px;
+      grid-template-areas:
+        "header header header"
+        "nav content ad"
+        "footer footer footer";
+    }
+    
+    /* =========================
+       ITENS
+       ========================= */
+    .item {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    }
+    
+    /* =========================
+       ÁREAS
+       ========================= */
+    .header {
+      grid-area: header;
+      background: #0600c8;
+      color: white;
+      font-weight: 700;
+      text-align: center;
+    }
+    
+    .nav {
+      grid-area: nav;
+    }
+    
+    .content {
+      grid-area: content;
+    }
+    
+    .ad {
+      grid-area: ad;
+    }
+    
+    .footer {
+      grid-area: footer;
+      text-align: center;
+      background: #111827;
+      color: white;
+    }
+    
+    /* =========================
+       TIPOGRAFIA
+       ========================= */
+    h1 {
+      font-size: 1.8rem;
+      color: #0600c8;
+      margin-bottom: 12px;
+    }
+    
+    p {
+      color: #4b5563;
+    }
+    
+    /* =========================
+       RESPONSIVIDADE
+       ========================= */
+    @media (max-width: 900px) {
+      .layout {
+        grid-template-columns: 200px 1fr;
+        grid-template-areas:
+          "header header"
+          "nav content"
+          "ad ad"
+          "footer footer";
+      }
+    }
+    
+    @media (max-width: 600px) {
+      body {
+        padding: 16px;
+      }
+    
+      .layout {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "header"
+          "nav"
+          "content"
+          "ad"
+          "footer";
+      }
+    
+      .item {
+        padding: 20px;
+      }
+    
+      h1 {
+        font-size: 1.4rem;
+      }
+    }

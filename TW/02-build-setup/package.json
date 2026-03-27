@@ -1,0 +1,16 @@
+{
+   "name": "build-setup",
+   "version": "1.0.0",
+   "private": true,
+   "description": "Projeto de estudo com Tailwind CSS usando build local",
+   "scripts": {
+     "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --watch",
+     "build": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --minify"
+   },
+   "devDependencies": {
+     "@tailwindcss/cli": "^4.2.2",
+     "@tailwindcss/postcss": "^4.2.2",
+     "postcss": "^8.5.8",
+     "tailwindcss": "^4.2.2"
+   }
+ }

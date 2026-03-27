@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Units e Measurements</title>
+  <link rel="stylesheet" href="absolute-relative.css">
+
+</head>
+<body>
+
+  <h1>CSS: Cascade, Units and Measurements</h1>
+
+  <p>
+    Nesta aula, estudamos a cascata do CSS e os principais tipos de unidades de medida:
+    absolutas, relativas e viewport.
+  </p>
+
+  <hr>
+
+  <h2>1. Cascata no CSS</h2>
+
+  <p>
+    A cascata define qual estilo terá prioridade quando mais de uma regra tenta
+    aplicar formatação ao mesmo elemento.
+  </p>
+
+  <p><strong>Ordem básica de prioridade:</strong></p>
+  <ul>
+    <li><strong>External CSS</strong> - arquivo externo com <code>.css</code></li>
+    <li><strong>Internal CSS</strong> - estilo dentro da tag <code>&lt;style&gt;</code></li>
+    <li><strong>Inline CSS</strong> - estilo direto no elemento com <code>style=""</code></li>
+  </ul>
+
+  <p>
+    O <strong>inline</strong> normalmente tem mais prioridade que o
+    <strong>internal</strong> e o <strong>external</strong>.
+  </p>
+
+  <hr>
+
+  <h2>2. Medidas absolutas</h2>
+
+  <p>
+    As medidas absolutas têm um valor fixo. Elas não dependem diretamente do tamanho
+    da tela ou do elemento pai.
+  </p>
+
+  <ul>
+    <li><strong>px</strong> - pixels</li>
+    <li><strong>pt</strong> - pontos</li>
+    <li><strong>in</strong> - polegadas</li>
+    <li><strong>cm</strong> - centímetros</li>
+    <li><strong>mm</strong> - milímetros</li>
+  </ul>
+
+  <p>
+    A unidade mais usada no desenvolvimento web costuma ser <strong>px</strong>.
+  </p>
+
+  <hr>
+
+  <h2>3. Unidades de medida relativas</h2>
+
+  <p>
+    As medidas relativas se ajustam de acordo com outro valor, como o tamanho da fonte
+    do elemento pai ou da raiz do documento.
+  </p>
+
+  <h3>3.1 em</h3>
+  <p>
+    A unidade <strong>em</strong> é relativa ao tamanho da fonte do elemento pai.
+  </p>
+
+  <p>
+    Exemplo: se o elemento pai tiver <code>font-size: 20px</code>, então:
+  </p>
+  <ul>
+    <li><code>1em = 20px</code></li>
+    <li><code>2em = 40px</code></li>
+    <li><code>0.5em = 10px</code></li>
+  </ul>
+
+  <h3>3.2 rem</h3>
+  <p>
+    A unidade <strong>rem</strong> é relativa ao tamanho da fonte do elemento raiz,
+    normalmente a tag <code>&lt;html&gt;</code>.
+  </p>
+
+  <p>
+    Ela é muito útil porque mantém mais consistência no site inteiro. Se o tamanho
+    base da página mudar, os elementos em <code>rem</code> acompanham essa alteração.
+  </p>
+
+  <p>
+    Por isso, <strong>rem</strong> costuma ser uma das melhores opções para trabalhar
+    com fontes e espaçamentos.
+  </p>
+
+  <h3>3.3 %</h3>
+  <p>
+    A porcentagem representa uma parte do tamanho do elemento pai.
+  </p>
+
+  <p>
+    Exemplo: <code>width: 50%</code> significa que o elemento ocupará metade da largura
+    do seu contêiner pai.
+  </p>
+
+  <hr>
+
+  <h2>4. Unidades de viewport</h2>
+
+  <p>
+    As unidades de viewport usam como referência o tamanho visível da janela do navegador.
+  </p>
+
+  <h3>4.1 vh</h3>
+  <p>
+    <strong>vh</strong> significa <em>viewport height</em>, ou seja, altura da área visível da tela.
+  </p>
+
+  <ul>
+    <li><code>100vh</code> = altura total da tela</li>
+    <li><code>50vh</code> = metade da altura da tela</li>
+  </ul>
+
+  <p>
+    Essa unidade é muito usada em banners, seções principais e menus laterais que
+    precisam ocupar toda a altura da tela.
+  </p>
+
+  <h3>4.2 vw</h3>
+  <p>
+    <strong>vw</strong> significa <em>viewport width</em>, ou seja, largura da área visível da tela.
+  </p>
+
+  <ul>
+    <li><code>100vw</code> = largura total da tela</li>
+    <li><code>50vw</code> = metade da largura da tela</li>
+  </ul>
+
+  <p>
+    Exemplo: se um elemento tiver <code>width: 50vw</code>, ele ocupará metade da largura da janela.
+  </p>
+
+  <hr>
+
+  <h2>5. Resumo</h2>
+
+  <ul>
+    <li><strong>px</strong> = valor fixo</li>
+    <li><strong>em</strong> = relativo ao elemento pai</li>
+    <li><strong>rem</strong> = relativo ao elemento raiz</li>
+    <li><strong>%</strong> = relativo ao tamanho do elemento pai</li>
+    <li><strong>vh</strong> = relativo à altura da tela</li>
+    <li><strong>vw</strong> = relativo à largura da tela</li>
+  </ul>
+
+</body>
+</html>

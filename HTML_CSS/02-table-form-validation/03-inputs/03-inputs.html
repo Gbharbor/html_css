@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula - Inputs</title>
+    <link rel="stylesheet" href="03-inputs.css" />
+
+</head>
+<body>
+<main>
+
+    <h1>Inputs HTML</h1>
+
+    <!-- =========================
+         INPUTS BÁSICOS
+    ========================== -->
+    <h2>Inputs básicos</h2>
+
+    <h3>type="text"</h3>
+    <pre><code>&lt;input type="text"&gt;</code></pre>
+    <input type="text">
+
+    <h3>type="password"</h3>
+    <pre><code>&lt;input type="password"&gt;</code></pre>
+    <input type="password">
+
+    <h3>type="checkbox"</h3>
+    <pre><code>&lt;input type="checkbox"&gt;</code></pre>
+    <input type="checkbox">
+
+    <h3>type="radio"</h3>
+    <p>Com mesmo <strong>name</strong> (apenas um selecionável):</p>
+    <input type="radio" name="sexo"> Masculino
+    <input type="radio" name="sexo"> Feminino
+
+    <p>Com <strong>names</strong> diferentes:</p>
+    <input type="radio" name="sexo"> Opção 1
+    <input type="radio" name="outro"> Opção 2
+
+    <h3>type="submit"</h3>
+    <input type="submit">
+
+    <h3>type="email"</h3>
+    <input type="email">
+
+    <h3>Name e Value</h3>
+    <p>
+        O atributo <strong>name</strong> identifica o campo.
+        O atributo <strong>value</strong> define o valor enviado ou o texto exibido no botão.
+    </p>
+
+    <form action="paginalogin.html" method="get">
+        <input type="text" name="usuario" value="guiporto">
+        <input type="submit" value="Fazer cadastro">
+    </form>
+
+    <!-- =========================
+         INPUTS HTML5
+    ========================== -->
+    <h2>Inputs HTML5</h2>
+
+    <h3>type="color"</h3>
+    <input type="color">
+
+    <h3>type="date"</h3>
+    <input type="date">
+
+    <h3>type="datetime-local"</h3>
+    <input type="datetime-local">
+
+    <h3>type="month"</h3>
+    <input type="month">
+
+    <h3>type="number"</h3>
+    <input type="number">
+
+    <h3>type="range"</h3>
+    <input type="range">
+
+    <h3>type="search"</h3>
+    <input type="search">
+    <p>Permite limpar rapidamente o campo em alguns navegadores.</p>
+
+    <h3>type="tel"</h3>
+    <input type="tel">
+    <p>Em dispositivos móveis, normalmente abre um teclado numérico.</p>
+
+    <h3>type="url"</h3>
+    <input type="url">
+
+    <h3>type="time"</h3>
+    <input type="time">
+
+    <h3>type="week"</h3>
+    <input type="week">
+
+    <!-- =========================
+         EXEMPLOS COM FORM
+    ========================== -->
+    <h2>Exemplos com formulário</h2>
+
+    <form>
+        <input type="url" name="url">
+        <input type="submit" value="Enviar">
+    </form>
+
+    <form>
+        <input type="tel" name="tel">
+        <input type="submit" value="Enviar">
+    </form>
+
+    <!-- =========================
+         INPUTS ESPECIAIS
+    ========================== -->
+    <h2>Inputs especiais</h2>
+
+    <h3>type="hidden"</h3>
+    <p>Envia dados invisíveis para o utilizador.</p>
+
+    <form action="paginalogin.html" method="post">
+        <input type="hidden" name="country" value="PT">
+        <input type="submit" value="Enviar hidden">
+    </form>
+
+    <h3>type="file"</h3>
+    <p>Permite upload de ficheiros.</p>
+
+    <form action="paginalogin.html" method="post" enctype="multipart/form-data">
+        <label>
+            Foto:
+            <input type="file" name="foto" accept="image/*">
+        </label>
+        <br><br>
+        <input type="submit" value="Enviar foto">
+    </form>
+
+    <p>
+        <strong>Importante:</strong>
+        usar <code>enctype="multipart/form-data"</code> para envio de ficheiros.
+    </p>
+
+    <!-- =========================
+         ATRIBUTOS IMPORTANTES
+    ========================== -->
+    <h2>Atributos importantes dos inputs</h2>
+
+    <h3>placeholder</h3>
+    <p>
+        É um texto de exemplo que fica dentro do campo.
+        É muito útil em páginas de login e formulários.
+    </p>
+
+    <h3>autofocus</h3>
+    <p>
+        Abre a página já com o cursor pronto para digitar no campo
+        que tiver o atributo <code>autofocus</code>.
+    </p>
+
+    <form action="index.html" method="get">
+        <label for="username">Usuário</label>
+        <input type="text" name="username" id="username" autofocus required placeholder="user">
+        <br>
+
+        <label for="password">Senha:</label>
+        <input type="password" name="password" id="password" required placeholder="senha" maxlength="4">
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <h3>size</h3>
+    <p>
+        O atributo <code>size</code> define a largura visível do campo
+        com base na quantidade aproximada de caracteres.
+    </p>
+    <input type="text" size="30">
+
+    <h3>maxlength</h3>
+    <p>Define o número máximo de caracteres permitidos no campo.</p>
+    <p>
+        Digamos que seja uma senha de banco que só aceite 4 caracteres.
+        Basta usar <code>maxlength="4"</code>.
+    </p>
+
+    <h3>required</h3>
+    <p>O atributo <code>required</code> torna o campo obrigatório.</p>
+
+    <h3>autocomplete</h3>
+    <p>
+        Se não quiser que apareçam sugestões automáticas,
+        basta adicionar <code>autocomplete="off"</code> no input desejado.
+    </p>
+
+    <form>
+        <label for="name">Usuário</label>
+        <input type="text" id="name" name="name" autocomplete="off">
+    </form>
+
+</main>
+</body>
+</html>

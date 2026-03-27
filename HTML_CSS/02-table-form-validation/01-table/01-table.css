@@ -1,0 +1,143 @@
+/* =========================
+   RESET & BASE
+   ========================= */
+   * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: "Noto Sans", Arial, sans-serif;
+      background-color: #f5f6fa;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+    
+    /* =========================
+       LAYOUT
+       ========================= */
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 30px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    }
+    
+    /* =========================
+       TIPOGRAFIA
+       ========================= */
+    h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #0600c8; /* tua cor primária */
+    }
+    
+    h2 {
+      font-size: 22px;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      color: #111827;
+    }
+    
+    h3 {
+      font-size: 18px;
+      margin-top: 25px;
+      margin-bottom: 10px;
+      color: #374151;
+    }
+    
+    p {
+      margin-bottom: 15px;
+      color: #4b5563;
+    }
+    
+    /* =========================
+       TABELAS
+       ========================= */
+    .tabela {
+      width: 100%;
+      max-width: 500px;
+      margin: 20px 0;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+    
+    /* Cabeçalho */
+    .tabela thead {
+      background-color: #0600c8;
+      color: #ffffff;
+    }
+    
+    /* Corpo */
+    .tabela tbody {
+      background-color: #f9fafb;
+    }
+    
+    /* Células */
+    .tabela td,
+    .tabela th {
+      padding: 12px;
+      text-align: center;
+      border: 1px solid #e5e7eb;
+      font-size: 14px;
+    }
+    
+    /* Removendo negrito do TH */
+    .tabela th {
+      font-weight: 500;
+    }
+    
+    /* Linhas pares */
+    .tabela tbody tr:nth-child(even) {
+      background-color: #eef2ff;
+    }
+    
+    /* Hover */
+    .tabela tbody tr:hover {
+      background-color: #dbeafe;
+      transition: background 0.2s ease;
+    }
+    
+    /* =========================
+       BLOCO DE CÓDIGO
+       ========================= */
+    pre {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #0f172a;
+      border-radius: 10px;
+      overflow-x: auto;
+    }
+    
+    code {
+      font-family: "Fira Code", monospace;
+      font-size: 14px;
+      color: #e5e7eb;
+      line-height: 1.5;
+    }
+    
+    /* Destaques dentro do code */
+    code strong {
+      color: #60a5fa;
+    }
+    
+    /* =========================
+       RESPONSIVIDADE
+       ========================= */
+    @media (max-width: 600px) {
+      main {
+        padding: 20px;
+      }
+    
+      h1 {
+        font-size: 24px;
+      }
+    
+      .tabela {
+        font-size: 12px;
+      }
+    }

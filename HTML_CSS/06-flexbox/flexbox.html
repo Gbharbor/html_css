@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flexbox</title>
+<link rel="stylesheet" href="flexbox.css">
+</head>
+<body>
+
+<main>
+   <h1>Flexbox: introdução, direções e alinhamentos</h1>
+
+   <section>
+   <h2>Por que o Flexbox foi criado?</h2>
+
+   <p>
+      Antes do Flexbox, era comum usar <code>float: left</code> para colocar elementos
+      lado a lado. Isso até funcionava em casos simples, mas era uma solução limitada
+      e pouco flexível.
+   </p>
+
+   <p>
+      Por exemplo, se quisermos criar duas divs uma ao lado da outra, poderíamos fazer assim:
+   </p>
+
+   <div class="square1"></div>
+   <div class="square2"></div>
+
+   <pre><code>.square1, .square2 {
+width: 150px;
+height: 150px;
+background-color: blue;
+margin: 15px;
+float: left;
+}</code></pre>
+
+   <p>
+      O problema aparece quando tentamos usar <code>width: 50%</code> com margens.
+      Mesmo com margens pequenas, os elementos podem quebrar de linha, porque a soma das larguras
+      e margens ultrapassa o espaço disponível.
+   </p>
+
+   <pre><code>.square1, .square2 {
+width: 50%;
+height: 150px;
+background-color: blue;
+margin: 0;
+float: left;
+}</code></pre>
+
+   <p>
+      Foi justamente para resolver esse tipo de limitação que o <strong>Flexbox</strong> foi criado.
+   </p>
+   </section>
+
+   <section>
+   <h2>Ativando o Flexbox</h2>
+
+   <p>
+      Para usar Flexbox, criamos um elemento container e aplicamos nele
+      <code>display: flex</code>.
+   </p>
+
+   <p>
+      Sem isso, as divs ocupam o espaço de forma normal. Quando ativamos o Flexbox,
+      os itens passam a seguir as regras de layout flexível.
+   </p>
+
+   <div class="container0">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+   </div>
+   </section>
+
+   <section>
+   <h2>Direção dos elementos</h2>
+
+   <p>
+      Por padrão, o Flexbox organiza os itens em linha, ou seja, um ao lado do outro.
+      Isso equivale a <code>flex-direction: row</code>.
+   </p>
+
+   <p>As principais opções são:</p>
+
+   <ul>
+      <li><code>row</code> → itens em linha</li>
+      <li><code>column</code> → itens em coluna</li>
+      <li><code>row-reverse</code> → linha da direita para a esquerda</li>
+      <li><code>column-reverse</code> → coluna de baixo para cima</li>
+   </ul>
+
+   <p>
+      Nos exemplos abaixo, um container está em <code>row</code> e o outro em <code>column</code>.
+   </p>
+
+   <div class="container1">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+   </div>
+
+   <div class="container2">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+   </div>
+   </section>
+
+   <section>
+   <h2>Preenchendo o espaço com <code>flex: 1</code></h2>
+
+   <p>
+      Mesmo que o conteúdo dos elementos seja pequeno, podemos fazer com que eles ocupem
+      o espaço disponível de forma proporcional usando <code>flex: 1</code>.
+   </p>
+
+   <p>
+      Nesse caso, todos os itens passam a dividir igualmente o espaço do container.
+   </p>
+
+   <div class="container3">
+      <div>1</div>
+      <div>2</div>
+   </div>
+
+   <pre><code>.container3 div {
+flex: 1;
+background-color: blue;
+margin: 5px;
+padding: 5px;
+font-size: 18px;
+}</code></pre>
+
+   <h3>Proporções diferentes</h3>
+
+   <p>
+      Se quisermos que um item ocupe mais espaço que os outros, basta aumentar seu valor de flex.
+   </p>
+
+   <p>
+      Por exemplo, um item com <code>flex: 2</code> ocupa o dobro do espaço de um item com <code>flex: 1</code>.
+   </p>
+
+   <div class="container4">
+      <div>1</div>
+      <div>2</div>
+      <div id="flex2">3</div>
+   </div>
+
+   <pre><code>.container4 {
+display: flex;
+background-color: grey;
+flex-direction: row;
+margin: 10px;
+}
+
+.container4 div {
+flex: 1;
+background-color: rgb(159, 51, 221);
+margin: 10px;
+padding: 10px;
+font-size: 18px;
+}
+
+#flex2 {
+flex: 2;
+}</code></pre>
+   </section>
+
+   <section>
+   <h1>Aula 2 - Flexbox: alinhamentos</h1>
+
+   <h2>Tamanhos fixos</h2>
+
+   <p>
+      Se quiser definir um tamanho fixo para os itens, pode usar <code>width</code>.
+      Porém, para isso funcionar corretamente, normalmente é preciso remover o <code>flex: 1</code>.
+   </p>
+
+   <p>
+      Se não houver espaço suficiente, os itens tentam se ajustar para continuar na mesma linha.
+   </p>
+
+   <h3><code>flex-wrap: wrap</code></h3>
+
+   <p>
+      Para permitir que os itens quebrem para a linha de baixo, usamos <code>flex-wrap: wrap</code>.
+   </p>
+
+   <p>
+      O valor padrão é <code>nowrap</code>, ou seja, sem quebra de linha.
+   </p>
+
+   <div class="container5">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+   </div>
+
+   <h2><code>flex-flow</code></h2>
+
+   <p>
+      A propriedade <code>flex-flow</code> junta duas propriedades em uma:
+      <code>flex-direction</code> e <code>flex-wrap</code>.
+   </p>
+
+   <pre><code>flex-flow: row wrap;</code></pre>
+
+   <h2>Centralizando os itens</h2>
+
+   <h3><code>justify-content</code></h3>
+   <p>
+      Alinha os itens no eixo principal.
+      Se a direção for <code>row</code>, esse eixo é horizontal.
+   </p>
+
+   <h3><code>align-items</code></h3>
+   <p>
+      Alinha os itens no eixo cruzado.
+      Se a direção for <code>row</code>, esse eixo é vertical.
+   </p>
+
+   <p>
+      Para centralizar totalmente os itens dentro do container, normalmente usamos:
+   </p>
+
+   <pre><code>justify-content: center;
+align-items: center;</code></pre>
+
+   <div class="container6">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+   </div>
+
+   <h3>Outros valores de <code>justify-content</code></h3>
+   <ul>
+      <li><code>flex-start</code> → itens no início</li>
+      <li><code>flex-end</code> → itens no final</li>
+      <li><code>center</code> → itens no centro</li>
+      <li><code>space-around</code> → espaço ao redor dos itens</li>
+      <li><code>space-between</code> → primeiro no início, último no final, espaço entre os do meio</li>
+   </ul>
+
+   <h3>E se a direção for <code>column</code>?</h3>
+   <p>
+      Quando usamos <code>flex-direction: column</code>, os eixos mudam:
+   </p>
+
+   <ul>
+      <li><code>justify-content</code> passa a atuar na vertical</li>
+      <li><code>align-items</code> passa a atuar na horizontal</li>
+   </ul>
+   </section>
+
+   <section>
+   <h1>Aula 3 - Flexbox: alinhamentos avançados</h1>
+
+   <h2><code>align-self</code></h2>
+
+   <p>
+      A propriedade <code>align-self</code> serve para alterar o alinhamento de apenas
+      um item específico dentro do container.
+   </p>
+
+   <p>
+      Isso é útil quando todos os elementos seguem um alinhamento geral,
+      mas um deles precisa ficar em posição diferente.
+   </p>
+
+   <h3>Valores comuns</h3>
+   <ul>
+      <li><code>flex-start</code></li>
+      <li><code>flex-end</code></li>
+      <li><code>center</code></li>
+   </ul>
+
+   <h2><code>order</code></h2>
+
+   <p>
+      A propriedade <code>order</code> altera a ordem visual dos itens.
+   </p>
+
+   <p>
+      Por padrão, todos os itens têm <code>order: 0</code>.
+   </p>
+
+   <ul>
+      <li><code>order: 1</code> → vai para depois dos itens com ordem 0</li>
+      <li><code>order: 2</code> → vai ainda mais para o fim</li>
+      <li><code>order: -1</code> → vai para antes dos itens padrão</li>
+   </ul>
+
+   <h2><code>align-content</code></h2>
+
+   <p>
+      A propriedade <code>align-content</code> só funciona quando:
+   </p>
+
+   <ul>
+      <li>o container tem <code>flex-wrap: wrap</code></li>
+      <li>os itens ocupam mais de uma linha</li>
+   </ul>
+
+   <p>
+      Ela controla o alinhamento do conjunto de linhas dentro do container.
+   </p>
+
+   <h3>Valores comuns</h3>
+   <ul>
+      <li><code>flex-start</code> → linhas no início</li>
+      <li><code>flex-end</code> → linhas no final</li>
+      <li><code>center</code> → linhas no centro</li>
+      <li><code>space-between</code> → linhas distribuídas com espaço entre elas</li>
+      <li><code>space-around</code> → linhas com espaço ao redor</li>
+   </ul>
+   </section>
+</main>
+
+</body>
+</html>

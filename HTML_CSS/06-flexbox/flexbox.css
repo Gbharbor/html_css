@@ -1,0 +1,270 @@
+/* =========================
+RESET / BASE
+========================= */
+* {
+box-sizing: border-box;
+}
+
+body {
+margin: 5px;
+font-family: Arial, sans-serif;
+line-height: 1.6;
+background-color: #f5f7fb;
+color: #1f2937;
+}
+
+main {
+max-width: 1000px;
+margin: 0 auto;
+padding: 20px;
+}
+
+h1 {
+font-size: 2rem;
+color: #0600c8;
+margin: 30px 0 15px;
+}
+
+h2 {
+font-size: 1.4rem;
+color: #111827;
+margin: 25px 0 10px;
+}
+
+h3 {
+font-size: 1.1rem;
+color: #374151;
+margin: 20px 0 8px;
+}
+
+h4 {
+font-size: 1rem;
+color: #4b5563;
+margin: 18px 0 6px;
+}
+
+p {
+margin-bottom: 12px;
+}
+
+ul {
+margin: 10px 0 15px 20px;
+}
+
+code {
+font-family: "Fira Code", monospace;
+font-size: 0.95rem;
+}
+
+pre {
+background-color: #0f172a;
+color: #e5e7eb;
+padding: 16px;
+border-radius: 10px;
+overflow-x: auto;
+margin: 15px 0 25px;
+}
+
+/* =========================
+   EXEMPLO COM FLOAT
+   ========================= */
+.square1,
+.square2 {
+width: 150px;
+height: 150px;
+background-color: blue;
+margin: 15px;
+float: left;
+}
+
+/* limpa o float para não bagunçar o layout depois */
+.square2 {
+margin-bottom: 30px;
+}
+
+section {
+clear: both;
+margin-bottom: 40px;
+padding: 24px;
+background-color: #ffffff;
+border: 1px solid #e5e7eb;
+border-radius: 14px;
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+}
+
+/* =========================
+   ESTILO BASE DOS CONTAINERS
+   ========================= */
+.container0,
+.container1,
+.container2,
+.container3,
+.container4,
+.container5,
+.container6 {
+display: flex;
+margin: 15px 0;
+padding: 10px;
+border-radius: 12px;
+}
+
+.container0,
+.container1,
+.container2,
+.container3,
+.container4 {
+background-color: grey;
+}
+
+.container5,
+.container6 {
+background-color: rgb(118, 118, 208);
+}
+
+/* itens base */
+.container0 div,
+.container1 div,
+.container2 div,
+.container3 div,
+.container4 div,
+.container5 div,
+.container6 div {
+margin: 8px;
+padding: 12px;
+font-size: 18px;
+text-align: center;
+border-radius: 8px;
+color: white;
+font-weight: bold;
+}
+
+/* =========================
+   CONTAINER 0
+   display:flex básico
+   ========================= */
+.container0 {
+flex-direction: row;
+}
+
+.container0 div {
+background-color: red;
+}
+
+/* =========================
+   CONTAINER 1
+   flex-direction: row
+   ========================= */
+.container1 {
+flex-direction: row;
+}
+
+.container1 div {
+background-color: red;
+}
+
+/* =========================
+   CONTAINER 2
+   flex-direction: column
+   ========================= */
+.container2 {
+flex-direction: column;
+}
+
+.container2 div {
+background-color: red;
+}
+
+/* =========================
+   CONTAINER 3
+   flex: 1
+   ========================= */
+.container3 {
+flex-direction: row;
+}
+
+.container3 div {
+flex: 1;
+background-color: blue;
+}
+
+/* =========================
+   CONTAINER 4
+   flex proporcional
+   ========================= */
+.container4 {
+flex-direction: row;
+}
+
+.container4 div {
+flex: 1;
+background-color: rgb(159, 51, 221);
+}
+
+#flex2 {
+flex: 2;
+}
+
+/* =========================
+   CONTAINER 5
+   wrap / alinhamento
+   ========================= */
+.container5 {
+flex-direction: row;
+justify-content: center;
+flex-wrap: wrap;
+}
+
+.container5 div {
+width: 70px;
+background-color: rgb(159, 51, 221);
+}
+
+/* =========================
+   CONTAINER 6
+   justify-content / align-items
+   ========================= */
+.container6 {
+justify-content: center;
+align-items: center;
+flex-direction: column;
+height: 500px;
+}
+
+.container6 div {
+width: 100px;
+height: 100px;
+background-color: rgb(159, 51, 221);
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+/* =========================
+   RESPONSIVIDADE
+   ========================= */
+@media (max-width: 768px) {
+body {
+   margin: 0;
+}
+
+main {
+   padding: 16px;
+}
+
+h1 {
+   font-size: 1.6rem;
+}
+
+h2 {
+   font-size: 1.2rem;
+}
+
+.container6 {
+   height: 350px;
+}
+
+.container5 div,
+.container6 div {
+   font-size: 16px;
+}
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Aula 1</title>
+   <link rel="stylesheet" href="01-table.css" />
+</head>
+<body>
+
+   <main>
+      <h1>Tabelas no HTML</h1>
+
+      <h2>Tag table</h2>
+      <p>
+         A tag <strong>tr</strong> representa uma linha da tabela, enquanto as células
+         (colunas) são representadas por <strong>td</strong>.<br>
+         Vamos definir uma largura de 400px para a tabela.
+      </p>
+
+      <!-- Exemplo básico -->
+      <table class="tabela">
+         <tr>
+            <td>quadrado1</td>
+            <td>quadrado2</td>
+         </tr>
+         <tr>
+            <td>quadrado3</td>
+            <td>quadrado4</td>
+         </tr>
+      </table>
+
+      <h3>Cabeçalho da tabela</h3>
+      <p>
+         Em vez de <strong>td</strong>, podemos usar <strong>th</strong> (table header).<br>
+         Por uma questão estrutural, também podemos utilizar <strong>thead</strong> e
+         <strong>tbody</strong>. Isso não altera o visual, mas organiza melhor o código.
+      </p>
+
+      <!-- Exemplo com thead e tbody -->
+      <table class="tabela">
+         <thead>
+            <tr>
+               <th>item 1</th>
+               <th>item 2</th>
+               <th>item 3</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>1</td>
+               <td>2</td>
+               <td>3</td>
+            </tr>
+            <tr>
+               <td>1</td>
+               <td>2</td>
+               <td>3</td>
+            </tr>
+         </tbody>
+      </table>
+
+      <!-- Parte didática de CSS -->
+      <pre>
+<code><strong>EDITANDO TABLE:</strong>
+Aqui definimos a largura da tabela e uma borda sólida.
+
+.tabela {
+   width: 400px;
+   border: 1px solid black;
+}
+
+<strong>EDITANDO COLUNAS (TD E TH):</strong>
+Por padrão, a borda aparece apenas ao redor da tabela.
+Para aplicar nas células, estilizamos td e th.
+
+td, th {
+   border: 1px solid black;
+   padding: 10px;
+   color: white;
+   text-align: center;
+}
+
+<strong>EDITANDO CABEÇALHO DA TABELA:</strong>
+Aqui alteramos apenas o fundo do thead.
+
+table thead {
+   background-color: rgb(12, 10, 10);
+}
+
+<strong>EDITANDO CORPO DA TABELA:</strong>
+Aqui estilizamos o tbody.
+
+table tbody {
+   background-color: rgb(43, 12, 12);
+}
+
+<strong>EFEITO HOVER:</strong>
+Quando passamos o mouse sobre uma linha.
+
+tbody tr:hover {
+   background-color: rgb(6, 20, 81);
+}
+
+<strong>LINHAS PARES:</strong>
+Aplicando estilo apenas em linhas pares.
+
+tbody tr:nth-child(even) {
+   background-color: rgb(124, 95, 196);
+}
+
+<strong>REMOVENDO NEGRITO DO TH:</strong>
+
+th {
+   font-weight: normal;
+}</code>
+      </pre>
+   </main>
+
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ações e Interações com Tailwind CSS</title>
+  <link rel="stylesheet" href="../dist/output.css">
+
+  <style>
+    /* Estilos adicionais apenas para apoio visual da aula */
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container-aula {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+    }
+
+    .bloco {
+      margin-bottom: 24px;
+    }
+
+    h1, h2 {
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-aula">
+    <h1>Ações e Interações com Tailwind CSS</h1>
+
+    <p>
+      Nesta aula, vamos explorar diferentes estados e interações que podem ser aplicados
+      aos elementos com Tailwind CSS, como <code>hover</code>, <code>active</code>,
+      <code>focus</code>, <code>disabled</code>, <code>group-hover</code> e
+      <code>dark mode</code>.
+    </p>
+
+    <!-- HOVER -->
+    <div class="bloco">
+      <p>
+        <strong>Exemplo de hover:</strong>
+        ao passar o mouse sobre o botão, a cor muda. Neste caso, a alteração só acontece
+        em telas médias ou maiores por causa do prefixo <code>md:</code>.
+      </p>
+
+      <button class="bg-red-200 p-4 md:hover:bg-blue-200">
+        Passe o mouse aqui (md:hover:bg-blue-200)
+      </button>
+    </div>
+
+    <!-- ACTIVE -->
+    <div class="bloco">
+      <p>
+        <strong>Exemplo de active:</strong>
+        enquanto o botão estiver a ser clicado, a cor de fundo muda.
+      </p>
+
+      <button class="bg-red-200 p-4 active:bg-green-200">
+        Clique aqui (active:bg-green-200)
+      </button>
+    </div>
+
+    <!-- FOCUS -->
+    <div class="bloco">
+      <p>
+        <strong>Exemplo de focus:</strong>
+        quando o campo recebe foco, a aparência muda.
+      </p>
+
+      <input
+        class="w-full border-2 border-black p-2 focus:bg-green-200"
+        type="text"
+        placeholder="Clique ou use Tab para focar"
+      />
+    </div>
+
+    <!-- DISABLED -->
+    <div class="bloco">
+      <p>
+        <strong>Exemplo de disabled:</strong>
+        quando o campo está desativado, podemos aplicar estilos específicos.
+      </p>
+
+      <input
+        class="w-full border-2 border-black p-2 disabled:bg-red-500 disabled:text-white"
+        type="text"
+        disabled
+        placeholder="Campo desabilitado"
+      />
+    </div>
+
+    <!-- FILE -->
+    <div class="bloco">
+      <p>
+        <strong>Exemplo com file:</strong>
+        é possível estilizar o botão interno de um campo de upload.
+      </p>
+
+      <input
+        class="w-full border-2 border-black p-2 file:bg-green-600 file:text-white file:border-0 file:px-4 file:py-2 file:mr-4"
+        type="file"
+      />
+    </div>
+
+    <!-- GROUP HOVER -->
+    <div class="bloco">
+      <p>
+        <strong>Exemplo de group-hover:</strong>
+        quando o elemento pai recebe hover, os elementos filhos também podem mudar.
+      </p>
+
+      <div class="group/coisa bg-blue-200 p-3 hover:bg-green-700">
+        <p class="text-black group-hover/coisa:text-white">
+          Texto 1
+        </p>
+        <p class="text-gray-500 group-hover/coisa:text-white">
+          Texto 2
+        </p>
+      </div>
+    </div>
+
+    <!-- DARK MODE -->
+    <div class="bloco">
+      <p>
+        <strong>Exemplo de dark mode:</strong>
+        os estilos mudam quando o modo escuro está ativo.
+      </p>
+
+      <div class="bg-blue-100 p-3 dark:bg-blue-800">
+        <p class="text-black dark:text-white">Texto 1</p>
+        <p class="text-gray-500 dark:text-white">Texto 2</p>
+      </div>
+    </div>
+
+    <!-- BASE STYLES -->
+    <div class="bloco">
+      <p>
+        <strong>Exemplo de estilos base:</strong>
+        este título pode receber estilos globais definidos com a diretiva
+        <code>@layer base</code> no Tailwind.
+      </p>
+
+      <h2>Título da página</h2>
+    </div>
+
+    <!-- COMPONENTES -->
+    <div class="bloco">
+      <p>
+        <strong>Exemplo de componente:</strong>
+        a classe <code>card</code> só funcionará se tiver sido criada por ti
+        dentro de <code>@layer components</code>.
+      </p>
+
+      <div class="card">
+        Exemplo de componente personalizado
+      </div>
+    </div>
+
+    <!-- PREFIXO -->
+    <div class="bloco">
+      <p>
+        <strong>Exemplo de prefixo:</strong>
+        estas classes só funcionarão se o Tailwind tiver sido configurado com
+        o prefixo <code>b7-</code> no ficheiro de configuração.
+      </p>
+
+      <div class="b7-bg-green-500 b7-w-10 b7-h-10"></div>
+    </div>
+
+    <footer class="mt-8">
+      <p>
+        Experimente interagir com os elementos para observar os efeitos de
+        <code>hover</code>, <code>active</code>, <code>focus</code>,
+        <code>disabled</code>, <code>group-hover</code> e <code>dark mode</code>.
+      </p>
+    </footer>
+  </div>
+</body>
+</html>

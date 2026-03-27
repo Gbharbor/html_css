@@ -1,0 +1,313 @@
+/* =========================
+RESET
+========================= */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+/* =========================
+   BASE
+   ========================= */
+body {
+font-family: "Noto Sans", Arial, sans-serif;
+line-height: 1.6;
+color: #1f2937;
+background-image: url("bg.jpg");
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+padding: 24px;
+position: relative;
+}
+
+/* Camada escura sobre o fundo */
+body::before {
+content: "";
+position: fixed;
+inset: 0;
+background-color: rgba(0, 0, 0, 0.45);
+z-index: 0;
+}
+
+/* Conteúdo acima da overlay */
+main {
+position: relative;
+z-index: 1;
+max-width: 950px;
+margin: 0 auto;
+}
+
+/* =========================
+   SEÇÕES
+   ========================= */
+section {
+background: rgba(255, 255, 255, 0.96);
+border: 1px solid rgba(229, 231, 235, 0.9);
+border-radius: 16px;
+padding: 28px;
+margin-bottom: 28px;
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   TIPOGRAFIA
+   ========================= */
+h1 {
+font-size: 2rem;
+color: #0600c8;
+margin-bottom: 24px;
+}
+
+h2 {
+font-size: 1.4rem;
+color: #111827;
+margin-bottom: 14px;
+}
+
+h3 {
+font-size: 1.1rem;
+color: #374151;
+margin: 22px 0 10px;
+}
+
+p {
+margin-bottom: 14px;
+color: #4b5563;
+}
+
+/* primeira letra */
+p::first-letter {
+color: blue;
+font-size: 1.2em;
+font-weight: 700;
+}
+
+code {
+font-family: "Fira Code", monospace;
+font-size: 0.95rem;
+background: #eef2ff;
+color: #312e81;
+padding: 2px 6px;
+border-radius: 6px;
+}
+
+pre {
+margin: 14px 0 20px;
+padding: 16px 18px;
+background: #0f172a;
+border-radius: 12px;
+overflow-x: auto;
+}
+
+pre code {
+display: block;
+background: transparent;
+color: #e5e7eb;
+padding: 0;
+border-radius: 0;
+line-height: 1.5;
+}
+
+/* =========================
+   INPUTS
+   ========================= */
+input {
+font: inherit;
+padding: 12px 14px;
+border: 1px solid #d1d5db;
+border-radius: 10px;
+background: #ffffff;
+color: #111827;
+margin: 8px 10px 16px 0;
+transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* foco */
+input:focus {
+outline: none;
+border-color: #0600c8;
+box-shadow: 0 0 0 4px rgba(6, 0, 200, 0.1);
+}
+
+/* seletor por atributo */
+input[required] {
+border-left: 4px solid #0600c8;
+}
+
+input[type="text"] {
+min-width: 220px;
+}
+
+input[type="password"] {
+min-width: 220px;
+}
+
+/* placeholder */
+input::placeholder,
+.input::placeholder {
+color: #9ca3af;
+font-size: 14px;
+}
+
+/* =========================
+   HEADER / FIRST & LAST CHILD
+   ========================= */
+header {
+margin: 18px 0 20px;
+display: inline-flex;
+flex-direction: column;
+border-radius: 20px;
+overflow: hidden;
+box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+header div {
+width: 100px;
+height: 100px;
+background-color: blue;
+border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+header div:first-child {
+border-top-right-radius: 20px;
+border-top-left-radius: 20px;
+}
+
+header div:last-child {
+border-bottom-left-radius: 20px;
+border-bottom-right-radius: 20px;
+border-bottom: none;
+}
+
+/* =========================
+   BALÃO
+   ========================= */
+.balao {
+position: relative;
+background-color: blue;
+display: inline-block;
+color: white;
+padding: 20px;
+border-radius: 20px;
+margin: 12px 0 36px;
+font-weight: 500;
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.balao::after {
+content: "";
+display: block;
+position: absolute;
+left: 30px;
+top: 100%;
+border: 20px solid;
+border-color: blue transparent transparent transparent;
+}
+
+/* =========================
+   DIVS SOLTAS DA AULA
+   ========================= */
+section > div:not(.balao) {
+margin: 8px 0;
+}
+
+/* elementos vazios */
+div:empty {
+min-height: 40px;
+background: #e5e7eb;
+border: 2px dashed #94a3b8;
+border-radius: 10px;
+}
+
+/* =========================
+   LISTA
+   ========================= */
+ul {
+margin: 16px 0 0 22px;
+}
+
+li {
+list-style-type: square;
+margin-bottom: 8px;
+color: #374151;
+}
+
+/* =========================
+   LINKS
+   ========================= */
+a {
+color: #0600c8;
+text-decoration: none;
+transition: color 0.2s ease;
+}
+
+a:hover {
+text-decoration: underline;
+}
+
+/* exemplo visual para href contendo economia */
+a[href*="economia"] {
+font-weight: 700;
+}
+
+/* começa com https */
+a[href^="https:"] {
+color: #065f46;
+}
+
+/* começa com http */
+a[href^="http:"] {
+color: #92400e;
+}
+
+/* termina com html */
+a[href$="html"] {
+text-decoration: underline;
+}
+
+/* =========================
+   CLASSE .div DA TUA BASE
+   ========================= */
+.div {
+background-color: rgba(0, 0, 0, 0.5);
+position: fixed;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+}
+
+/* =========================
+   RESPONSIVIDADE
+   ========================= */
+@media (max-width: 768px) {
+body {
+   padding: 16px;
+}
+
+section {
+   padding: 20px;
+}
+
+h1 {
+   font-size: 1.6rem;
+}
+
+h2 {
+   font-size: 1.2rem;
+}
+
+input[type="text"],
+input[type="password"] {
+   width: 100%;
+   min-width: 0;
+   margin-right: 0;
+}
+
+header div {
+   width: 80px;
+   height: 80px;
+}
+}

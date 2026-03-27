@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 4</title>
+    <link rel="stylesheet" href="04-form-components.css" />
+</head>
+<body>
+    <main>
+
+        <h1>Componentes de Formulário</h1>
+        <p>
+            Nesta aula vamos ver alguns elementos muito usados em formulários:
+            <strong>select</strong>, <strong>textarea</strong>, <strong>button</strong> e <strong>label</strong>.
+        </p>
+
+        <!-- =========================
+             SELECT
+        ========================== -->
+        <section>
+            <h2>Select</h2>
+            <p>
+                A tag <strong>select</strong> cria uma lista de opções para o utilizador escolher.
+                Dentro dela usamos a tag <strong>option</strong>, que representa cada item da lista.
+            </p>
+
+            <pre>
+<code>&lt;form action="paginalogin.html" method="get"&gt;
+    &lt;select name="ordenacao"&gt;
+        &lt;option value="bestseller"&gt;mais vendidos&lt;/option&gt;
+        &lt;option value="last" selected&gt;recentes&lt;/option&gt;
+    &lt;/select&gt;
+    &lt;input type="submit" value="ver resultado"&gt;
+&lt;/form&gt;</code>
+            </pre>
+
+            <p>
+                No exemplo abaixo, usamos o atributo <strong>selected</strong> para deixar uma opção
+                marcada por padrão quando a página abrir.
+            </p>
+
+            <form action="paginalogin.html" method="get">
+                <select name="ordenacao">
+                    <option value="">Selecione uma opção</option>
+                    <option value="bestseller">mais vendidos</option>
+                    <option value="last" selected>recentes</option>
+                </select>
+                <input type="submit" value="ver resultado">
+            </form>
+
+            <h3>Select com múltipla escolha</h3>
+            <p>
+                Se quisermos permitir que o utilizador escolha mais de uma opção,
+                podemos usar o atributo <strong>multiple</strong>.  
+                O atributo <strong>size</strong> define quantas opções ficam visíveis ao mesmo tempo.
+            </p>
+
+            <pre>
+<code>&lt;select name="order" size="4" multiple&gt;
+    &lt;option value="expensive"&gt;mais caro&lt;/option&gt;
+    &lt;option value="bestseller"&gt;mais vendidos&lt;/option&gt;
+    &lt;option value="last"&gt;recentes&lt;/option&gt;
+    &lt;option value="cheap"&gt;mais barato&lt;/option&gt;
+&lt;/select&gt;</code>
+            </pre>
+
+            <form action="paginalogin.html" method="get">
+                <select name="order" size="4" multiple>
+                    <option value="expensive">mais caro</option>
+                    <option value="bestseller">mais vendidos</option>
+                    <option value="last">recentes</option>
+                    <option value="cheap">mais barato</option>
+                </select>
+                <input type="submit" value="ver resultado">
+            </form>
+        </section>
+
+        <!-- =========================
+             TEXTAREA
+        ========================== -->
+        <section>
+            <h2>Textarea</h2>
+            <p>
+                A tag <strong>textarea</strong> cria uma área maior de texto,
+                muito usada para descrições, mensagens, comentários ou observações.
+            </p>
+
+            <pre>
+<code>&lt;form action="paginalogin.html" method="get"&gt;
+    &lt;textarea name="descricao"&gt;&lt;/textarea&gt;
+    &lt;input type="submit" value="enviar"&gt;
+&lt;/form&gt;</code>
+            </pre>
+
+            <form action="paginalogin.html" method="get">
+                <textarea name="descricao"></textarea>
+                <input type="submit" value="enviar">
+            </form>
+        </section>
+
+        <!-- =========================
+             BUTTON
+        ========================== -->
+        <section>
+            <h2>Button</h2>
+            <p>
+                A tag <strong>button</strong> também pode ser usada para enviar um formulário.
+                Em muitos casos, ela cumpre a mesma função de um
+                <strong>input type="submit"</strong>.
+            </p>
+
+            <form action="paginalogin.html" method="get">
+                <button type="submit">Texto do botão</button>
+                <input type="submit" value="texto do submit">
+            </form>
+
+            <pre>
+<code>&lt;form action="paginalogin.html" method="get"&gt;
+    &lt;button type="submit"&gt;Texto do botão&lt;/button&gt;
+    &lt;input type="submit" value="texto do submit"&gt;
+&lt;/form&gt;</code>
+            </pre>
+        </section>
+
+        <!-- =========================
+             LABEL
+        ========================== -->
+        <section>
+            <h2>Label</h2>
+            <p>
+                A tag <strong>label</strong> serve para identificar e associar um texto a um campo do formulário.
+                Isso melhora a organização e também a acessibilidade.
+            </p>
+
+            <h3>Exemplo usando for e id</h3>
+            <p>
+                Neste caso, o atributo <strong>for</strong> do label deve ter o mesmo valor do
+                <strong>id</strong> do input.
+            </p>
+
+            <form action="paginalogin.html" method="get">
+                <label for="nome">Nome Completo</label><br>
+                <input type="text" name="nome" id="nome"><br>
+                <input type="submit" value="Enviar">
+            </form>
+
+            <pre>
+<code>&lt;form action="paginalogin.html" method="get"&gt;
+    &lt;label for="nome"&gt;Nome Completo&lt;/label&gt;
+    &lt;br&gt;
+    &lt;input type="text" name="nome" id="nome"&gt;
+    &lt;br&gt;
+    &lt;input type="submit" value="Enviar"&gt;
+&lt;/form&gt;</code>
+            </pre>
+
+            <h3>Outro exemplo com checkbox</h3>
+            <p>
+                Também podemos associar o label a um checkbox. Assim, ao clicar no texto,
+                o campo também é ativado.
+            </p>
+
+            <form action="paginalogin.html" method="get">
+                <input type="checkbox" id="aceite">
+                <label for="aceite">Clique para aceitar os termos de privacidade.</label>
+            </form>
+
+            <pre>
+<code>&lt;input type="checkbox" id="aceite"&gt;
+&lt;label for="aceite"&gt;Clique para aceitar os termos de privacidade.&lt;/label&gt;</code>
+            </pre>
+
+            <h3>Input dentro do label</h3>
+            <p>
+                Existe ainda outra forma de usar label: colocando o input dentro dele.
+                Isso também cria a associação entre o texto e o campo.
+            </p>
+
+            <form action="paginalogin.html" method="get">
+                <label>
+                    Nome Completo: <br>
+                    <input type="text" name="nome">
+                </label>
+            </form>
+
+            <pre>
+<code>&lt;label&gt;
+    Nome Completo:
+    &lt;br&gt;
+    &lt;input type="text" name="nome"&gt;
+&lt;/label&gt;</code>
+            </pre>
+        </section>
+
+    </main>
+</body>
+</html>

@@ -1,0 +1,78 @@
+/* =========================
+   Reset básico
+========================= */
+* {
+   box-sizing: border-box;
+}
+
+body {
+   margin: 0;
+   font-family: Arial, Helvetica, sans-serif;
+   line-height: 1.6;
+   background-color: #f7f7f7;
+   color: #222;
+}
+
+/* =========================
+  Estrutura principal
+========================= */
+main {
+   max-width: 800px;
+   margin: 0 auto;
+   padding: 30px 20px 60px;
+}
+
+/* =========================
+  Tipografia
+========================= */
+h1 {
+   margin-bottom: 30px;
+}
+
+h2 {
+   margin-top: 40px;
+   margin-bottom: 10px;
+}
+
+h3 {
+   margin-top: 20px;
+   margin-bottom: 8px;
+   color: #555;
+}
+
+p {
+   margin-bottom: 16px;
+}
+
+/* =========================
+  Código inline
+========================= */
+code {
+   background-color: #eee;
+   padding: 2px 6px;
+   border-radius: 4px;
+   font-family: Consolas, Monaco, monospace;
+}
+
+/* =========================
+  Lista (engines)
+========================= */
+ul {
+   padding-left: 20px;
+   margin-bottom: 20px;
+}
+
+li {
+   margin-bottom: 6px;
+}
+
+/* =========================
+  Exemplo data-*
+========================= */
+div[data-nome] {
+   padding: 12px;
+   background-color: #eaeaea;
+   border-left: 4px solid #555;
+   margin-bottom: 20px;
+   border-radius: 4px;
+}

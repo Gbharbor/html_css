@@ -1,0 +1,247 @@
+/* =========================
+RESET
+========================= */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+/* =========================
+   BASE
+   ========================= */
+body {
+font-family: "Noto Sans", Arial, sans-serif;
+background: #f5f7fb;
+color: #1f2937;
+line-height: 1.6;
+padding: 24px;
+}
+
+main {
+max-width: 950px;
+margin: 0 auto;
+background: #ffffff;
+padding: 32px;
+border-radius: 16px;
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+/* =========================
+   TIPOGRAFIA
+   ========================= */
+h1 {
+font-size: 2rem;
+color: #0600c8;
+margin-bottom: 16px;
+}
+
+h2 {
+font-size: 1.4rem;
+color: #111827;
+margin-bottom: 12px;
+}
+
+h3 {
+font-size: 1rem;
+color: #374151;
+margin-top: 22px;
+margin-bottom: 10px;
+}
+
+p {
+margin-bottom: 14px;
+color: #4b5563;
+}
+
+strong {
+color: #111827;
+}
+
+code {
+font-family: "Fira Code", monospace;
+font-size: 0.95rem;
+background: #eef2ff;
+color: #312e81;
+padding: 2px 6px;
+border-radius: 6px;
+}
+
+/* =========================
+   SEÇÕES
+   ========================= */
+section {
+margin-top: 32px;
+padding: 24px;
+background: #f9fafb;
+border: 1px solid #e5e7eb;
+border-radius: 14px;
+}
+
+/* =========================
+   BLOCO DE CÓDIGO
+   ========================= */
+pre {
+margin: 14px 0 18px;
+padding: 16px 18px;
+background: #0f172a;
+border-radius: 12px;
+overflow-x: auto;
+}
+
+pre code {
+display: block;
+background: transparent;
+color: #e5e7eb;
+padding: 0;
+border-radius: 0;
+line-height: 1.5;
+}
+
+/* =========================
+   FORMULÁRIOS
+   ========================= */
+form {
+display: flex;
+flex-direction: column;
+gap: 12px;
+margin: 16px 0 22px;
+padding: 18px;
+background: #ffffff;
+border: 1px solid #e5e7eb;
+border-radius: 12px;
+}
+
+/* Label */
+label {
+display: inline-block;
+font-weight: 600;
+color: #374151;
+margin-bottom: 6px;
+}
+
+/* =========================
+   INPUTS, SELECT E TEXTAREA
+   ========================= */
+input,
+select,
+textarea,
+button {
+font: inherit;
+}
+
+input[type="text"],
+select,
+textarea {
+width: 100%;
+max-width: 460px;
+padding: 12px 14px;
+border: 1px solid #d1d5db;
+border-radius: 10px;
+background: #ffffff;
+color: #111827;
+transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+textarea {
+min-height: 130px;
+resize: vertical;
+}
+
+select[multiple] {
+min-height: 120px;
+}
+
+/* Focus */
+input[type="text"]:focus,
+select:focus,
+textarea:focus {
+outline: none;
+border-color: #0600c8;
+box-shadow: 0 0 0 4px rgba(6, 0, 200, 0.1);
+}
+
+/* Checkbox */
+input[type="checkbox"] {
+margin-right: 8px;
+accent-color: #0600c8;
+transform: scale(1.05);
+}
+
+/* =========================
+   BOTÕES
+   ========================= */
+input[type="submit"],
+button {
+align-self: flex-start;
+padding: 12px 18px;
+border: none;
+border-radius: 10px;
+background: #0600c8;
+color: #ffffff;
+font-weight: 600;
+cursor: pointer;
+transition: background 0.2s ease, transform 0.2s ease;
+}
+
+input[type="submit"]:hover,
+button:hover {
+background: #04009a;
+}
+
+input[type="submit"]:active,
+button:active {
+transform: scale(0.98);
+}
+
+/* =========================
+   FORMULÁRIOS COM ELEMENTOS LADO A LADO
+   ========================= */
+form:has(button + input[type="submit"]) {
+flex-direction: row;
+flex-wrap: wrap;
+align-items: center;
+}
+
+/* =========================
+   QUEBRAS DE LINHA
+   ========================= */
+br {
+line-height: 1.8;
+}
+
+/* =========================
+   RESPONSIVIDADE
+   ========================= */
+@media (max-width: 768px) {
+body {
+   padding: 16px;
+}
+
+main {
+   padding: 22px;
+}
+
+section {
+   padding: 18px;
+}
+
+h1 {
+   font-size: 1.7rem;
+}
+
+h2 {
+   font-size: 1.2rem;
+}
+
+input[type="text"],
+select,
+textarea {
+   max-width: 100%;
+}
+
+form:has(button + input[type="submit"]) {
+   flex-direction: column;
+   align-items: flex-start;
+}
+}

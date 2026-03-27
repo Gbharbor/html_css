@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>CSS - Efeitos e Recursos</title>
+   <link rel="stylesheet" href="05-visual-effects.css">
+</head>
+<body>
+
+<main>
+   <h1>CSS - Efeitos e Recursos Visuais</h1>
+
+   <!-- =========================
+        NORMALIZE.CSS
+   ========================== -->
+   <h2>Normalize.css</h2>
+
+   <p>
+      Em resumo, padroniza o comportamento do site em diferentes navegadores,
+      corrigindo diferenças e inconsistências visuais.
+   </p>
+   <p>
+      É um arquivo que podes incluir no projeto, funcionando como uma biblioteca
+      muito usada para normalização de estilos.
+   </p>
+
+   <!-- =========================
+        BORDER-RADIUS
+   ========================== -->
+   <h2>Bordas arredondadas</h2>
+
+   <p>
+      Usamos a propriedade <code>border-radius</code> para criar bordas arredondadas.
+   </p>
+
+   <!-- =========================
+        GRADIENTE
+   ========================== -->
+   <h2>Degradê (Gradient)</h2>
+
+   <p>
+      Alguns navegadores antigos podem não suportar certos gradientes,
+      por isso é interessante definir uma cor de fundo padrão.
+   </p>
+   <p>
+      Em alguns casos, utilizavam-se múltiplas propriedades para compatibilidade
+      entre navegadores.
+   </p>
+
+   <div class="gradiente"></div>
+
+   <p>Agora vamos ver a direção do gradiente:</p>
+
+   <div class="gradiente2"></div>
+
+   <!-- =========================
+        ANIMAÇÕES E TRANSIÇÕES
+   ========================== -->
+   <h2>Animações, sombras e transições</h2>
+
+   <p>
+      Criamos animações com <code>@keyframes</code>.
+      O nome da animação não precisa ser o mesmo nome da classe.
+   </p>
+   <p>
+      <code>box-shadow</code> é usado para elementos,
+      enquanto <code>text-shadow</code> é usado para textos.
+   </p>
+
+<pre><code>
+@keyframes exemplo {
+   0% {
+      background-color: red;
+      margin-top: 0px;
+      margin-left: 0px;
+      box-shadow: -15px 0px 5px black;
+   }
+   25% {
+      background-color: yellow;
+      margin-top: 0px;
+      margin-left: 200px;
+      box-shadow: 0px -15px 5px black;
+   }
+   50% {
+      background-color: blue;
+      margin-top: 200px;
+      margin-left: 200px;
+      box-shadow: 15px 0px 5px black;
+   }
+   75% {
+      background-color: green;
+      margin-top: 200px;
+      margin-left: 0px;
+      box-shadow: 0px 15px 5px black;
+   }
+   100% {
+      background-color: red;
+      margin-top: 0px;
+      margin-left: 0px;
+      box-shadow: 0px 0px 0px rgb(81, 79, 79);
+   }
+}
+
+.exemplo {
+   width: 150px;
+   height: 150px;
+   background-color: red;
+   animation-name: exemplo;
+   animation-duration: 10s;
+   animation-delay: 1s;
+   animation-iteration-count: 1;
+   margin: auto;
+   margin-top: 100px;
+   box-shadow: 10px 10px 5px;
+   border-radius: 75px;
+   transition: all 1s linear;
+}
+
+.exemplo:hover {
+   width: 200px;
+   height: 200px;
+   border-radius: 100px;
+   background-color: grey;
+}
+
+.exemplo2 {
+   width: 100px;
+   height: 100px;
+   background-color: red;
+   transition: all 0.5s linear;
+}
+
+.exemplo2:hover {
+   background-color: blue;
+   width: 200px;
+}
+</code></pre>
+
+   <div class="exemplo"></div>
+   <br>
+   <div class="exemplo2"></div>
+
+   <!-- =========================
+        WORD-WRAP
+   ========================== -->
+   <h2>Quebra de palavra (word-wrap)</h2>
+
+   <p>
+      Quando colocamos uma palavra muito grande,
+      ela pode ultrapassar o espaço do elemento.
+   </p>
+
+   <div class="aula21">
+      this paragraph contains nothing especialadsadsadasdasddadsda
+   </div>
+
+   <p>
+      Podemos resolver isso com propriedades de quebra de palavra,
+      como <code>word-wrap</code> ou <code>overflow-wrap</code>.
+   </p>
+
+</main>
+
+</body>
+</html>
